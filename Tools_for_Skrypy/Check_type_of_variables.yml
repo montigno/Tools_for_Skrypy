@@ -1,0 +1,38 @@
+Module:
+  int_simple: 1
+  int_list: [0, 5, -1]
+  int_array: [[0, 5, -1], [5, -5, 1], [-5, 12, 25], [-5, 12, 25]]
+  float_simple: 1.5
+  float_list: [1.20, -56.5, 1.0]
+  float_array: [[0.0, 0.5, -0.1, 0.0], [6.3, 5.5, -5.99, 1.66], [8.8, -5.21, 12.5688, 25.30111]]
+  tuple_ex: ('Mattes', 32, 'None', 0.55)
+  bool_simple: True
+  bool_list: [True, False]
+  bool_array: [[True, False, False], [True, False, False], [True, False, False]]
+  string_simple: 'hello'
+  string_list: ['hello', 'world']
+  string_array: [['hello', 'world'], ['how', 'are'], ['you', '?']]
+  dictny: {}
+  enum_str: enumerate(['Gauss','DMFFD', 'None', 'Laplace'])
+  enum_int: enumerate([1, 5, -8, 0])
+  enum_float: enumerate([-2.5, 6.666, 0.0, -9.3])
+  string_int: '1'
+  string_int_list: ['1', '0']
+  string_int_array: [['1', '0'], ['1', '0']]
+  string_float: '0.5'
+  string_float_list: ['0.5', '-5.2', '6.555']
+  string_float_array: [['0.5', '-5.2', '6.555'], ['0.5', '-5.2', '6.555'], ['0.5', '-5.2', '6.555']]
+  string_flist: '[0.5, -1, 10.0]'
+  string_farr: '[[0, 5, -1], [5, -5, 1], [-5, 12, 25]]'
+  various_list: ['aret', 5.0, 'None', 0.555]
+  enum_various: enumerate([5.2, 'kop', '5.6', '5', -8])
+  path_simple: 'path'
+  path_list: ['path']
+  path_array: [['path']]
+  path_simple_b: '/tmp/myNifti.nii'
+  path_list_b: ['/tmp/myNifti.nii']
+  path_array_b: [['/tmp/myNifti.nii']]
+  int_list_no_reg: [1, [5, -2], 55]
+  int_array_no_reg: [[2, 5], [6, 5, -1]]
+  enum_str_particular1: enumerate(['int', 'float', 'list', 'complex', 'str', 'dict', 'tuple'])
+  enum_str_particular2: enumerate([int, float, list, complex, str, dict, tuple])
