@@ -4,6 +4,7 @@ import sys
 
 
 interf = 'fsl'
+out_path = os.path.expanduser('~')
 
 try:
     if sys.argv[1]:
@@ -232,7 +233,7 @@ for elem in dict_cat_fct.keys():
             outputs = tag_values_comments(outp, 'outputs')
 
         for kin, vin in outputs.items():
-            print(kin, vin)
+            # print(kin, vin)
             codeMain.indent()
             text_outputs = 'def {}(self: \"{}\"):\n'.format(kin, vin[1])
             codeMain += text_outputs
@@ -247,8 +248,9 @@ for elem in dict_cat_fct.keys():
 
 
 # print(codeMain)
-file = TxtToImport + '.py'
+file = os.path.join(out_path, TxtToImport + '.py')
 f = open(file, 'w',  encoding='utf8')
 os.chmod(file, 0o777)
 f.write(str(codeMain))
 f.close()
+print("saved in", file)

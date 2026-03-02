@@ -1,0 +1,140 @@
+fsl_AR1Image:
+  dimension: enumerate(('T','X','Y','Z'))
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: True
+  output_type: enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_ApplyMask:
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: True
+  output_type: enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_BinaryMaths:
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: True
+  output_type: enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_ChangeDataType:
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: True
+  output_type: enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_DilateImage:
+  kernel_shape: enumerate(('3D','2D','box','boxv','gauss','sphere','file'))
+  kernel_size: 0.0
+  kernel_file: 'path'
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: True
+  output_type: enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_ErodeImage:
+  minimum_filter: True
+  kernel_shape: enumerate(('3D','2D','box','boxv','gauss','sphere','file'))
+  kernel_size: 0.0
+  kernel_file: 'path'
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: True
+  output_type: enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_IsotropicSmooth:
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: True
+  output_type: enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_MaxnImage:
+  dimension: enumerate(('T','X','Y','Z'))
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: True
+  output_type: enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_MeanImage:
+  dimension: enumerate(('T','X','Y','Z'))
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: True
+  output_type: enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_MedianImage:
+  dimension: enumerate(('T','X','Y','Z'))
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: True
+  output_type: enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_MinImage:
+  dimension: enumerate(('T','X','Y','Z'))
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: True
+  output_type: enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_MultiImageMaths:
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: True
+  output_type: enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_PercentileImage:
+  dimension: enumerate(('T','X','Y','Z'))
+  perc: 0
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: True
+  output_type: enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_SpatialFilter:
+  kernel_shape: enumerate(('3D','2D','box','boxv','gauss','sphere','file'))
+  kernel_size: 0.0
+  kernel_file: 'path'
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: True
+  output_type: enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_TemporalFilter:
+  lowpass_sigma: 0.0
+  highpass_sigma: 0.0
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: True
+  output_type: enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_Threshold:
+  direction: enumerate(('below','above'))
+  use_robust_range: True
+  use_nonzero_voxels: True
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: True
+  output_type: enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_UnaryMaths:
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: True
+  output_type: enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
