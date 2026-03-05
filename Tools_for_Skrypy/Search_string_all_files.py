@@ -12,7 +12,7 @@ def searching_string(dossier, mot):
             except (UnicodeDecodeError, PermissionError):
                 continue
 
-user_dir = "/home/olivier/Documents/eclipse-workspace/skrypy-pyqt6/"
-searchstring = "/tmp"
+user_dir = "/home/olivier/Documents/dataIRM/Bruker/PV360/20250320_092234_carboPt_2_rat21_post_fus_20250320_1_5"
+searchstring = "rawdata.job0"
 
 searching_string(user_dir, searchstring)
