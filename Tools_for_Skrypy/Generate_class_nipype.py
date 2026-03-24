@@ -160,7 +160,7 @@ for nameClass in lis:
         pass
 
 TxtToImport = interf
-
+print(TxtToImport)
 codeMain = CodeGenerator()
 
 for elem in dict_cat_fct.keys():
@@ -188,6 +188,7 @@ for elem in dict_cat_fct.keys():
         try:
             doc = eval(TxtToImport + "." + TxtToExecute + "().help(True)")
             clss = doc[doc.index('[Mandatory]'):doc.index('[Optional]')]
+            print(doc[0:10])
             # clss = subtext('[Mandatory]', doc)
             outp = subtext('Outputs::', doc) + '\n' + ' ' * 8
             # outp = outp[outp.index('\n')+1: ]
@@ -197,7 +198,7 @@ for elem in dict_cat_fct.keys():
 
 
 ###############################################################################
-
+        print('classes found:', clss)
         if clss:
             code += tag + ':\n'
             inputs = tag_values_comments(clss, 'inputs')
@@ -242,7 +243,9 @@ for elem in dict_cat_fct.keys():
             codeMain += text_outputs
             codeMain.dedent()
             codeMain.dedent()
-        codeMain += '\n'
+        # codeMain += '\n'
+        codeMain += '#' * 79
+        codeMain += '\n\n\n'
 
 ###############################################################################
 

@@ -1,0 +1,16 @@
+fsl_B0Calc:
+  out_file: 'path'
+  x_grad: 0.0
+  y_grad: 0.0
+  z_grad: 0.0
+  x_b0: 0.0
+  y_b0: 0.0
+  z_b0: 0.0
+  xyz_b0: (0,)
+  delta: 0.0
+  chi_air: 0.0
+  compute_xyz: True
+  extendboundary: 0.0
+  directconv: True
+  output_type: enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''

@@ -1,0 +1,1269 @@
+fsl_ICA_AROMA:
+  mask: 'path'
+  dim: 0
+  TR: 0.0
+  melodic_dir: 'path'
+  mat_file: 'path'
+  fnirt_warp_file: 'path'
+  args: ''
+fsl_BEDPOSTX5:
+  logdir: 'path'
+  model: ''
+  fudge: 0
+  n_jumps: 0
+  burn_in: 0
+  sample_every: 0
+  gradnonlin: true
+  grad_dev: 'path'
+  use_gpu: true
+  burn_in_no_ard: 0
+  update_proposal_every: 0
+  seed: 0
+  no_ard: true
+  all_ard: true
+  no_spat: true
+  non_linear: true
+  cnlinear: true
+  rician: true
+  f0_noard: true
+  f0_ard: true
+  force_dir: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_DTIFit:
+  base_name: ''
+  min_z: 0
+  max_z: 0
+  min_y: 0
+  max_y: 0
+  min_x: 0
+  max_x: 0
+  save_tensor: true
+  sse: true
+  cni: 'path'
+  little_bit: true
+  gradnonlin: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_DistanceMap:
+  mask_file: 'path'
+  invert_input: true
+  local_max_file: 'path'
+  distance_map: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_FindTheBiggest:
+  out_file: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_MakeDyadicVectors:
+  mask: 'path'
+  output: 'path'
+  perc: 0.0
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_ProbTrackX:
+  mode: enumerate(('simple','two_mask_symm','seedmask'))
+  mask2: 'path'
+  mesh: 'path'
+  samples_base_name: ''
+  target_masks: ['path']
+  waypoints: 'path'
+  network: true
+  seed_ref: 'path'
+  out_dir: 'path'
+  force_dir: true
+  opd: true
+  correct_path_distribution: true
+fsl_ProbTrackX2:
+  simple: true
+  fopd: 'path'
+  waycond: enumerate(('OR','AND'))
+  wayorder: true
+  onewaycondition: true
+  omatrix1: true
+  distthresh1: 0.0
+  omatrix2: true
+  target2: 'path'
+  omatrix3: true
+  target3: 'path'
+  lrtarget3: 'path'
+  distthresh3: 0.0
+  omatrix4: true
+  colmask4: 'path'
+  target4: 'path'
+  meshspace: enumerate(('caret','freesurfer','first','vox'))
+  samples_base_name: ''
+  target_masks: ['path']
+  waypoints: 'path'
+  network: true
+  seed_ref: 'path'
+  out_dir: 'path'
+  force_dir: true
+  opd: true
+  correct_path_distribution: true
+fsl_ProjThresh:
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_TractSkeleton:
+  project_data: true
+  threshold: 0.0
+  distance_map: 'path'
+  search_mask_file: 'path'
+  use_cingulum_mask: true
+  data_file: 'path'
+  alt_data_file: 'path'
+  alt_skeleton: 'path'
+  projected_data: 'path'
+  skeleton_file: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_VecReg:
+  out_file: 'path'
+  affine_mat: 'path'
+  warp_field: 'path'
+  rotation_mat: 'path'
+  rotation_warp: 'path'
+  interpolation: enumerate(('nearestneighbour','trilinear','sinc','spline'))
+  mask: 'path'
+  ref_mask: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_XFibres5:
+  gradnonlin: 'path'
+  logdir: 'path'
+  model: ''
+  fudge: 0
+  n_jumps: 0
+  burn_in: 0
+  burn_in_no_ard: 0
+  sample_every: 0
+  update_proposal_every: 0
+  seed: 0
+  no_ard: true
+  all_ard: true
+  no_spat: true
+  non_linear: true
+  cnlinear: true
+  rician: true
+  f0_noard: true
+  f0_ard: true
+  force_dir: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_ApplyTOPUP:
+  in_index: [0]
+  in_topup_fieldcoef: 'path'
+  in_topup_movpar: 'path'
+  out_corrected: 'path'
+  method: enumerate(('jac','lsr'))
+  interp: enumerate(('trilinear','spline'))
+  datatype: enumerate(('char','short','int','float','double'))
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_EPIDeWarp:
+  exf_file: 'path'
+  epi_file: 'path'
+  tediff: 0.0
+  esp: 0.0
+  sigma: 0
+  vsm: 'path'
+  exfdw: 'path'
+  epidw: 'path'
+  tmpdir: 'path'
+  nocleanup: true
+  cleanup: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_Eddy:
+  out_base: 'path'
+  session: 'path'
+  in_topup_fieldcoef: 'path'
+  in_topup_movpar: 'path'
+  field: 'path'
+  field_mat: 'path'
+  flm: enumerate(('quadratic','linear','cubic'))
+  slm: enumerate(('none','linear','quadratic'))
+  fep: true
+  initrand: true
+  interp: enumerate(('spline','trilinear'))
+  nvoxhp: 0
+  fudge_factor: 0.0
+  dont_sep_offs_move: true
+  dont_peas: true
+  fwhm: 0.0
+  niter: 0
+  method: enumerate(('jac','lsr'))
+  repol: true
+  outlier_nstd: 0
+  outlier_nvox: 0
+  outlier_type: enumerate(('sw','gw','both'))
+  outlier_pos: true
+  outlier_sqr: true
+  multiband_factor: 0
+  multiband_offset: ''
+  mporder: 0
+  slice2vol_niter: 0
+  slice2vol_lambda: 0
+  slice2vol_interp: enumerate(('trilinear','spline'))
+  slice_order: 'path'
+  json: 'path'
+  estimate_move_by_susceptibility: true
+  mbs_niter: 0
+  mbs_lambda: 0
+  mbs_ksp: 0
+  num_threads: 0
+  is_shelled: true
+  use_cuda: true
+  cnr_maps: true
+  residuals: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_EddyCorrect:
+  out_file: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_EddyQuad:
+  base_name: ''
+  bvec_file: 'path'
+  output_dir: ''
+  field: 'path'
+  slice_spec: 'path'
+  verbose: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_EpiReg:
+  out_base: ''
+  fmap: 'path'
+  fmapmag: 'path'
+  fmapmagbrain: 'path'
+  wmseg: 'path'
+  echospacing: 0.0
+  pedir: enumerate(('x','y','z','-x','-y','-z'))
+  weight_image: 'path'
+  no_fmapreg: true
+  no_clean: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_PrepareFieldmap:
+  scanner: ''
+  nocheck: true
+  out_fieldmap: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_SigLoss:
+  out_file: 'path'
+  mask_file: 'path'
+  echo_time: 0.0
+  slice_direction: enumerate(('x','y','z'))
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_TOPUP:
+  out_base: 'path'
+  out_field: 'path'
+  out_warp_prefix: ''
+  out_mat_prefix: ''
+  out_jac_prefix: ''
+  out_corrected: 'path'
+  out_logfile: 'path'
+  warp_res: 0.0
+  subsamp: 0
+  fwhm: 0.0
+  config: ''
+  max_iter: 0
+  reg_lambda: 0.0
+  ssqlambda: ''
+  regmod: enumerate(('bending_energy','membrane_energy'))
+  estmov: ''
+  minmet: ''
+  splineorder: 0
+  numprec: enumerate(('double','float'))
+  interp: enumerate(('spline','linear'))
+  scale: ''
+  regrid: ''
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_TrainingSetCreator:
+fsl_AR1Image:
+  dimension: enumerate(('T','X','Y','Z'))
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_ApplyMask:
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_BinaryMaths:
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_ChangeDataType:
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_DilateImage:
+  kernel_shape: enumerate(('3D','2D','box','boxv','gauss','sphere','file'))
+  kernel_size: 0.0
+  kernel_file: 'path'
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_ErodeImage:
+  minimum_filter: true
+  kernel_shape: enumerate(('3D','2D','box','boxv','gauss','sphere','file'))
+  kernel_size: 0.0
+  kernel_file: 'path'
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_IsotropicSmooth:
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_MaxnImage:
+  dimension: enumerate(('T','X','Y','Z'))
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_MeanImage:
+  dimension: enumerate(('T','X','Y','Z'))
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_MedianImage:
+  dimension: enumerate(('T','X','Y','Z'))
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_MinImage:
+  dimension: enumerate(('T','X','Y','Z'))
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_MultiImageMaths:
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_PercentileImage:
+  dimension: enumerate(('T','X','Y','Z'))
+  perc: 0
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_SpatialFilter:
+  kernel_shape: enumerate(('3D','2D','box','boxv','gauss','sphere','file'))
+  kernel_size: 0.0
+  kernel_file: 'path'
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_TemporalFilter:
+  lowpass_sigma: 0.0
+  highpass_sigma: 0.0
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_Threshold:
+  direction: enumerate(('below','above'))
+  use_robust_range: true
+  use_nonzero_voxels: true
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_UnaryMaths:
+  out_file: 'path'
+  internal_datatype: enumerate(('float','char','int','short','double','input'))
+  output_datatype: enumerate(('float','char','int','short','double','input'))
+  nan2zeros: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_Cluster:
+  out_index_file: 'path'
+  out_threshold_file: 'path'
+  out_localmax_txt_file: 'path'
+  out_localmax_vol_file: 'path'
+  out_size_file: 'path'
+  out_max_file: 'path'
+  out_mean_file: 'path'
+  out_pval_file: 'path'
+  pthreshold: 0.0
+  peak_distance: 0.0
+  cope_file: 'path'
+  volume: 0
+  dlh: 0.0
+  fractional: true
+  connectivity: 0
+  use_mm: true
+  find_min: true
+  no_table: true
+  minclustersize: true
+  xfm_file: 'path'
+  std_space_file: 'path'
+  num_maxima: 0
+  warpfield_file: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_ContrastMgr:
+  fcon_file: 'path'
+  contrast_num: 0
+  suffix: ''
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_FEAT:
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_FEATModel:
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_FEATRegister:
+fsl_FILMGLS:
+  threshold: 0.0
+  tcon_file: 'path'
+  fcon_file: 'path'
+  mode: enumerate(('volumetric','surface'))
+  surface: 'path'
+  design_file: 'path'
+  smooth_autocorr: true
+  mask_size: 0
+  brightness_threshold: 0
+  full_data: true
+  autocorr_estimate_only: true
+  fit_armodel: true
+  tukey_window: 0
+  multitaper_product: 0
+  use_pava: true
+  autocorr_noestimate: true
+  output_pwdata: true
+  results_dir: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_FLAMEO:
+  var_cope_file: 'path'
+  dof_var_cope_file: 'path'
+  f_con_file: 'path'
+  n_jumps: 0
+  burnin: 0
+  sample_every: 0
+  fix_mean: true
+  infer_outliers: true
+  no_pe_outputs: true
+  sigma_dofs: 0
+  outlier_iter: 0
+  log_dir: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_GLM:
+  out_file: 'path'
+  contrasts: 'path'
+  mask: 'path'
+  dof: 0
+  des_norm: true
+  dat_norm: true
+  var_norm: true
+  demean: true
+  out_cope: 'path'
+  out_z_name: 'path'
+  out_t_name: 'path'
+  out_p_name: 'path'
+  out_f_name: 'path'
+  out_pf_name: 'path'
+  out_res_name: 'path'
+  out_varcb_name: 'path'
+  out_sigsq_name: 'path'
+  out_data_name: 'path'
+  out_vnscales_name: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_Level1Design:
+  orthogonalization: {}
+fsl_MELODIC:
+  out_dir: 'path'
+  mask: 'path'
+  no_mask: true
+  update_mask: true
+  no_bet: true
+  bg_threshold: 0.0
+  dim: 0
+  dim_est: ''
+  sep_whiten: true
+  sep_vn: true
+  migp: true
+  migpN: 0
+  migp_shuffle: true
+  migp_factor: 0
+  num_ICs: 0
+  approach: ''
+  non_linearity: ''
+  var_norm: true
+  pbsc: true
+  cov_weight: 0.0
+  epsilon: 0.0
+  epsilonS: 0.0
+  maxit: 0
+  max_restart: 0
+  mm_thresh: 0.0
+  no_mm: true
+  ICs: 'path'
+  mix: 'path'
+  smode: 'path'
+  rem_cmp: [0]
+  report: true
+  bg_image: 'path'
+  tr_sec: 0.0
+  log_power: true
+  t_des: 'path'
+  t_con: 'path'
+  s_des: 'path'
+  s_con: 'path'
+  out_all: true
+  out_unmix: true
+  out_stats: true
+  out_pca: true
+  out_white: true
+  out_orig: true
+  out_mean: true
+  report_maps: ''
+  remove_deriv: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_MultipleRegressDesign:
+fsl_Randomise:
+  base_name: ''
+  design_mat: 'path'
+  tcon: 'path'
+  fcon: 'path'
+  mask: 'path'
+  x_block_labels: 'path'
+  demean: true
+  one_sample_group_mean: true
+  show_total_perms: true
+  show_info_parallel_mode: true
+  vox_p_values: true
+  tfce: true
+  tfce2D: true
+  f_only: true
+  raw_stats_imgs: true
+  p_vec_n_dist_files: true
+  num_perm: 0
+  seed: 0
+  var_smooth: 0
+  c_thresh: 0.0
+  cm_thresh: 0.0
+  f_c_thresh: 0.0
+  f_cm_thresh: 0.0
+  tfce_H: 0.0
+  tfce_E: 0.0
+  tfce_C: 0.0
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_SMM:
+  no_deactivation_class: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_SmoothEstimate:
+  residual_fit_file: 'path'
+  zstat_file: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_B0Calc:
+  out_file: 'path'
+  x_grad: 0.0
+  y_grad: 0.0
+  z_grad: 0.0
+  x_b0: 0.0
+  y_b0: 0.0
+  z_b0: 0.0
+  xyz_b0: (0,)
+  delta: 0.0
+  chi_air: 0.0
+  compute_xyz: true
+  extendboundary: 0.0
+  directconv: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_ApplyWarp:
+  out_file: 'path'
+  field_file: 'path'
+  abswarp: true
+  relwarp: true
+  datatype: enumerate(('char','short','int','float','double'))
+  supersample: true
+  superlevel: 0
+  premat: 'path'
+  postmat: 'path'
+  mask_file: 'path'
+  interp: enumerate(('nn','trilinear','sinc','spline'))
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_ApplyXFM:
+  apply_xfm: true
+  out_file: 'path'
+  out_matrix_file: 'path'
+  out_log: 'path'
+  in_matrix_file: 'path'
+  apply_isoxfm: 0.0
+  datatype: enumerate(('char','short','int','float','double'))
+  cost: 
+    enumerate(('mutualinfo','corratio','normcorr','normmi','leastsq','labeldiff','bbr'))
+  cost_func: 
+    enumerate(('mutualinfo','corratio','normcorr','normmi','leastsq','labeldiff','bbr'))
+  uses_qform: true
+  display_init: true
+  angle_rep: enumerate(('quaternion','euler'))
+  interp: enumerate(('trilinear','nearestneighbour','sinc','spline'))
+  sinc_width: 0
+  sinc_window: enumerate(('rectangular','hanning','blackman'))
+  bins: 0
+  dof: 0
+  no_resample: true
+  force_scaling: true
+  min_sampling: 0.0
+  padding_size: 0
+  searchr_x: 0
+  searchr_y: 0
+  searchr_z: 0
+  no_search: true
+  coarse_search: 0
+  fine_search: 0
+  schedule: 'path'
+  ref_weight: 'path'
+  in_weight: 'path'
+  no_clamp: true
+  no_resample_blur: true
+  rigid2D: true
+  save_log: true
+  verbose: 0
+  bgvalue: 0.0
+  wm_seg: 'path'
+  wmcoords: 'path'
+  wmnorms: 'path'
+  fieldmap: 'path'
+  fieldmapmask: 'path'
+  pedir: 0
+  echospacing: 0.0
+  bbrtype: enumerate(('signed','global_abs','local_abs'))
+  bbrslope: 0.0
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_BET:
+  out_file: 'path'
+  outline: true
+  mask: true
+  skull: true
+  no_output: true
+  frac: 0.0
+  vertical_gradient: 0.0
+  radius: 0
+  center: 0
+  threshold: true
+  mesh: true
+  robust: true
+  padding: true
+  remove_eyes: true
+  surfaces: true
+  t2_guided: 'path'
+  functional: true
+  reduce_bias: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_FAST:
+  out_basename: 'path'
+  number_classes: 0
+  output_biasfield: true
+  output_biascorrected: true
+  img_type: ''
+  bias_iters: 0
+  bias_lowpass: 0
+  init_seg_smooth: 0.0
+  segments: true
+  init_transform: 'path'
+  other_priors: 'path'
+  no_pve: true
+  no_bias: true
+  use_priors: true
+  segment_iters: 0
+  mixel_smooth: 0.0
+  iters_afterbias: 0
+  hyper: 0.0
+  verbose: true
+  manual_seg: 'path'
+  probability_maps: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_FIRST:
+  verbose: true
+  brain_extracted: true
+  no_cleanup: true
+  method: enumerate(('auto','fast','none'))
+  method_as_numerical_threshold: 0.0
+  list_of_specific_structures: ''
+  affine_file: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_FLIRT:
+  out_file: 'path'
+  out_matrix_file: 'path'
+  out_log: 'path'
+  in_matrix_file: 'path'
+  apply_xfm: true
+  apply_isoxfm: 0.0
+  datatype: enumerate(('char','short','int','float','double'))
+  cost: 
+    enumerate(('mutualinfo','corratio','normcorr','normmi','leastsq','labeldiff','bbr'))
+  cost_func: 
+    enumerate(('mutualinfo','corratio','normcorr','normmi','leastsq','labeldiff','bbr'))
+  uses_qform: true
+  display_init: true
+  angle_rep: enumerate(('quaternion','euler'))
+  interp: enumerate(('trilinear','nearestneighbour','sinc','spline'))
+  sinc_width: 0
+  sinc_window: enumerate(('rectangular','hanning','blackman'))
+  bins: 0
+  dof: 0
+  no_resample: true
+  force_scaling: true
+  min_sampling: 0.0
+  padding_size: 0
+  searchr_x: 0
+  searchr_y: 0
+  searchr_z: 0
+  no_search: true
+  coarse_search: 0
+  fine_search: 0
+  schedule: 'path'
+  ref_weight: 'path'
+  in_weight: 'path'
+  no_clamp: true
+  no_resample_blur: true
+  rigid2D: true
+  save_log: true
+  verbose: 0
+  bgvalue: 0.0
+  wm_seg: 'path'
+  wmcoords: 'path'
+  wmnorms: 'path'
+  fieldmap: 'path'
+  fieldmapmask: 'path'
+  pedir: 0
+  echospacing: 0.0
+  bbrtype: enumerate(('signed','global_abs','local_abs'))
+  bbrslope: 0.0
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_FNIRT:
+  affine_file: 'path'
+  inwarp_file: 'path'
+  in_intensitymap_file: 'path'
+  fieldcoeff_file: 'path'
+  warped_file: 'path'
+  field_file: 'path'
+  jacobian_file: 'path'
+  modulatedref_file: 'path'
+  out_intensitymap_file: 'path'
+  log_file: 'path'
+  config_file: enumerate(('T1_2_MNI152_2mm','FA_2_FMRIB58_1mm',a pathlike 
+    object,string representing an existing file))
+  refmask_file: 'path'
+  inmask_file: 'path'
+  skip_refmask: true
+  skip_inmask: true
+  apply_refmask: ['']
+  apply_inmask: ['']
+  skip_implicit_ref_masking: true
+  skip_implicit_in_masking: true
+  refmask_val: 0.0
+  inmask_val: 0.0
+  max_nonlin_iter: [0]
+  subsampling_scheme: [0]
+  warp_resolution: (0,)
+  spline_order: 0
+  in_fwhm: [0]
+  ref_fwhm: [0]
+  regularization_model: enumerate(('membrane_energy','bending_energy'))
+  regularization_lambda: [0.0]
+  skip_lambda_ssq: true
+  jacobian_range: (0,)
+  derive_from_ref: true
+  intensity_mapping_model: 
+    enumerate(('none','global_linear','global_non_linear','local_linear','global_non_linear_with_bias','local_non_linear'))
+  intensity_mapping_order: 0
+  biasfield_resolution: (0,)
+  bias_regularization_lambda: 0.0
+  skip_intensity_mapping: true
+  apply_intensity_mapping: ['']
+  hessian_precision: enumerate(('double','float'))
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_FUGUE:
+  in_file: 'path'
+  shift_in_file: 'path'
+  phasemap_in_file: 'path'
+  fmap_in_file: 'path'
+  unwarped_file: 'path'
+  warped_file: 'path'
+  forward_warping: true
+  dwell_to_asym_ratio: 0.0
+  dwell_time: 0.0
+  asym_se_time: 0.0
+  median_2dfilter: true
+  despike_2dfilter: true
+  no_gap_fill: true
+  no_extend: true
+  smooth2d: 0.0
+  smooth3d: 0.0
+  poly_order: 0
+  fourier_order: 0
+  pava: true
+  despike_threshold: 0.0
+  unwarp_direction: enumerate(('x','y','z','x-','y-','z-'))
+  phase_conjugate: true
+  icorr: true
+  icorr_only: true
+  mask_file: 'path'
+  nokspace: true
+  save_shift: true
+  shift_out_file: 'path'
+  save_unmasked_shift: true
+  save_fmap: true
+  fmap_out_file: 'path'
+  save_unmasked_fmap: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_MCFLIRT:
+  out_file: 'path'
+  cost: 
+    enumerate(('mutualinfo','woods','corratio','normcorr','normmi','leastsquares'))
+  bins: 0
+  dof: 0
+  ref_vol: 0
+  scaling: 0.0
+  smooth: 0.0
+  rotation: 0
+  stages: 0
+  init: 'path'
+  interpolation: enumerate(('spline','nn','sinc'))
+  use_gradient: true
+  use_contour: true
+  mean_vol: true
+  stats_imgs: true
+  save_mats: true
+  save_plots: true
+  save_rms: true
+  ref_file: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_PRELUDE:
+  unwrapped_phase_file: 'path'
+  num_partitions: 0
+  labelprocess2d: true
+  process2d: true
+  process3d: true
+  threshold: 0.0
+  mask_file: 'path'
+  start: 0
+  end: 0
+  savemask_file: 'path'
+  rawphase_file: 'path'
+  label_file: 'path'
+  removeramps: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_SUSAN:
+  dimension: ''
+  use_median: ''
+  usans: (0,)
+  out_file: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_SliceTimer:
+  out_file: 'path'
+  index_dir: true
+  time_repetition: 0.0
+  slice_direction: ''
+  interleaved: true
+  custom_timings: 'path'
+  global_shift: 0.0
+  custom_order: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_AvScale:
+  all_param: true
+  mat_file: 'path'
+  ref_file: 'path'
+  args: ''
+fsl_Complex:
+  complex_in_file: 'path'
+  complex_in_file2: 'path'
+  real_in_file: 'path'
+  imaginary_in_file: 'path'
+  magnitude_in_file: 'path'
+  phase_in_file: 'path'
+  complex_out_file: 'path'
+  magnitude_out_file: 'path'
+  phase_out_file: 'path'
+  real_out_file: 'path'
+  imaginary_out_file: 'path'
+  start_vol: 0
+  end_vol: 0
+  real_polar: true
+  real_cartesian: true
+  complex_cartesian: true
+  complex_polar: true
+  complex_split: true
+  complex_merge: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_ConvertWarp:
+  out_file: 'path'
+  premat: 'path'
+  warp1: 'path'
+  midmat: 'path'
+  warp2: 'path'
+  postmat: 'path'
+  shift_in_file: 'path'
+  shift_direction: enumerate(('y-','y','x','x-','z','z-'))
+  cons_jacobian: true
+  jacobian_min: 0.0
+  jacobian_max: 0.0
+  abswarp: true
+  relwarp: true
+  out_abswarp: true
+  out_relwarp: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_ConvertXFM:
+  in_file2: 'path'
+  invert_xfm: true
+  concat_xfm: true
+  fix_scale_skew: true
+  out_file: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_CopyGeom:
+  ignore_dims: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_ExtractROI:
+  roi_file: 'path'
+  x_min: 0
+  x_size: 0
+  y_min: 0
+  y_size: 0
+  z_min: 0
+  z_size: 0
+  t_min: 0
+  t_size: 0
+  crop_list: [(0, )]
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_FilterRegressor:
+  out_file: 'path'
+  mask: 'path'
+  var_norm: true
+  out_vnscales: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_ImageMaths:
+  in_file2: 'path'
+  mask_file: 'path'
+  out_file: 'path'
+  op_string: ''
+  suffix: ''
+  out_data_type: enumerate(('char','short','int','float','double','input'))
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_ImageMeants:
+  out_file: 'path'
+  mask: 'path'
+  spatial_coord: [0]
+  use_mm: true
+  show_all: true
+  eig: true
+  order: 0
+  nobin: true
+  transpose: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_ImageStats:
+  split_4d: true
+  mask_file: 'path'
+  index_mask_file: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_InvWarp:
+  inverse_warp: 'path'
+  absolute: true
+  relative: true
+  niter: 0
+  regularise: 0.0
+  noconstraint: true
+  jacobian_min: 0.0
+  jacobian_max: 0.0
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_Merge:
+  tr: 0.0
+  merged_file: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_MotionOutliers:
+  out_file: 'path'
+  mask: 'path'
+  metric: enumerate(('refrms','dvars','refmse','fd','fdrms'))
+  threshold: 0.0
+  no_motion_correction: true
+  dummy: 0
+  out_metric_values: 'path'
+  out_metric_plot: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_Overlay:
+  transparency: true
+  out_type: enumerate(('float','int'))
+  use_checkerboard: true
+  show_negative_stats: true
+  stat_image2: 'path'
+  stat_thresh2: (0,)
+  out_file: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_PlotMotionParams:
+  plot_size: (0,)
+  out_file: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_PlotTimeSeries:
+  plot_start: 0
+  plot_finish: 0
+  plot_range: (0,)
+  title: ''
+  legend_file: 'path'
+  labels: ['']
+  y_min: 0.0
+  y_max: 0.0
+  y_range: (0,)
+  x_units: 0
+  plot_size: (0,)
+  x_precision: 0
+  sci_notation: true
+  out_file: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_PowerSpectrum:
+  out_file: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_Reorient2Std:
+  out_file: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_RobustFOV:
+  out_roi: 'path'
+  brainsize: 0
+  out_transform: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_Slice:
+  out_base_name: ''
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_Slicer:
+  image_edges: 'path'
+  label_slices: true
+  colour_map: 'path'
+  intensity_range: (0,)
+  threshold_edges: 0.0
+  dither_edges: true
+  nearest_neighbour: true
+  show_orientation: true
+  single_slice: enumerate(('x','y','z'))
+  slice_number: 0
+  middle_slices: true
+  all_axial: true
+  sample_axial: 0
+  image_width: 0
+  out_file: 'path'
+  scaling: 0.0
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_Smooth:
+  smoothed_file: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_Split:
+  out_base_name: ''
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_SwapDimensions:
+  out_file: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_Text2Vest:
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_Vest2Text:
+  out_file: 'path'
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
+fsl_WarpPoints:
+  xfm_file: 'path'
+  warp_file: 'path'
+  coord_vox: true
+  coord_mm: true
+  out_file: 'path'
+  args: ''
+fsl_WarpPointsFromStd:
+  xfm_file: 'path'
+  warp_file: 'path'
+  coord_vox: true
+  coord_mm: true
+  args: ''
+fsl_WarpPointsToStd:
+  premat_file: 'path'
+  xfm_file: 'path'
+  warp_file: 'path'
+  coord_vox: true
+  coord_mm: true
+  out_file: 'path'
+  args: ''
+fsl_WarpUtils:
+  out_format: enumerate(('spline','field'))
+  warp_resolution: (0,)
+  knot_space: (0,)
+  out_file: 'path'
+  out_jacobian: 'path'
+  with_affine: true
+  output_type: 
+    enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
+  args: ''
