@@ -1,8 +1,0 @@
-fsl_ICA_AROMA:
-  mask: 'path'
-  dim: 0
-  TR: 0.0
-  melodic_dir: 'path'
-  mat_file: 'path'
-  fnirt_warp_file: 'path'
-  args: ''

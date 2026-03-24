@@ -1,0 +1,27 @@
+mrtrix3_BuildConnectome:
+  in_parc: 'path'
+  nthreads: 0
+  vox_lookup: True
+  search_radius: 0.0
+  search_reverse: 0.0
+  search_forward: 0.0
+  metric: enumerate(('count','meanlength','invlength','invnodevolume','mean_scalar','invlength_invnodevolume'))
+  in_scalar: 'path'
+  in_weights: 'path'
+  keep_unassigned: True
+  zero_diagonal: True
+  args: ''
+mrtrix3_LabelConfig:
+  in_config: 'path'
+  lut_basic: 'path'
+  lut_fs: 'path'
+  lut_aal: 'path'
+  lut_itksnap: 'path'
+  spine: 'path'
+  nthreads: 0
+  args: ''
+mrtrix3_LabelConvert:
+  in_config: 'path'
+  spine: 'path'
+  num_threads: 0
+  args: ''

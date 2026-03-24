@@ -2,7 +2,7 @@ import inspect
 import sys
 
 
-interf = 'fsl'
+interf = 'mrtrix3'
 comment = False
 
 try:

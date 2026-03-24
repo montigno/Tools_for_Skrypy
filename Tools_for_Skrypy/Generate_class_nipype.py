@@ -3,7 +3,7 @@ import os
 import sys
 
 
-interf = 'fsl'
+interf = 'mrtrix3'
 out_path = os.path.expanduser('~')
 
 try:
