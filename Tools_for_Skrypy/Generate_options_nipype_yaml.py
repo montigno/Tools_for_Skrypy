@@ -1,8 +1,7 @@
 import inspect
 import sys
 
-
-interf = 'mrtrix3'
+interf = 'nipy'
 comment = False
 
 try:

@@ -3,7 +3,7 @@ import os
 import sys
 
 
-interf = 'mrtrix3'
+interf = 'nipy'
 out_path = os.path.expanduser('~')
 
 try:
