@@ -3,7 +3,7 @@ import os
 import sys
 
 
-interf = 'nipy'
+interf = 'fsl'
 out_path = os.path.expanduser('~')
 
 try:
@@ -35,6 +35,12 @@ class CodeGenerator:
 
     def __str__(self):
         return str(self.code)
+    
+def detectMutuallyExclusive(docstr):
+    if 'Mutually exclusive' in docstr:
+        return True
+    else:
+        return False
 
 def initial_values(line):
     br = line[line.index('(') + 1:line.index(')')]
@@ -118,6 +124,8 @@ def tag_values_comments(txt, rep):
             # if TxtToExecute == 'BinaryMaths':
             # print(tmp,leading_spaces, rep)
             if label:
+                if detectMutuallyExclusive(comments):
+                    print("mutually exclusive")
                 val_init = initial_values(comments)
                 # print(label, val_init)
                 port[label] = val_init

@@ -1,7 +1,9 @@
 import inspect
 import sys
+import re
 
-interf = 'nipy'
+
+interf = 'fsl'
 comment = False
 
 try:
@@ -11,6 +13,12 @@ except Exception as err:
     pass
 
 
+def detectMutuallyExclusive(docstr):
+    if 'Mutually_exclusive' in docstr:
+        return True
+    else:
+        return False
+
 def initial_values(line):
     br = line[line.index('(') + 1:line.index(')')]
     # print(br)
@@ -19,7 +27,13 @@ def initial_values(line):
     def get_value(gv):
         value = "''"
         type = 'str'
-        if 'tuple' in br:
+        if '1 or 0' in br:
+            value = '1'
+            type = 'int'
+        elif '0 or 1' in br:
+            value = '0'
+            type = 'int'
+        elif 'tuple' in br:
             value = '(0,)'
             type = 'tuple'
         elif 'dictionary' in br:
@@ -105,6 +119,7 @@ for elem in dict_cat_fct.keys():
     for elemVal in dict_cat_fct[elem]:
         TxtToExecute = elemVal[0:-1]
         tag = TxtToImport + "_" + TxtToExecute
+        # print(tag)
 
         try:
             doc = eval(TxtToImport + "." + TxtToExecute + "().help(True)")
@@ -116,24 +131,31 @@ for elem in dict_cat_fct.keys():
             code += tag + ':\n'
             descript = ''
             label, comments = None, ''
+            list_opt = []
 
             for ele in doc.split('\n'):
                 tmp = ele.strip()
                 leading_spaces = len(ele) - len(ele.lstrip())
+                # print(tmp, leading_spaces)
                 if leading_spaces == 8:
-                    # if TxtToExecute == 'BinaryMaths':
-                    #     print(tmp,leading_spaces)
-                    if label:
-                        val_init = initial_values(comments)
-                        if comment:
-                            code += '  ' + label + ': ' + val_init[0] + comments + '\n'
-                        else:
-                            code += '  ' + label + ': ' + val_init[0] + '\n'
-                        # print(label, comments)
-                    label = tmp[0:tmp.index(':')]
-                    comments = ' #' + tmp[tmp.index(':') + 1:]
-                elif leading_spaces != 0:
-                    comments += ' ' + tmp
+                    key = tmp[:tmp.index(':')]
+                    list_opt.append(key)
+
+            for i, opt in enumerate(list_opt):
+                try:
+                    text = doc[doc.index(list_opt[i]+": ") + len(opt) + 2:doc.index(list_opt[i+1]+": ")].strip()
+                except:
+                    text = doc[doc.index(list_opt[i]+": ") + len(opt) + 2:].strip()
+                text = re.sub(r'\s+', ' ', text).strip()
+                if text:
+                    try:
+                        # print(opt, ':', text)
+                        print(tag, opt, 'Mutual exclusive?', detectMutuallyExclusive(text))
+                        val_init = initial_values(text)
+                        # print('values', val_init[0])
+                        code += '  ' + opt + ': ' + val_init[0] + '\n'
+                    except Exception as err:
+                        print("error with", opt, 'in', tag, ":", err, ':', text)
 
         file = 'Interfaces_' + TxtToImport + '_' + elem + '.yml'
         f = open(file, 'w', encoding='utf8')
