@@ -10,7 +10,8 @@ fsl_BEDPOSTX5:
   use_gpu: True
   burn_in_no_ard: 0
   update_proposal_every: 0
-  no_ard: 0
+  seed: 0
+  no_ard: True
   all_ard: True
   no_spat: True
   non_linear: True
@@ -96,7 +97,8 @@ fsl_ProbTrackX2:
   network: True
   seed_ref: 'path'
   out_dir: 'path'
-  opd: 'path'
+  force_dir: True
+  opd: True
   correct_path_distribution: True
   os2t: True
 fsl_ProjThresh:
@@ -139,7 +141,8 @@ fsl_XFibres5:
   burn_in_no_ard: 0
   sample_every: 0
   update_proposal_every: 0
-  no_ard: 0
+  seed: 0
+  no_ard: True
   all_ard: True
   no_spat: True
   non_linear: True

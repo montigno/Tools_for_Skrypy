@@ -15,16 +15,17 @@ fsl_EPIDeWarp:
   tediff: 0.0
   esp: 0.0
   sigma: 0
-  vsm: ''
-  exfdw: ''
-  epidw: ''
-  tmpdir: ''
+  vsm: 'path'
+  exfdw: 'path'
+  epidw: 'path'
+  tmpdir: 'path'
+  nocleanup: True
   cleanup: True
   output_type: enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))
   args: ''
   environ: {}
 fsl_Eddy:
-  out_base: ''
+  out_base: 'path'
   session: 'path'
   in_topup_fieldcoef: 'path'
   in_topup_movpar: 'path'
@@ -54,8 +55,8 @@ fsl_Eddy:
   slice2vol_niter: 0
   slice2vol_lambda: 0
   slice2vol_interp: enumerate(('trilinear','spline'))
-  slice_order: ''
-  json: ''
+  slice_order: 'path'
+  json: 'path'
   estimate_move_by_susceptibility: True
   mbs_niter: 0
   mbs_lambda: 0

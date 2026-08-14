@@ -217,6 +217,7 @@ fsl_FUGUE:
   shift_in_file: 'path'
   phasemap_in_file: 'path'
   fmap_in_file: 'path'
+  unwarped_file: 'path'
   warped_file: 'path'
   forward_warping: True
   dwell_to_asym_ratio: 0.0
@@ -273,6 +274,7 @@ fsl_MCFLIRT:
 fsl_PRELUDE:
   unwrapped_phase_file: 'path'
   num_partitions: 0
+  labelprocess2d: True
   process2d: True
   process3d: True
   threshold: 0.0

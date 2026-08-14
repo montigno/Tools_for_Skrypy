@@ -3,12 +3,15 @@ from ruamel.yaml import YAML
 yaml = YAML()
 yaml.preserve_quotes = True
 
-files = ["Interfaces_dipy_anisotropic_power.yml",
-            "Interfaces_dipy_preprocess.yml",
-            "Interfaces_dipy_reconstruction.yml",
-            "Interfaces_dipy_simulate.yml",
-            "Interfaces_dipy_tensors.yml",
-            "Interfaces_dipy_tracks.yml"]
+files = ["Interfaces_fsl_aroma.yml", 
+        "Interfaces_fsl_dti.yml",
+        "Interfaces_fsl_epi.yml",
+        "Interfaces_fsl_fix.yml",
+        "Interfaces_fsl_maths.yml",
+        "Interfaces_fsl_model.yml",
+        "Interfaces_fsl_possum.yml",
+        "Interfaces_fsl_preprocess.yml",
+        "Interfaces_fsl_utils.yml"]
 
 merged = {}
 

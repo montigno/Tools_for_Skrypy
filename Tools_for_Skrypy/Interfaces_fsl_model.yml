@@ -132,7 +132,8 @@ fsl_MELODIC:
   maxit: 0
   max_restart: 0
   mm_thresh: 0.0
-  ICs: 0
+  no_mm: True
+  ICs: 'path'
   mix: 'path'
   smode: 'path'
   rem_cmp: [0]

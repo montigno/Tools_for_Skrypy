@@ -13,8 +13,23 @@ except Exception as err:
     pass
 
 
+def sort_yaml(data):
+    if isinstance(data, dict):
+        return {
+            key: sort_yaml(data[key])
+            for key in sorted(data)
+        }
+
+    elif isinstance(data, list):
+        return [
+            sort_yaml(item)
+            for item in data
+        ]
+
+    return data
+
 def detectMutuallyExclusive(docstr):
-    if 'Mutually_exclusive' in docstr:
+    if 'mutually_exclusive' in docstr:
         return True
     else:
         return False
@@ -140,17 +155,23 @@ for elem in dict_cat_fct.keys():
                 if leading_spaces == 8:
                     key = tmp[:tmp.index(':')]
                     list_opt.append(key)
+            if tag == 'fsl_EPIDeWarp':
+                print(tag, ":", list_opt)
 
             for i, opt in enumerate(list_opt):
                 try:
-                    text = doc[doc.index(list_opt[i]+": ") + len(opt) + 2:doc.index(list_opt[i+1]+": ")].strip()
+                    text = doc[doc.index(" " + list_opt[i]+": ") + len(opt) + 3: doc.index(" " + list_opt[i+1]+": ")].strip()
+                    doc = doc[doc.index(" " + list_opt[i+1]+": "):]
                 except:
-                    text = doc[doc.index(list_opt[i]+": ") + len(opt) + 2:].strip()
+                    text = doc[doc.index(" " + list_opt[i]+": ") + len(opt) + 3: ].strip()
+                if tag == "fsl_EPIDeWarp":
+                    print(opt, ":", text)
                 text = re.sub(r'\s+', ' ', text).strip()
                 if text:
                     try:
                         # print(opt, ':', text)
-                        print(tag, opt, 'Mutual exclusive?', detectMutuallyExclusive(text))
+                        # if detectMutuallyExclusive(text):
+                        #     print(tag, opt, 'Mutual exclusive')
                         val_init = initial_values(text)
                         # print('values', val_init[0])
                         code += '  ' + opt + ': ' + val_init[0] + '\n'

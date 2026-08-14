@@ -6,8 +6,8 @@ def count_lines_py(repertory):
     for file in Path(repertory).rglob("*.py"):
         with file.open("r", encoding="utf-8") as f:
             total1 += sum(1 for _ in f)
-            # total2 += sum(1 for ligne in f if ligne.strip())
-            # total3 += sum(1 for ligne in f if ligne.strip() and not ligne.strip().startswith("#"))
+            #total2 += sum(1 for ligne in f if ligne.strip())
+            #total3 += sum(1 for ligne in f if ligne.strip() and not ligne.strip().startswith("#"))
 
     return total1, total2, total3
 

@@ -37,7 +37,7 @@ class CodeGenerator:
         return str(self.code)
     
 def detectMutuallyExclusive(docstr):
-    if 'Mutually exclusive' in docstr:
+    if 'mutually_exclusive' in docstr:
         return True
     else:
         return False
@@ -125,7 +125,7 @@ def tag_values_comments(txt, rep):
             # print(tmp,leading_spaces, rep)
             if label:
                 if detectMutuallyExclusive(comments):
-                    print("mutually exclusive")
+                    print(" " * 5, label, "mutually exclusive")
                 val_init = initial_values(comments)
                 # print(label, val_init)
                 port[label] = val_init
@@ -196,7 +196,7 @@ for elem in dict_cat_fct.keys():
         try:
             doc = eval(TxtToImport + "." + TxtToExecute + "().help(True)")
             clss = doc[doc.index('[Mandatory]'):doc.index('[Optional]')]
-            print(doc[0:10])
+            # print(doc[0:10])
             # clss = subtext('[Mandatory]', doc)
             outp = subtext('Outputs::', doc) + '\n' + ' ' * 8
             # outp = outp[outp.index('\n')+1: ]
@@ -206,10 +206,12 @@ for elem in dict_cat_fct.keys():
 
 
 ###############################################################################
-        print('classes found:', clss)
         if clss:
+            print('classes found:', tag)
+            # print(clss)
             code += tag + ':\n'
             inputs = tag_values_comments(clss, 'inputs')
+            # print(inputs)
 
         text_inputs = "def __init__(self"
         for kin, vin in inputs.items():
