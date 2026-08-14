@@ -1,0 +1,64 @@
+freesurfer_EMRegister:
+  out_file: 'path'
+  skull: True
+  mask: 'path'
+  nbrspacing: 0
+  transform: 'path'
+  num_threads: 0
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_MPRtoMNI305:
+  in_file: 'path'
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_MRICoreg:
+  out_lta_file: 'path'
+  out_reg_file: 'path'
+  out_params_file: 'path'
+  subjects_dir: 'path'
+  dof: ''
+  reference_mask: ''
+  source_mask: ''
+  num_threads: 0
+  no_coord_dithering: True
+  no_intensity_dithering: True
+  sep: ''
+  initial_translation: (0,)
+  initial_rotation: (0,)
+  initial_scale: (0,)
+  initial_shear: (0,)
+  no_cras0: True
+  max_iters: 0
+  ftol: 0.0
+  linmintol: 0.0
+  saturation_threshold: 0.0
+  conform_reference: True
+  no_brute_force: True
+  brute_force_limit: 0.0
+  brute_force_samples: 0
+  no_smooth: True
+  ref_fwhm: 0.0
+  source_oob: True
+  args: ''
+  environ: {}
+freesurfer_Paint:
+  template_param: 0
+  averages: 0
+  out_file: 'path'
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_Register:
+  out_file: 'path'
+  curv: True
+  in_smoothwm: 'path'
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_RegisterAVItoTalairach:
+  out_file: 'path'
+  subjects_dir: 'path'
+  args: ''
+  environ: {}

@@ -2,7 +2,7 @@ import yaml
 
 
 fichier1_yaml = "output.yaml"
-fichier2_yaml = "/home/olivier/Documents/eclipse-workspace-2026/skrypy-pyqt5/NodeEditor/modules/Nipype/Interfaces_fsl.yml"
+fichier2_yaml = "/home/olivier/Documents/eclipse-workspace-2026/skrypy-pyqt5/NodeEditor/modules/Nipype/Interfaces_freesurfer.yml"
 
 with open(fichier1_yaml, "r", encoding="utf-8") as f:
     yaml1 = yaml.safe_load(f)

@@ -1,0 +1,380 @@
+freesurfer_AddXFormToHeader:
+  out_file: 'path'
+  copy_name: True
+  verbose: True
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_Aparc2Aseg:
+  filled: 'path'
+  aseg: 'path'
+  volmask: True
+  ctxseg: 'path'
+  label_wm: True
+  hypo_wm: True
+  rip_unknown: True
+  a2009s: True
+  copy_inputs: True
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_Apas2Aseg:
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_ApplyMask:
+  out_file: 'path'
+  xfm_file: 'path'
+  invert_xfm: True
+  xfm_source: 'path'
+  xfm_target: 'path'
+  use_abs: True
+  mask_thresh: 0.0
+  keep_mask_deletion_edits: True
+  transfer: 0
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_CheckTalairachAlignment:
+  threshold: 0.0
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_Contrast:
+  copy_inputs: True
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_Curvature:
+  threshold: 0.0
+  n: True
+  averages: 0
+  save: True
+  distances: (0,)
+  copy_input: True
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_CurvatureStats:
+  surface: 'path'
+  out_file: 'path'
+  min_max: True
+  values: True
+  write: True
+  copy_inputs: True
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_EulerNumber:
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_ExtractMainComponent:
+  out_file: 'path'
+  args: ''
+  environ: {}
+freesurfer_FixTopology:
+  seed: 0
+  ga: True
+  mgz: True
+  sphere: 'path'
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_Jacobian:
+  out_file: 'path'
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_MRIFill:
+  segmentation: 'path'
+  transform: 'path'
+  log_file: 'path'
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_MRIMarchingCubes:
+  connectivity_value: 0
+  out_file: 'path'
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_MRIPretess:
+  out_file: 'path'
+  nocorners: True
+  keep: True
+  test: True
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_MRITessellate:
+  out_file: 'path'
+  tesselate_all_voxels: True
+  use_real_RAS_coordinates: True
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_MRIsCalc:
+  in_file2: 'path'
+  in_float: 0.0
+  in_int: 0
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_MRIsCombine:
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_MRIsConvert:
+  annot_file: 'path'
+  parcstats_file: 'path'
+  label_file: 'path'
+  scalarcurv_file: 'path'
+  functional_file: 'path'
+  labelstats_outfile: 'path'
+  patch: True
+  rescale: True
+  normal: True
+  xyz_ascii: True
+  vertex: True
+  scale: 0.0
+  dataarray_num: 0
+  talairachxfm_subjid: ''
+  origname: ''
+  to_scanner: True
+  to_tkr: True
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_MRIsExpand:
+  out_name: ''
+  thickness: True
+  thickness_name: ''
+  pial: ''
+  sphere: ''
+  spring: 0.0
+  dt: 0.0
+  write_iterations: 0
+  smooth_averages: 0
+  nsurfaces: 0
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_MRIsInflate:
+  out_file: 'path'
+  out_sulc: 'path'
+  no_save_sulc: True
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_MakeAverageSubject:
+  out_name: 'path'
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_MakeSurfaces:
+  in_white: 'path'
+  in_label: 'path'
+  orig_white: 'path'
+  orig_pial: 'path'
+  fix_mtl: True
+  no_white: True
+  white_only: True
+  in_aseg: 'path'
+  in_T1: 'path'
+  mgz: True
+  noaparc: True
+  maximum: 0.0
+  longitudinal: True
+  white: ''
+  copy_inputs: True
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_ParcellationStats:
+  cortex_label: 'path'
+  surface: ''
+  mgz: True
+  in_cortex: 'path'
+  in_annotation: 'path'
+  in_label: 'path'
+  tabular_output: True
+  out_table: 'path'
+  out_color: 'path'
+  copy_inputs: True
+  th3: True
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_RelabelHypointensities:
+  surf_directory: 'path'
+  out_file: 'path'
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_RemoveIntersection:
+  out_file: 'path'
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_RemoveNeck:
+  out_file: 'path'
+  radius: 0
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_SampleToSurface:
+  reference_file: 'path'
+  surface: ''
+  apply_rot: (0,)
+  apply_trans: (0,)
+  override_reg_subj: True
+  sampling_range: (0,)
+  sampling_units: enumerate(('mm','frac'))
+  smooth_vol: 0.0
+  smooth_surf: 0.0
+  interp_method: enumerate(('nearest','trilinear'))
+  cortex_mask: True
+  mask_label: 'path'
+  float2int_method: enumerate(('round','tkregister'))
+  fix_tk_reg: True
+  subject_id: ''
+  target_subject: ''
+  surf_reg: True
+  ico_order: 0
+  reshape: True
+  no_reshape: True
+  reshape_slices: 0
+  scale_input: 0.0
+  frame: 0
+  out_file: 'path'
+  out_type: enumerate(('cor','mgh','mgz','minc','analyze','analyze4d','spm','afni','brik','bshort','bfloat','sdt','outline','otl','gdf','nifti1','nii','niigz','gii'))
+  hits_file: 'path'
+  hits_type: enumerate(('cor','mgh','mgz','minc','analyze','analyze4d','spm','afni','brik','bshort','bfloat','sdt','outline','otl','gdf','nifti1','nii','niigz'))
+  vox_file: 'path'
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_SmoothTessellation:
+  curvature_averaging_iterations: 0
+  smoothing_iterations: 0
+  snapshot_writing_iterations: 0
+  use_gaussian_curvature_smoothing: True
+  gaussian_curvature_norm_steps: 0
+  gaussian_curvature_smoothing_steps: 0
+  disable_estimates: True
+  normalize_area: True
+  use_momentum: True
+  out_file: 'path'
+  out_curvature_file: 'path'
+  out_area_file: 'path'
+  seed: 0
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_Sphere:
+  out_file: 'path'
+  seed: 0
+  magic: True
+  in_smoothwm: 'path'
+  num_threads: 0
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_Surface2VolTransform:
+  transformed_file: 'path'
+  template_file: 'path'
+  mkmask: True
+  vertexvol_file: 'path'
+  surf_name: ''
+  projfrac: 0.0
+  subjects_dir: ''
+  subject_id: ''
+  args: ''
+  environ: {}
+freesurfer_SurfaceSmooth:
+  fwhm: 0.0
+  smooth_iters: 0
+  cortex: True
+  reshape: True
+  out_file: 'path'
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_SurfaceSnapshots:
+  show_curv: True
+  show_gray_curv: True
+  overlay: 'path'
+  overlay_reg: 'path'
+  identity_reg: True
+  mni152_reg: True
+  overlay_range: (0,)
+  overlay_range_offset: 0.0
+  truncate_overlay: True
+  reverse_overlay: True
+  invert_overlay: True
+  demean_overlay: True
+  annot_file: 'path'
+  annot_name: ''
+  label_file: 'path'
+  label_name: ''
+  colortable: 'path'
+  label_under: True
+  label_outline: True
+  patch_file: 'path'
+  orig_suffix: ''
+  sphere_suffix: ''
+  show_color_scale: True
+  show_color_text: True
+  six_images: True
+  screenshot_stem: ''
+  stem_template_args: ['']
+  tcl_script: 'path'
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_SurfaceTransform:
+  target_ico_order: ''
+  source_type: enumerate(('cor','mgh','mgz','minc','analyze','analyze4d','spm','afni','brik','bshort','bfloat','sdt','outline','otl','gdf','nifti1','nii','niigz'))
+  target_type: enumerate(('cor','mgh','mgz','minc','analyze','analyze4d','spm','afni','brik','bshort','bfloat','sdt','outline','otl','gdf','nifti1','nii','niigz','gii'))
+  reshape: True
+  reshape_factor: 0
+  out_file: 'path'
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_TalairachAVI:
+  atlas: ''
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_TalairachQC:
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_Tkregister2:
+  target_image: 'path'
+  fstarg: True
+  fsl_in_matrix: 'path'
+  xfm: 'path'
+  lta_in: 'path'
+  invert_lta_in: True
+  fsl_out: 'path'
+  lta_out: 'path'
+  invert_lta_out: True
+  subject_id: ''
+  noedit: True
+  reg_header: True
+  fstal: True
+  movscale: 0.0
+  subjects_dir: 'path'
+  args: ''
+  environ: {}
+freesurfer_VolumeMask:
+  aseg: 'path'
+  in_aseg: 'path'
+  save_ribbon: True
+  copy_inputs: True
+  subjects_dir: 'path'
+  args: ''
+  environ: {}

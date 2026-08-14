@@ -3,7 +3,7 @@ import sys
 import re
 
 
-interf = 'fsl'
+interf = 'freesurfer'
 comment = False
 
 try:
