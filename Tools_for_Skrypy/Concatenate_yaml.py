@@ -3,12 +3,7 @@ from ruamel.yaml import YAML
 yaml = YAML()
 yaml.preserve_quotes = True
 
-files = ["Interfaces_freesurfer_longitudinal.yml",
-        "Interfaces_freesurfer_model.yml",
-        "Interfaces_freesurfer_petsurfer.yml",
-        "Interfaces_freesurfer_preprocess.yml",
-        "Interfaces_freesurfer_registration.yml",
-        "Interfaces_freesurfer_utils.yml"]
+files = ["Interfaces_brainsuite_brainsuite.yml"]
 
 merged = {}
 

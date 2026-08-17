@@ -3,7 +3,7 @@ import os
 import sys
 
 
-interf = 'fsl'
+interf = 'brainsuite'
 out_path = os.path.expanduser('~')
 
 try:
@@ -58,7 +58,7 @@ def initial_values(line):
             type = 'dict'
         elif 'pathlike object' in br:
             value = "'path'"
-            type = 'path'
+            type = 'None'
         elif 'boolean' in br:
             value = 'True'
             type = 'bool'
@@ -78,18 +78,21 @@ def initial_values(line):
             # print('sub', br)
             # br = br[br.index(','):]
             br = br[0: br.index(',')]
-        br = br[br.index("'"):]
+        try:
+            br = br[br.index("'"):]
+        except:
+            pass
         value_init = br.split(" or ")
         value_init = ','.join(value_init)
         value_init = '"enumerate((' + value_init + '))"'
     elif 'list of items which are a list of items which are' in br:
         gv = get_value(br)
         value_init = "[[" + gv[0]+ "]]"
-        type_init = "array_" + gv[1]
+        type_init = "list[list[{}]]".format(gv[1])
     elif 'list of items which are' in br:
         gv = get_value(br)
         value_init = "[" + gv[0]+ "]"
-        type_init = "list_" + gv[1]
+        type_init = "list[{}]".format(gv[1])
     else:
         gv = get_value(br)
         value_init = gv[0]
@@ -240,19 +243,21 @@ for elem in dict_cat_fct.keys():
 
 ###############################################################################
 
-        if outp:
+        if "None" not in outp:
             outputs = tag_values_comments(outp, 'outputs')
 
-        for kin, vin in outputs.items():
-            # print(kin, vin)
-            codeMain.indent()
-            text_outputs = 'def {}(self: \"{}\"):\n'.format(kin, vin[1])
-            codeMain += text_outputs
-            codeMain.indent()
-            text_outputs = 'return self.res.outputs.{}\n\n'.format(kin)
-            codeMain += text_outputs
-            codeMain.dedent()
-            codeMain.dedent()
+            for kin, vin in outputs.items():
+                # print(kin, vin)
+                codeMain.indent()
+                # text_outputs = 'def {}(self: \"{}\"):\n'.format(kin, vin[1])
+                form = vin[1]
+                text_outputs = 'def {}(self) -> {}:\n'.format(kin, form)
+                codeMain += text_outputs
+                codeMain.indent()
+                text_outputs = 'return self.res.outputs.{}\n\n'.format(kin)
+                codeMain += text_outputs
+                codeMain.dedent()
+                codeMain.dedent()
         # codeMain += '\n'
         codeMain += '#' * 79
         codeMain += '\n\n\n'

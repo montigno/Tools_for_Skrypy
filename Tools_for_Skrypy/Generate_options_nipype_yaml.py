@@ -3,7 +3,7 @@ import sys
 import re
 
 
-interf = 'freesurfer'
+interf = 'brainsuite'
 comment = False
 
 try:
