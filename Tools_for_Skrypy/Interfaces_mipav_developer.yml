@@ -12,8 +12,8 @@ mipav_JistBrainMgdmSegmentation:
   inMin: 0.0
   inSteps: 0
   inTopology: enumerate(('26/6','6/26','18/6','6/18','6/6','wcs','wco','no'))
-  inCompute: true
-  inAdjust: true
+  inCompute: enumerate(('true','false'))
+  inAdjust: enumerate(('true','false'))
   inOutput: enumerate(('segmentation','memberships'))
   xPrefExt: ''
   outSegmented: 'path'
@@ -35,7 +35,7 @@ mipav_JistBrainMp2rageSkullStripping:
   inT1: 'path'
   inT1weighted: 'path'
   inFilter: 'path'
-  inSkip: true
+  inSkip: enumerate(('true','false'))
   xPrefExt: ''
   outBrain: 'path'
   outMasked: 'path'
@@ -55,7 +55,7 @@ mipav_JistCortexSurfaceMeshInflation:
   inMean: 0.0
   inStep: 0
   inMax: 0
-  inLorentzian: true
+  inLorentzian: enumerate(('true','false'))
   inTopology: enumerate(('26/6','6/26','18/6','6/18','6/6','wcs','wco','no'))
   xPrefExt: ''
   outOriginal: 'path'
@@ -70,7 +70,7 @@ mipav_JistIntensityMp2rageMasking:
   inQuantitative: 'path'
   inT1weighted: 'path'
   inBackground: enumerate(('exponential','half-normal'))
-  inSkip: true
+  inSkip: enumerate(('true','false'))
   inMasking: enumerate(('binary','proba'))
   xPrefExt: ''
   outSignal: 'path'
@@ -140,7 +140,7 @@ mipav_JistLaminarVolumetricLayering:
   inLayering2: enumerate(('outward','inward'))
   incurvature: 0
   inratio: 0.0
-  inpresmooth: true
+  inpresmooth: enumerate(('true','false'))
   inTopology: enumerate(('26/6','6/26','18/6','6/18','6/6','wcs','wco','no'))
   xPrefExt: ''
   outContinuous: 'path'
@@ -168,16 +168,16 @@ mipav_MedicAlgorithmLesionToads:
   inFLAIR: 'path'
   inAtlas: enumerate(('With Lesion','No Lesion'))
   inOutput: enumerate(('hard segmentation','hard segmentation+memberships','cruise inputs','dura removal inputs'))
-  inOutput2: true
-  inCorrect: true
-  inOutput3: true
+  inOutput2: enumerate(('true','false'))
+  inCorrect: enumerate(('true','false'))
+  inOutput3: enumerate(('true','false'))
   inAtlas2: 'path'
   inAtlas3: 'path'
   inAtlas4: 'path'
   inMaximum: 0
   inMaximum2: 0
   inMaximum3: 0
-  inInclude: true
+  inInclude: enumerate(('true','false'))
   inAtlas5: 0.0
   inSmooting: 0.0
   inMaximum4: 0.0
@@ -225,7 +225,7 @@ mipav_MedicAlgorithmN3:
   inSubsample: 0.0
   inKernel: 0.0
   inWeiner: 0.0
-  inAutomatic: true
+  inAutomatic: enumerate(('true','false'))
   xPrefExt: ''
   outInhomogeneity: 'path'
   outInhomogeneity2: 'path'
@@ -239,9 +239,9 @@ mipav_MedicAlgorithmSPECTRE2010:
   inAtlas: 'path'
   inInitial: 0
   inImage: enumerate(('T1_SPGR','T1_ALT','T1_MPRAGE','T2','FLAIR'))
-  inOutput: true
-  inFind: true
-  inRun: true
+  inOutput: enumerate(('true','false'))
+  inFind: enumerate(('true','false'))
+  inRun: enumerate(('true','false'))
   inResample: enumerate(('true','false'))
   inInitial2: 0.0
   inMinimum: 0.0
@@ -250,9 +250,9 @@ mipav_MedicAlgorithmSPECTRE2010:
   inInhomogeneity: enumerate(('true','false'))
   inSmoothing: 0.0
   inBackground: 0.0
-  inOutput2: true
-  inOutput3: true
-  inOutput4: true
+  inOutput2: enumerate(('true','false'))
+  inOutput3: enumerate(('true','false'))
+  inOutput4: enumerate(('true','false'))
   inDegrees: enumerate(('Rigid - 6','Global rescale - 7','Specific rescale - 9','Affine - 12'))
   inCost: enumerate(('Correlation ratio','Least squares','Normalized cross correlation','Normalized mutual information'))
   inRegistration: enumerate(('Trilinear','Bspline 3rd order','Bspline 4th order','Cubic Lagrangian','Quintic Lagrangian','Heptic Lagrangian','Windowed sinc'))
@@ -265,10 +265,10 @@ mipav_MedicAlgorithmSPECTRE2010:
   inMultiple: 0
   inNumber: 0
   inNumber2: 0
-  inUse: true
-  inSubsample: true
-  inSkip: true
-  inMultithreading: true
+  inUse: enumerate(('true','false'))
+  inSubsample: enumerate(('true','false'))
+  inSkip: enumerate(('true','false'))
+  inMultithreading: enumerate(('true','false'))
   xPrefExt: ''
   outOriginal: 'path'
   outStripped: 'path'
@@ -288,7 +288,7 @@ mipav_MedicAlgorithmThresholdToBinaryMask:
   inLabel: ['path']
   inMinimum: 0.0
   inMaximum: 0.0
-  inUse: true
+  inUse: enumerate(('true','false'))
   xPrefExt: ''
   outBinary: ['path']
   null: ''

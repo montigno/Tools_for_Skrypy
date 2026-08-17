@@ -3,8 +3,9 @@ import os
 import sys
 
 
-interf = 'slicer.utilities'
+# interf = 'slicer.utilities'
 # interf = "fsl"
+interf = "mipav"
 out_path = os.path.expanduser('~')
 
 try:

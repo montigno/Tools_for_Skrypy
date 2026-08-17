@@ -4,7 +4,8 @@ import re
 
 
 # interf = "slicer.registration"
-interf = 'fsl'
+# interf = "fsl"
+interf = "mipav"
 comment = False
 
 try:
