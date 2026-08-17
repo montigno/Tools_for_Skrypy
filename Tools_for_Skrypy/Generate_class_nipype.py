@@ -3,7 +3,8 @@ import os
 import sys
 
 
-interf = 'brainsuite'
+interf = 'slicer.utilities'
+# interf = "fsl"
 out_path = os.path.expanduser('~')
 
 try:
@@ -142,12 +143,20 @@ def tag_values_comments(txt, rep):
     
     return port
 
-exec('from nipype.interfaces import ' + interf)
-lis = inspect.getmembers(eval(interf), lambda a: not(inspect.isroutine(a)))
+if '.' in interf:
+    print('from nipype.interfaces.{} import {}'.format(interf.split('.')[0], interf.split('.')[1]))
+    exec('from nipype.interfaces.{} import {}'.format(interf.split('.')[0], interf.split('.')[1]))
+    interf2 = interf.split('.')[1]
+else:
+    exec('from nipype.interfaces import ' + interf)
+    interf2 = interf
+lis = inspect.getmembers(eval(interf2), lambda a: not(inspect.isroutine(a)))
 list_cat = []
 list_fct = []
 dict_cat_fct = {}
 code = ''
+
+print(lis)
 
 for nameClass in lis:
     try:
@@ -171,7 +180,8 @@ for nameClass in lis:
         pass
 
 TxtToImport = interf
-print(TxtToImport)
+# print(TxtToImport)
+print(dict_cat_fct)
 codeMain = CodeGenerator()
 
 for elem in dict_cat_fct.keys():
@@ -179,10 +189,15 @@ for elem in dict_cat_fct.keys():
     dataAll = {}
     doc = ''
     code = ''
+    
 
     for elemVal in dict_cat_fct[elem]:
+        TxtToImport = interf2
         TxtToExecute = elemVal[0:-1]
-        tag = TxtToImport + "_" + TxtToExecute
+        if '.' in interf:
+            tag = interf.split('.')[0] + "_" + TxtToExecute
+        else:
+            tag = TxtToImport + "_" + TxtToExecute
         # print('\n' + tag)
         codeMain += 'class ' + tag + ":\n"
         codeMain.indent()
@@ -197,8 +212,15 @@ for elem in dict_cat_fct.keys():
         # inputs = {}
 
         try:
+            if '.' in interf:
+                TxtToImport += "." + elem
+            print('try to execute', TxtToImport + "." + TxtToExecute + "().help(True)")
             doc = eval(TxtToImport + "." + TxtToExecute + "().help(True)")
-            clss = doc[doc.index('[Mandatory]'):doc.index('[Optional]')]
+            # print("doc=", doc)
+            try:
+                clss = doc[doc.index('[Mandatory]'):doc.index('[Optional]')]
+            except:
+                clss = ''
             # print(doc[0:10])
             # clss = subtext('[Mandatory]', doc)
             outp = subtext('Outputs::', doc) + '\n' + ' ' * 8
@@ -206,27 +228,29 @@ for elem in dict_cat_fct.keys():
             outp = outp[outp.index('\n')+1:]
         except Exception as e:
             clss = ''
+            outp = ''
 
 
 ###############################################################################
+        text_inputs = "def __init__(self"
         if clss:
             print('classes found:', tag)
             # print(clss)
             code += tag + ':\n'
             inputs = tag_values_comments(clss, 'inputs')
             # print(inputs)
-
-        text_inputs = "def __init__(self"
-        for kin, vin in inputs.items():
-            text_inputs += ', ' + kin + '=' + vin[0]
+            for kin, vin in inputs.items():
+                text_inputs += ', ' + kin + '=' + vin[0]
         codeMain += text_inputs + ', **options):\n'
         codeMain.indent()
-        codeMain += 'from nipype.interfaces.{} import {}\n'.format(TxtToImport, TxtToExecute)
+        # codeMain += 'from nipype.interfaces.{} import {}\n'.format(TxtToImport, TxtToExecute)
+        codeMain += 'from nipype.interfaces.{}.{} import {}\n'.format(interf, elem, TxtToExecute)
         codeMain += 'at = ' + TxtToExecute + '()\n'
         # codeMain.dedent()
         # codeMain.dedent()
-        for kin in inputs.keys():
-            codeMain += 'at.inputs.{} = {}\n'.format(kin, kin)
+        if clss:
+            for kin in inputs.keys():
+                codeMain += 'at.inputs.{} = {}\n'.format(kin, kin)
         # codeMain.indent()
         # codeMain.indent()
         _opt = 'for ef in options:\n'
@@ -266,6 +290,7 @@ for elem in dict_cat_fct.keys():
 
 
 # print(codeMain)
+name_file = interf
 file = os.path.join(out_path, TxtToImport + '.py')
 f = open(file, 'w',  encoding='utf8')
 os.chmod(file, 0o777)

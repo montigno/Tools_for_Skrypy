@@ -3,7 +3,8 @@ import sys
 import re
 
 
-interf = 'brainsuite'
+# interf = "slicer.registration"
+interf = 'fsl'
 comment = False
 
 try:
@@ -95,8 +96,14 @@ def initial_values(line):
     return value_init, type_init
 
 
-exec('from nipype.interfaces import ' + interf)
-lis = inspect.getmembers(eval(interf), lambda a: not(inspect.isroutine(a)))
+if '.' in interf:
+    print('from nipype.interfaces.{} import {}'.format(interf.split('.')[0], interf.split('.')[1]))
+    exec('from nipype.interfaces.{} import {}'.format(interf.split('.')[0], interf.split('.')[1]))
+    interf2 = interf.split('.')[1]
+else:
+    exec('from nipype.interfaces import ' + interf)
+    interf2 = interf
+lis = inspect.getmembers(eval(interf2), lambda a: not(inspect.isroutine(a)))
 list_cat = []
 list_fct = []
 dict_cat_fct = {}
@@ -132,16 +139,23 @@ for elem in dict_cat_fct.keys():
     code = ''
 
     for elemVal in dict_cat_fct[elem]:
+        TxtToImport = interf2
         TxtToExecute = elemVal[0:-1]
-        tag = TxtToImport + "_" + TxtToExecute
+        if '.' in interf:
+            tag = interf.split('.')[0] + "_" + TxtToExecute
+        else:
+            tag = TxtToImport + "_" + TxtToExecute
         # print(tag)
 
         try:
+            if '.' in interf:
+                TxtToImport += "." + elem
+            print('try to execute', TxtToImport + "." + TxtToExecute + "().help(True)")
             doc = eval(TxtToImport + "." + TxtToExecute + "().help(True)")
             doc = doc[doc.index('[Optional]'):doc.index('Outputs')]
         except Exception as e:
             doc = ''
-
+            
         if doc:
             code += tag + ':\n'
             descript = ''
@@ -155,8 +169,6 @@ for elem in dict_cat_fct.keys():
                 if leading_spaces == 8:
                     key = tmp[:tmp.index(':')]
                     list_opt.append(key)
-            if tag == 'fsl_EPIDeWarp':
-                print(tag, ":", list_opt)
 
             for i, opt in enumerate(list_opt):
                 try:
@@ -164,8 +176,6 @@ for elem in dict_cat_fct.keys():
                     doc = doc[doc.index(" " + list_opt[i+1]+": "):]
                 except:
                     text = doc[doc.index(" " + list_opt[i]+": ") + len(opt) + 3: ].strip()
-                if tag == "fsl_EPIDeWarp":
-                    print(opt, ":", text)
                 text = re.sub(r'\s+', ' ', text).strip()
                 if text:
                     try:

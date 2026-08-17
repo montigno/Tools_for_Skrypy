@@ -1,0 +1,14 @@
+slicer_BRAINSResample:
+  inputVolume: 'path'
+  referenceVolume: 'path'
+  outputVolume: 'path'
+  pixelType: enumerate(('float','short','ushort','int','uint','uchar','binary'))
+  deformationVolume: 'path'
+  warpTransform: 'path'
+  interpolationMode: enumerate(('NearestNeighbor','Linear','ResampleInPlace','BSpline','WindowedSinc','Hamming','Cosine','Welch','Lanczos','Blackman'))
+  inverseTransform: True
+  defaultValue: 0.0
+  gridSpacing: [0]
+  numberOfThreads: 0
+  args: ''
+  environ: {}

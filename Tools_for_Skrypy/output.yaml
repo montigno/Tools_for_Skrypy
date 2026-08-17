@@ -1,215 +1,389 @@
-brainsuite_BDP:
-  bfcFile: 'path' # Mandatory Mutually exclusive
-  noStructuralRegistration: True # Mandatory Mutually exclusive
-  bMatrixFile: 'path' # Mandatory Mutually exclusive
-  BVecBValPair; '' # Mandatory Mutually exclusive
+legacy_AffineRegistration:
+  FixedImageFileName: path
+  MovingImageFileName: path
   args: ''
-  bValRatioThreshold: 0.0
-  customDiffusionLabel: path
-  customLabelXML: path
-  customT1Label: path
-  dataSinkDelay:
-  - ''
-  dcorrRegMeasure: enumerate(('MI','INVERSION-EPI','INVERSION-T1','INVERSION-BOTH','BDP'))
-  dcorrWeight: 0.0
-  dwiMask: path
-  echoSpacing: 0.0
   environ: {}
-  estimateODF_3DShore: 0.0
-  estimateODF_FRACT: true
-  estimateODF_FRT: true
-  estimateTensors: true
-  fieldmapCorrection: path
-  fieldmapCorrectionMethod: enumerate(('pixelshift','leastsq'))
-  fieldmapSmooth: 0.0
-  flagConfigFile: path
-  forcePartialROIStats: true
-  generateStats: true
-  ignoreFieldmapFOV: true
-  ignoreMemory: true
-  lowMemory: true
-  odfLambta: true
-  onlyStats: true
-  outPrefix: ''
-  outputDiffusionCoordinates: true
-  outputSubdir: ''
-  phaseEncodingDirection: enumerate(('x','x-','y','y-','z','z-'))
-  rigidRegMeasure: enumerate(('MI','INVERSION','BDP'))
-  skipDistortionCorr: true
-  skipIntensityCorr: true
-  skipNonuniformityCorr: true
-  t1Mask: path
-  threads: 0
-  transformDataOnly: true
-  transformDiffusionSurface: path
-  transformDiffusionVolume: path
-  transformInterpolation: enumerate(('linear','nearest','cubic','spline'))
-  transformT1Surface: path
-  transformT1Volume: path
-brainsuite_Bfc:
+  fixedsmoothingfactor: 0
+  histogrambins: 0
+  initialtransform: path
+  iterations: 0
+  movingsmoothingfactor: 0
+  outputtransform: path
+  resampledmovingfilename: path
+  spatialsamples: 0
+  translationscale: 0.0
+legacy_BSplineDeformableRegistration:
+  FixedImageFileName: path
+  MovingImageFileName: path
   args: ''
-  biasEstimateConvergenceThreshold: 0.0
-  biasEstimateSpacing: 0
-  biasFieldEstimatesOutputPrefix: ''
-  biasRange: enumerate(('low','medium','high'))
+  constrain: true
+  default: 0
+  environ: {}
+  gridSize: 0
+  histogrambins: 0
+  initialtransform: path
+  iterations: 0
+  maximumDeformation: 0.0
+  outputtransform: path
+  outputwarp: path
+  resampledmovingfilename: path
+  spatialsamples: 0
+legacy_BSplineToDeformationField:
+  args: ''
+  defImage: path
+  environ: {}
+  refImage: path
+  tfm: path
+legacy_ExpertAutomatedRegistration:
+  affineMaxIterations: 0
+  affineSamplingRatio: 0.0
+  args: ''
+  bsplineMaxIterations: 0
+  bsplineSamplingRatio: 0.0
   controlPointSpacing: 0
-  convergenceThreshold: 0.0
-  correctWholeVolume: true
-  correctedImagesOutputPrefix: ''
-  correctionScheduleFile: path
   environ: {}
-  histogramRadius: 0
-  histogramType: enumerate(('ellipse','block'))
-  inputMaskFile: path
-  intermediate_file_type: enumerate(('analyze','nifti','gzippedAnalyze','gzippedNifti'))
-  iterativeMode: true
-  maxBias: 0.0
-  minBias: 0.0
-  outputBiasField: path
-  outputMRIVolume: path
-  outputMaskedBiasField: path
-  splineLambda: 0.0
-  timer: true
-  verbosityLevel: 0
-brainsuite_Bse:
-  args: ''
-  diffusionConstant: 0.0
-  diffusionIterations: 0
-  dilateFinalMask: true
-  edgeDetectionConstant: 0.0
-  environ: {}
-  noRotate: true
-  outputCortexFile: path
-  outputDetailedBrainMask: path
-  outputDiffusionFilter: path
-  outputEdgeMap: path
-  outputMRIVolume: path
-  outputMaskFile: path
-  radius: 0.0
-  timer: true
-  trim: true
-  verbosityLevel: 0.0
-brainsuite_Cerebro:
-  args: ''
-  costFunction: 0
-  environ: {}
-  inputBrainMaskFile: path
-  keepTempFiles: true
-  linearConvergence: 0.0
-  outputAffineTransformFile: path
-  outputCerebrumMaskFile: path
-  outputLabelVolumeFile: path
-  outputWarpTransformFile: path
-  tempDirectory: ''
-  tempDirectoryBase: ''
-  useCentroids: true
-  verbosity: 0
-  warpConvergence: 0.0
-  warpLabel: 0
-brainsuite_Cortex:
-  args: ''
-  computeGCBoundary: true
-  computeWGBoundary: true
-  environ: {}
-  includeAllSubcorticalAreas: true
-  outputCerebrumMask: path
-  timer: true
-  tissueFractionThreshold: 0.0
-  verbosity: 0
-brainsuite_Dewisp:
+  expectedOffset: 0.0
+  expectedRotation: 0.0
+  expectedScale: 0.0
+  expectedSkew: 0.0
+  fixedImage: path
+  fixedImageMask: path
+  fixedLandmarks:
+  - 0.0
+  initialization: enumerate(('None','Landmarks','ImageCenters','CentersOfMass','SecondMoments'))
+  interpolation: enumerate(('NearestNeighbor','Linear','BSpline'))
+  loadTransform: path
+  metric: enumerate(('MattesMI','NormCorr','MeanSqrd'))
+  minimizeMemory: true
+  movingImage: path
+  movingLandmarks:
+  - 0.0
+  numberOfThreads: 0
+  randomNumberSeed: 0
+  registration: enumerate(('None','Initial','Rigid','Affine','BSpline','PipelineRigid','PipelineAffine','PipelineBSpline'))
+  resampledImage: path
+  rigidMaxIterations: 0
+  rigidSamplingRatio: 0.0
+  sampleFromOverlap: true
+  saveTransform: path
+  verbosityLevel: enumerate(('Silent','Standard','Verbose'))
+legacy_LinearRegistration:
+  FixedImageFileName: path
+  MovingImageFileName: path
   args: ''
   environ: {}
-  maximumIterations: 0
-  outputMaskFile: path
-  sizeThreshold: 0
-  timer: true
-  verbosity: 0
-brainsuite_Dfs:
-  args: ''
-  curvatureWeighting: 0.0
-  environ: {}
-  inputShadingVolume: path
-  noNormalsFlag: true
-  nonZeroTessellation: true
-  outputSurfaceFile: path
-  postSmoothFlag: true
-  scalingPercentile: 0.0
-  smoothingConstant: 0.0
-  smoothingIterations: 0
-  specialTessellation: enumerate(('greater_than','less_than','equal_to'))
-  tessellationThreshold: 0.0
-  timer: true
-  verbosity: 0
-  zeroPadFlag: true
-brainsuite_Hemisplit:
+  fixedsmoothingfactor: 0
+  histogrambins: 0
+  initialtransform: path
+  iterations:
+  - 0
+  learningrate:
+  - 0.0
+  movingsmoothingfactor: 0
+  outputtransform: path
+  resampledmovingfilename: path
+  spatialsamples: 0
+  translationscale: 0.0
+legacy_MultiResolutionAffineRegistration:
   args: ''
   environ: {}
-  outputLeftHemisphere: path
-  outputLeftPialHemisphere: path
-  outputRightHemisphere: path
-  outputRightPialHemisphere: path
-  pialSurfaceFile: path
-  timer: true
-  verbosity: 0
-brainsuite_Pialmesh:
-  args: ''
-  environ: {}
-  exportPrefix: ''
-  laplacianSmoothing: 0.0
-  maxThickness: 0.0
-  normalSmoother: 0.0
+  fixedImage: path
+  fixedImageMask: path
+  fixedImageROI:
+  - ''
+  metricTolerance: 0.0
+  movingImage: path
   numIterations: 0
-  outputInterval: 0
-  outputSurfaceFile: path
-  recomputeNormals: true
-  searchRadius: 0.0
+  numLineIterations: 0
+  resampledImage: path
+  saveTransform: path
   stepSize: 0.0
-  tangentSmoother: 0.0
-  timer: true
-  tissueThreshold: 0.0
-  verbosity: 0
-brainsuite_Pvc:
+  stepTolerance: 0.0
+legacy_OtsuThresholdImageFilter:
   args: ''
   environ: {}
-  inputMaskFile: path
-  outputLabelFile: path
-  outputTissueFractionFile: path
-  spatialPrior: 0.0
-  threeClassFlag: true
-  timer: true
-  verbosity: 0
-brainsuite_Scrubmask:
+  inputVolume: path
+  insideValue: 0
+  numberOfBins: 0
+  outputVolume: path
+  outsideValue: 0
+legacy_OtsuThresholdSegmentation:
   args: ''
-  backgroundFillThreshold: 0
+  brightObjects: true
   environ: {}
-  foregroundTrimThreshold: 0
-  numberIterations: 0
-  outputMaskFile: path
-  timer: true
-  verbosity: 0
-brainsuite_Skullfinder:
-  args: ''
-  bgLabelValue: 0
-  brainLabelValue: 0
-  environ: {}
-  lowerThreshold: 0
-  outputLabelFile: path
-  performFinalOpening: true
-  scalpLabelValue: 0
-  skullLabelValue: 0
-  spaceLabelValue: 0
-  surfaceFilePrefix: ''
-  upperThreshold: 0
-  verbosity: 0
-brainsuite_Tca:
+  faceConnected: true
+  inputVolume: path
+  minimumObjectSize: 0
+  numberOfBins: 0
+  outputVolume: path
+legacy_ResampleScalarVolume:
+  InputVolume: path
+  OutputVolume: path
   args: ''
   environ: {}
-  foregroundDelta: 0
-  maxCorrectionSize: 0
-  minCorrectionSize: 0
-  outputMaskFile: path
-  timer: true
-  verbosity: 0
-brainsuite_ThicknessPVC:
+  interpolation: enumerate(('linear','nearestNeighbor','bspline','hamming','cosine','welch','lanczos','blackman'))
+  spacing:
+  - 0.0
+legacy_RigidRegistration:
+  FixedImageFileName: path
+  MovingImageFileName: path
   args: ''
   environ: {}
+  fixedsmoothingfactor: 0
+  histogrambins: 0
+  initialtransform: path
+  iterations:
+  - 0
+  learningrate:
+  - 0.0
+  movingsmoothingfactor: 0
+  outputtransform: path
+  resampledmovingfilename: path
+  spatialsamples: 0
+  testingmode: true
+  translationscale: 0.0
+legacy_denoising.DWIUnbiasedNonLocalMeansFilter:
+  args: ''
+  environ: {}
+  hp: 0.0
+  inputVolume: path
+  ng: 0
+  outputVolume: path
+  rc:
+  - 0
+  re:
+  - 0
+  rs:
+  - 0
+quantification_IntensityDifferenceMetric:
+  args: ''
+  baselineSegmentationVolume: path
+  baselineVolume: path
+  changingBandSize: 0
+  environ: {}
+  followupVolume: path
+  outputVolume: path
+  reportFileName: path
+  sensitivityThreshold: 0.0
+quantification_PETStandardUptakeValueComputation:
+  OutputLabel: ''
+  OutputLabelValue: ''
+  SUVMax: ''
+  SUVMean: ''
+  SUVMin: ''
+  args: ''
+  color: path
+  csvFile: path
+  environ: {}
+  labelMap: path
+  petDICOMPath: path
+  petVolume: path
+registration_ACPCTransform:
+  acpc:
+  - 0.0
+  args: ''
+  debugSwitch: true
+  environ: {}
+  midline:
+  - 0.0
+  outputTransform: path
+registration_BRAINSDemonWarp:
+  args: ''
+  arrayOfPyramidLevelIterations:
+  - 0
+  backgroundFillValue: 0
+  checkerboardPatternSubdivisions:
+  - 0
+  environ: {}
+  fixedBinaryVolume: path
+  fixedVolume: path
+  gradient_type: enumerate(('0','1','2'))
+  gui: true
+  histogramMatch: true
+  initializeWithDisplacementField: path
+  initializeWithTransform: path
+  inputPixelType: enumerate(('float','short','ushort','int','uchar'))
+  interpolationMode: enumerate(('NearestNeighbor','Linear','ResampleInPlace','BSpline','WindowedSinc','Hamming','Cosine','Welch','Lanczos','Blackman'))
+  lowerThresholdForBOBF: 0
+  maskProcessingMode: enumerate(('NOMASK','ROIAUTO','ROI','BOBF'))
+  max_step_length: 0.0
+  medianFilterSize:
+  - 0
+  minimumFixedPyramid:
+  - 0
+  minimumMovingPyramid:
+  - 0
+  movingBinaryVolume: path
+  movingVolume: path
+  neighborhoodForBOBF:
+  - 0
+  numberOfBCHApproximationTerms: 0
+  numberOfHistogramBins: 0
+  numberOfMatchPoints: 0
+  numberOfPyramidLevels: 0
+  numberOfThreads: 0
+  outputCheckerboardVolume: path
+  outputDebug: true
+  outputDisplacementFieldPrefix: ''
+  outputDisplacementFieldVolume: path
+  outputNormalized: true
+  outputPixelType: enumerate(('float','short','ushort','int','uchar'))
+  outputVolume: path
+  promptUser: true
+  registrationFilterType: enumerate(('Demons','FastSymmetricForces','Diffeomorphic'))
+  seedForBOBF:
+  - 0
+  smoothDisplacementFieldSigma: 0.0
+  upFieldSmoothing: 0.0
+  upperThresholdForBOBF: 0
+  use_vanilla_dem: true
+registration_BRAINSFit:
+  NEVER_USE_THIS_FLAG_IT_IS_OUTDATED_00: true
+  NEVER_USE_THIS_FLAG_IT_IS_OUTDATED_01: true
+  NEVER_USE_THIS_FLAG_IT_IS_OUTDATED_02: true
+  ROIAutoClosingSize: 0.0
+  ROIAutoDilateSize: 0.0
+  args: ''
+  backgroundFillValue: 0.0
+  bsplineTransform: path
+  costFunctionConvergenceFactor: 0.0
+  costMetric: enumerate(('MMI','MSE','NC','MC'))
+  debugLevel: 0
+  environ: {}
+  failureExitCode: 0
+  fixedBinaryVolume: path
+  fixedVolume: path
+  fixedVolumeTimeIndex: 0
+  forceMINumberOfThreads: 0
+  gui: true
+  histogramMatch: true
+  initialTransform: path
+  initializeTransformMode: enumerate(('Off','useMomentsAlign','useCenterOfHeadAlign','useGeometryAlign','useCenterOfROIAlign'))
+  interpolationMode: enumerate(('NearestNeighbor','Linear','ResampleInPlace','BSpline','WindowedSinc','Hamming','Cosine','Welch','Lanczos','Blackman'))
+  linearTransform: path
+  maskInferiorCutOffFromCenter: 0.0
+  maskProcessingMode: enumerate(('NOMASK','ROIAUTO','ROI'))
+  maxBSplineDisplacement: 0.0
+  maximumStepLength: 0.0
+  medianFilterSize:
+  - 0
+  minimumStepLength:
+  - 0.0
+  movingBinaryVolume: path
+  movingVolume: path
+  movingVolumeTimeIndex: 0
+  numberOfHistogramBins: 0
+  numberOfIterations:
+  - 0
+  numberOfMatchPoints: 0
+  numberOfSamples: 0
+  numberOfThreads: 0
+  outputFixedVolumeROI: path
+  outputMovingVolumeROI: path
+  outputTransform: path
+  outputVolume: path
+  outputVolumePixelType: enumerate(('float','short','ushort','int','uint','uchar'))
+  permitParameterVariation:
+  - 0
+  projectedGradientTolerance: 0.0
+  promptUser: true
+  relaxationFactor: 0.0
+  removeIntensityOutliers: 0.0
+  reproportionScale: 0.0
+  scaleOutputValues: true
+  skewScale: 0.0
+  splineGridSize:
+  - 0
+  strippedOutputTransform: path
+  transformType:
+  - ''
+  translationScale: 0.0
+  useAffine: true
+  useBSpline: true
+  useCachingOfBSplineWeightsMode: enumerate(('ON','OFF'))
+  useExplicitPDFDerivativesMode: enumerate(('AUTO','ON','OFF'))
+  useRigid: true
+  useScaleSkewVersor3D: true
+  useScaleVersor3D: true
+  writeOutputTransformInFloat: true
+  writeTransformOnFailure: true
+registration_BRAINSResample:
+  args: ''
+  defaultValue: 0.0
+  deformationVolume: path
+  environ: {}
+  gridSpacing:
+  - 0
+  inputVolume: path
+  interpolationMode: enumerate(('NearestNeighbor','Linear','ResampleInPlace','BSpline','WindowedSinc','Hamming','Cosine','Welch','Lanczos','Blackman'))
+  inverseTransform: true
+  numberOfThreads: 0
+  outputVolume: path
+  pixelType: enumerate(('float','short','ushort','int','uint','uchar','binary'))
+  referenceVolume: path
+  warpTransform: path
+registration_FiducialRegistration:
+  args: ''
+  environ: {}
+  fixedLandmarks:
+  - 0.0
+  movingLandmarks:
+  - 0.0
+  outputMessage: ''
+  rms: 0.0
+  saveTransform: path
+  transformType: enumerate(('Translation','Rigid','Similarity'))
+registration_VBRAINSDemonWarp:
+  args: ''
+  arrayOfPyramidLevelIterations:
+  - 0
+  backgroundFillValue: 0
+  checkerboardPatternSubdivisions:
+  - 0
+  environ: {}
+  fixedBinaryVolume: path
+  fixedVolume:
+  - path
+  gradient_type: enumerate(('0','1','2'))
+  gui: true
+  histogramMatch: true
+  initializeWithDisplacementField: path
+  initializeWithTransform: path
+  inputPixelType: enumerate(('float','short','ushort','int','uchar'))
+  interpolationMode: enumerate(('NearestNeighbor','Linear','ResampleInPlace','BSpline','WindowedSinc','Hamming','Cosine','Welch','Lanczos','Blackman'))
+  lowerThresholdForBOBF: 0
+  makeBOBF: true
+  max_step_length: 0.0
+  medianFilterSize:
+  - 0
+  minimumFixedPyramid:
+  - 0
+  minimumMovingPyramid:
+  - 0
+  movingBinaryVolume: path
+  movingVolume:
+  - path
+  neighborhoodForBOBF:
+  - 0
+  numberOfBCHApproximationTerms: 0
+  numberOfHistogramBins: 0
+  numberOfMatchPoints: 0
+  numberOfPyramidLevels: 0
+  numberOfThreads: 0
+  outputCheckerboardVolume: path
+  outputDebug: true
+  outputDisplacementFieldPrefix: ''
+  outputDisplacementFieldVolume: path
+  outputNormalized: true
+  outputPixelType: enumerate(('float','short','ushort','int','uchar'))
+  outputVolume: path
+  promptUser: true
+  registrationFilterType: enumerate(('Demons','FastSymmetricForces','Diffeomorphic','LogDemons','SymmetricLogDemons'))
+  seedForBOBF:
+  - 0
+  smoothDisplacementFieldSigma: 0.0
+  upFieldSmoothing: 0.0
+  upperThresholdForBOBF: 0
+  use_vanilla_dem: true
+  weightFactors:
+  - 0.0
