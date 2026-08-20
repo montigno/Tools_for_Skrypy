@@ -1,8 +1,9 @@
 import yaml
 
+module = 'dcmstack'
 
-fichier1_yaml = "output.yaml"
-fichier2_yaml = "/home/olivier/Documents/eclipse-workspace-2026/skrypy-pyqt5/NodeEditor/modules/Nipype/Interfaces_freesurfer.yml"
+fichier1_yaml = "/home/olivier/Documents/eclipse-workspace-2026/Tools_for_Skrypy/Nipype/Interfaces_{}.yml".format(module)
+fichier2_yaml = "/home/olivier/Applications/skrypy_venv/skrypy-pyqt5/NodeEditor/modules/Nipype/Interfaces_{}.yml".format(module)
 
 with open(fichier1_yaml, "r", encoding="utf-8") as f:
     yaml1 = yaml.safe_load(f)
@@ -16,6 +17,7 @@ def compare(a, b, path=""):
         keys = sorted(set(a) | set(b))
 
         for key in keys:
+            # print("key=", key)
             current_path = f"{path}.{key}" if path else str(key)
 
             if key not in a:
@@ -38,3 +40,5 @@ def compare(a, b, path=""):
 
 
 compare(yaml1, yaml2)
+
+print("end of comparaison")

@@ -5,7 +5,7 @@ import re
 
 # interf = "slicer.registration"
 # interf = "fsl"
-interf = "mipav"
+interf = "fsl"
 comment = False
 
 try:
@@ -38,7 +38,6 @@ def detectMutuallyExclusive(docstr):
 
 def initial_values(line):
     br = line[line.index('(') + 1:line.index(')')]
-    # print(br)
     value_init, type_init = '{}', '{}'
 
     def get_value(gv):
@@ -166,7 +165,6 @@ for elem in dict_cat_fct.keys():
             for ele in doc.split('\n'):
                 tmp = ele.strip()
                 leading_spaces = len(ele) - len(ele.lstrip())
-                # print(tmp, leading_spaces)
                 if leading_spaces == 8:
                     key = tmp[:tmp.index(':')]
                     list_opt.append(key)
