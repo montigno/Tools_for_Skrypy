@@ -1,0 +1,23 @@
+workbench_CiftiSmooth:
+  args: ''
+  cerebellum_corrected_areas: "path"
+  cerebellum_surf: "path"
+  cifti_roi: "path"
+  environ: {}
+  fix_zeros_surf: True
+  fix_zeros_vol: True
+  left_corrected_areas: "path"
+  merged_volume: True
+  out_file: "path"
+  right_corrected_areas: "path"
+workbench_MetricResample:
+  area_metrics: True # Optional Mutually exclusive with: area_surfs
+  area_surfs: True # Optional Mutually exclusive with: area_metrics
+  args: ''
+  current_area: "path"
+  environ: {}
+  largest: True
+  new_area: "path"
+  out_file: "path"
+  roi_metric: "path"
+  valid_roi_out: True

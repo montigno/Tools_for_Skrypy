@@ -1,0 +1,1130 @@
+afni_ABoverlap:
+  args: ''
+  environ: {}
+  no_automask: True
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  quiet: True
+  verb: True
+afni_AFNItoNIFTI:
+  args: ''
+  denote: True
+  environ: {}
+  newid: True # Optional Mutually exclusive with: oldid
+  num_threads: 0
+  oldid: True # Optional Mutually exclusive with: newid
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  pure: True
+afni_AlignEpiAnatPy:
+  anat2epi: True
+  args: ''
+  environ: {}
+  epi2anat: True
+  epi_strip: "enumerate(('3dSkullStrip','3dAutomask','None'))"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  py27_path: "path"
+  save_skullstrip: True
+  suffix: ''
+  tshift: "enumerate(('on','off'))"
+  volreg: "enumerate(('on','off'))"
+afni_Allineate:
+  allcostx: "path" # Optional Mutually exclusive with: out_file, out_matrix, out_param_file, out_weight_file
+  args: ''
+  autobox: True
+  automask: 0
+  autoweight: ''
+  center_of_mass: ''
+  check: "enumerate(('leastsq','ls','mutualinfo','mi','corratio_mul','crM','norm_mutualinfo','nmi','hellinger','hel','corratio_add','crA','corratio_uns','crU'))"
+  convergence: 0.0
+  cost: "enumerate(('leastsq','ls','mutualinfo','mi','corratio_mul','crM','norm_mutualinfo','nmi','hellinger','hel','corratio_add','crA','corratio_uns','crU'))"
+  environ: {}
+  epi: True
+  final_interpolation: "enumerate(('nearestneighbour','linear','cubic','quintic','wsinc5'))"
+  fine_blur: 0.0
+  in_matrix: "path" # Optional Mutually exclusive with: out_matrix
+  in_param_file: "path" # Optional Mutually exclusive with: out_param_file
+  interpolation: "enumerate(('nearestneighbour','linear','cubic','quintic'))"
+  master: "path"
+  maxrot: 0.0
+  maxscl: 0.0
+  maxshf: 0.0
+  maxshr: 0.0
+  newgrid: 0.0
+  nmatch: 0
+  no_pad: True
+  nomask: True
+  num_threads: 0
+  nwarp: "enumerate(('bilinear','cubic','quintic','heptic','nonic','poly3','poly5','poly7','poly9'))"
+  nwarp_fixdep: "enumerate(('X','Y','Z','I','J','K'))"
+  nwarp_fixmot: "enumerate(('X','Y','Z','I','J','K'))"
+  one_pass: True
+  out_file: "path" # Optional Mutually exclusive with: allcostx
+  out_matrix: "path" # Optional Mutually exclusive with: in_matrix, allcostx
+  out_param_file: "path" # Optional Mutually exclusive with: in_param_file, allcostx
+  out_weight_file: "path" # Optional Mutually exclusive with: allcostx
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  overwrite: True
+  quiet: True
+  reference: "path"
+  replacebase: True
+  replacemeth: "enumerate(('leastsq','ls','mutualinfo','mi','corratio_mul','crM','norm_mutualinfo','nmi','hellinger','hel','corratio_add','crA','corratio_uns','crU'))"
+  source_automask: 0
+  source_mask: "path"
+  two_best: 0
+  two_blur: 0.0
+  two_first: True
+  two_pass: True
+  usetemp: True
+  verbose: True
+  warp_type: "enumerate(('shift_only','shift_rotate','shift_rotate_scale','affine_general'))"
+  warpfreeze: True
+  weight: "path"
+  weight_file: "path"
+  zclip: True
+afni_AutoTLRC:
+  args: ''
+  environ: {}
+  no_ss: True
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+afni_AutoTcorrelate:
+  args: ''
+  environ: {}
+  eta2: True
+  mask: "path"
+  mask_only_targets: True # Optional Mutually exclusive with: mask_source
+  mask_source: "path" # Optional Mutually exclusive with: mask_only_targets
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  polort: 0
+afni_Autobox:
+  args: ''
+  environ: {}
+  no_clustering: True
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  padding: 0
+afni_Automask:
+  args: ''
+  brain_file: "path"
+  clfrac: 0.0
+  dilate: 0
+  environ: {}
+  erode: 0
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+afni_Axialize:
+  args: ''
+  axial: True # Optional Mutually exclusive with: coronal, sagittal
+  coronal: True # Optional Mutually exclusive with: sagittal, axial
+  environ: {}
+  num_threads: 0
+  orientation: ''
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  sagittal: True # Optional Mutually exclusive with: coronal, axial
+  verb: True
+afni_Bandpass:
+  args: ''
+  automask: True
+  blur: 0.0
+  despike: True
+  environ: {}
+  localPV: 0.0
+  mask: "path"
+  nfft: 0
+  no_detrend: True
+  normalize: True
+  notrans: True
+  num_threads: 0
+  orthogonalize_dset: "path"
+  orthogonalize_file: ["path"]
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  tr: 0.0
+afni_BlurInMask:
+  args: ''
+  automask: True
+  environ: {}
+  float_out: True
+  mask: "path"
+  multimask: "path"
+  num_threads: 0
+  options: ''
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  preserve: True
+afni_BlurToFWHM:
+  args: ''
+  automask: True
+  blurmaster: "path"
+  environ: {}
+  fwhm: 0.0
+  fwhmxy: 0.0
+  mask: "path"
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+afni_BrickStat:
+  args: ''
+  environ: {}
+  mask: "path"
+  max: True
+  mean: True
+  min: True
+  percentile: (0,)
+  slow: True
+  sum: True
+  var: True
+afni_Bucket:
+  args: ''
+  environ: {}
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+afni_Calc:
+  args: ''
+  environ: {}
+  in_file_b: "path"
+  in_file_c: "path"
+  num_threads: 0
+  other: "path"
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  overwrite: True
+  single_idx: 0
+  start_idx: 0
+  stop_idx: 0
+afni_Cat:
+  args: ''
+  environ: {}
+  keepfree: True
+  num_threads: 0
+  omitconst: True
+  out_cint: True # Optional Mutually exclusive with: out_format, out_nice, out_double, out_fint, out_int
+  out_double: True # Optional Mutually exclusive with: out_format, out_nice, out_int, out_fint, out_cint
+  out_fint: True # Optional Mutually exclusive with: out_format, out_nice, out_double, out_int, out_cint
+  out_format: "enumerate(('int','nice','double','fint','cint'))" # Optional Mutually exclusive with: out_int, out_nice, out_double, out_fint, out_cint
+  out_int: True # Optional Mutually exclusive with: out_format, out_nice, out_double, out_fint, out_cint
+  out_nice: True # Optional Mutually exclusive with: out_format, out_int, out_double, out_fint, out_cint
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  sel: ''
+  stack: True
+afni_CatMatvec:
+  args: ''
+  environ: {}
+  fourxfour: True # Optional Mutually exclusive with: matrix, oneline
+  matrix: True # Optional Mutually exclusive with: oneline, fourxfour
+  num_threads: 0
+  oneline: True # Optional Mutually exclusive with: matrix, fourxfour
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+afni_CenterMass:
+  all_rois: True
+  args: ''
+  automask: True
+  cm_file: "path"
+  environ: {}
+  local_ijk: True
+  mask_file: "path"
+  roi_vals: [0]
+  set_cm: (0,)
+afni_ClipLevel:
+  args: ''
+  doall: True # Optional Mutually exclusive with: g, r, a, d
+  environ: {}
+  grad: "path" # Optional Mutually exclusive with: d, o, a, l, l
+  mfrac: 0.0
+afni_ConvertDset:
+  args: ''
+  environ: {}
+  num_threads: 0
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+afni_Copy:
+  args: ''
+  environ: {}
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  verbose: True
+afni_Deconvolve:
+  STATmask: "path"
+  TR_1D: 0.0
+  allzero_OK: True
+  args: ''
+  automask: True
+  cbucket: ''
+  censor: "path"
+  dmbase: True
+  dname: (0,)
+  environ: {}
+  force_TR: 0.0
+  fout: True
+  global_times: True # Optional Mutually exclusive with: local_times
+  glt_label: [(0,)]
+  gltsym: ['']
+  goforit: 0
+  in_files: ["path"]
+  input1D: "path"
+  legendre: True
+  local_times: True # Optional Mutually exclusive with: global_times
+  mask: "path"
+  noblock: True
+  nocond: True
+  nodmbase: True
+  nofdr: True
+  nolegendre: True
+  nosvd: True
+  num_glt: 0
+  num_stimts: 0
+  num_threads: 0
+  ortvec: (0,)
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  polort: 0
+  rmsmin: 0.0
+  rout: True
+  sat: True # Optional Mutually exclusive with: trans
+  singvals: True
+  stim_label: [(0,)]
+  stim_times: [(0,)]
+  stim_times_subtract: 0.0
+  svd: True
+  tout: True
+  trans: True # Optional Mutually exclusive with: sat
+  vout: True
+  x1D: "path"
+  x1D_stop: True
+afni_DegreeCentrality:
+  args: ''
+  autoclip: True
+  automask: True
+  environ: {}
+  mask: "path"
+  num_threads: 0
+  oned_file: ''
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  polort: 0
+  sparsity: 0.0
+  thresh: 0.0
+afni_Despike:
+  args: ''
+  environ: {}
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+afni_Detrend:
+  args: ''
+  environ: {}
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+afni_Dot:
+  args: ''
+  demean: True
+  docoef: True
+  docor: True
+  dodice: True
+  dodot: True
+  doeta2: True
+  dosums: True
+  environ: {}
+  full: True
+  in_files: ["path"]
+  mask: "path"
+  mrange: (0,)
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  show_labels: True
+  upper: True
+afni_ECM:
+  args: ''
+  autoclip: True
+  automask: True
+  environ: {}
+  eps: 0.0
+  fecm: True
+  full: True
+  mask: "path"
+  max_iter: 0
+  memory: 0.0
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  polort: 0
+  scale: 0.0
+  shift: 0.0
+  sparsity: 0.0
+  thresh: 0.0
+afni_Edge3:
+  args: ''
+  datum: "enumerate(('byte','short','float'))"
+  environ: {}
+  fscale: True # Optional Mutually exclusive with: gscale, nscale, scale_floats
+  gscale: True # Optional Mutually exclusive with: fscale, nscale, scale_floats
+  nscale: True # Optional Mutually exclusive with: fscale, gscale, scale_floats
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  scale_floats: 0.0 # Optional Mutually exclusive with: fscale, gscale, nscale
+  verbose: True
+afni_Eval:
+  args: ''
+  environ: {}
+  in_file_b: "path"
+  in_file_c: "path"
+  num_threads: 0
+  other: "path"
+  out1D: True
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  single_idx: 0
+  start_idx: 0
+  stop_idx: 0
+afni_FWHMx:
+  acf: (0,)
+  args: ''
+  arith: True # Optional Mutually exclusive with: geom
+  automask: True
+  combine: True
+  compat: True
+  demed: True # Optional Mutually exclusive with: detrend
+  detrend: True # Optional Mutually exclusive with: demed
+  environ: {}
+  geom: True # Optional Mutually exclusive with: arith
+  mask: "path"
+  out_detrend: "path"
+  out_file: "path"
+  out_subbricks: "path"
+  unif: True
+afni_Fim:
+  args: ''
+  environ: {}
+  fim_thr: 0.0
+  num_threads: 0
+  out: ''
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+afni_Fourier:
+  args: ''
+  environ: {}
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  retrend: True
+afni_GCOR:
+  args: ''
+  environ: {}
+  mask: "path"
+  nfirst: 0
+  no_demean: True
+afni_Hist:
+  args: ''
+  bin_width: 0.0
+  environ: {}
+  mask: "path"
+  max_value: 0.0
+  min_value: 0.0
+  nbin: 0
+  out_file: "path"
+  out_show: "path"
+  showhist: True
+afni_LFCD:
+  args: ''
+  autoclip: True
+  automask: True
+  environ: {}
+  mask: "path"
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  polort: 0
+  thresh: 0.0
+afni_LocalBistat:
+  args: ''
+  automask: True # Optional Mutually exclusive with: weight_file
+  environ: {}
+  mask_file: "path"
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  weight_file: "path" # Optional Mutually exclusive with: automask
+afni_Localstat:
+  args: ''
+  automask: True
+  environ: {}
+  grid_rmode: "enumerate(('NN','Li','Cu','Bk'))"
+  mask_file: "path"
+  nonmask: True
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  overwrite: True
+  quiet: True
+  reduce_grid: (0,) # Optional Mutually exclusive with: reduce_restore_grid, reduce_max_vox
+  reduce_max_vox: 0.0 # Optional Mutually exclusive with: reduce_restore_grid, reduce_grid
+  reduce_restore_grid: (0,) # Optional Mutually exclusive with: reduce_max_vox, reduce_grid
+afni_MaskTool:
+  args: ''
+  count: True
+  datum: "enumerate(('byte','short','float'))"
+  dilate_inputs: ''
+  dilate_results: ''
+  environ: {}
+  fill_dirs: ''
+  fill_holes: True
+  frac: 0.0
+  inter: True
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  union: True
+  verbose: 0
+afni_Maskave:
+  args: ''
+  environ: {}
+  mask: "path"
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  quiet: True
+afni_Means:
+  args: ''
+  count: True
+  datum: ''
+  environ: {}
+  in_file_b: "path"
+  mask_inter: True
+  mask_union: True
+  non_zero: True
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  scale: ''
+  sqr: True
+  std_dev: True
+  summ: True
+afni_Merge:
+  args: ''
+  blurfwhm: 0
+  doall: True
+  environ: {}
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+afni_NetCorr:
+  args: ''
+  environ: {}
+  fish_z: True
+  ignore_LT: True
+  mask: "path"
+  nifti: True
+  num_threads: 0
+  out_file: "path"
+  output_mask_nonnull: True
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  part_corr: True
+  push_thru_many_zeros: True
+  ts_indiv: True
+  ts_label: True
+  ts_out: True
+  ts_wb_Z: True
+  ts_wb_corr: True
+  ts_wb_strlabel: True
+  weight_ts: "path"
+afni_Notes:
+  add: ''
+  add_history: '' # Optional Mutually exclusive with: rep_history
+  args: ''
+  delete: 0
+  environ: {}
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  rep_history: '' # Optional Mutually exclusive with: add_history
+  ses: True
+afni_NwarpAdjust:
+  args: ''
+  environ: {}
+  in_files: "path"
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+afni_NwarpApply:
+  ainterp: "enumerate(('NN','nearestneighbour','nearestneighbor','linear','trilinear','cubic','tricubic','quintic','triquintic','wsinc5'))"
+  args: ''
+  environ: {}
+  interp: "enumerate(('wsinc5','NN','nearestneighbour','nearestneighbor','linear','trilinear','cubic','tricubic','quintic','triquintic'))"
+  inv_warp: True
+  master: "path"
+  out_file: "path"
+  quiet: True # Optional Mutually exclusive with: verb
+  short: True
+  verb: True # Optional Mutually exclusive with: quiet
+afni_NwarpCat:
+  args: ''
+  environ: {}
+  expad: 0
+  interp: "enumerate(('wsinc5','linear','quintic'))"
+  inv_warp: True
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  space: ''
+  verb: True
+afni_OneDToolPy:
+  args: ''
+  censor_motion: (0,)
+  censor_prev_TR: True
+  demean: True
+  derivative: True
+  environ: {}
+  out_file: "path" # Optional Mutually exclusive with: show_cormat_warnings
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  py27_path: "path"
+  set_nruns: 0
+  show_censor_count: True
+  show_cormat_warnings: "path" # Optional Mutually exclusive with: out_file
+  show_indices_interest: True
+  show_trs_run: 0
+  show_trs_uncensored: "enumerate(('comma','space','encoded','verbose'))"
+afni_OutlierCount:
+  args: ''
+  autoclip: True # Optional Mutually exclusive with: mask
+  automask: True # Optional Mutually exclusive with: mask
+  environ: {}
+  fraction: True
+  interval: True
+  legendre: True
+  mask: "path" # Optional Mutually exclusive with: autoclip, automask
+  out_file: "path"
+  outliers_file: "path"
+  polort: 0
+  qthr: 0.0
+  save_outliers: True
+afni_QualityIndex:
+  args: ''
+  autoclip: True # Optional Mutually exclusive with: mask
+  automask: True # Optional Mutually exclusive with: mask
+  clip: 0.0
+  environ: {}
+  interval: True
+  mask: "path" # Optional Mutually exclusive with: autoclip, automask
+  out_file: "path"
+  quadrant: True
+  spearman: True
+afni_Qwarp:
+  Qfinal: True
+  Qonly: True
+  allineate: True
+  allineate_opts: ''
+  allsave: True # Optional Mutually exclusive with: nopadWARP, duplo, plusminus
+  args: ''
+  ballopt: True # Optional Mutually exclusive with: workhard, boxopt
+  bandpass: (0,)
+  baxopt: True # Optional Mutually exclusive with: workhard, ballopt
+  blur: 0.0
+  duplo: True # Optional Mutually exclusive with: gridlist, maxlev, inilev, iniwarp, plusminus, allsave
+  emask: "path"
+  environ: {}
+  expad: 0 # Optional Mutually exclusive with: nopadWARP
+  gridlist: "path" # Optional Mutually exclusive with: duplo, plusminus
+  hel: True # Optional Mutually exclusive with: nmi, mi, lpc, lpa, pear
+  inilev: 0 # Optional Mutually exclusive with: duplo
+  iniwarp: ["path"] # Optional Mutually exclusive with: duplo
+  iwarp: True # Optional Mutually exclusive with: plusminus
+  lpa: True # Optional Mutually exclusive with: nmi, mi, lpc, hel, pear
+  lpc: True # Optional Mutually exclusive with: nmi, mi, hel, lpa, pear
+  maxlev: 0 # Optional Mutually exclusive with: duplo
+  mi: True # Optional Mutually exclusive with: mi, hel, lpc, lpa, pear
+  minpatch: 0
+  nmi: True # Optional Mutually exclusive with: nmi, hel, lpc, lpa, pear
+  noXdis: True
+  noYdis: True
+  noZdis: True
+  noneg: True
+  nopad: True
+  nopadWARP: True # Optional Mutually exclusive with: allsave, expad
+  nopenalty: True
+  nowarp: True
+  noweight: True
+  num_threads: 0
+  out_file: "path"
+  out_weight_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  overwrite: True
+  pblur: 0.0
+  pear: True
+  penfac: 0.0
+  plusminus: True # Optional Mutually exclusive with: duplo, allsave, iwarp
+  quiet: True # Optional Mutually exclusive with: verb
+  resample: True
+  verb: True # Optional Mutually exclusive with: quiet
+  wball: 0 # Optional Mutually exclusive with: wmask
+  weight: "path"
+  wmask: (0,) # Optional Mutually exclusive with: wball
+  workhard: True # Optional Mutually exclusive with: boxopt, ballopt
+afni_QwarpPlusMinus:
+  Qfinal: True
+  Qonly: True
+  allineate: True
+  allineate_opts: ''
+  allsave: True # Optional Mutually exclusive with: nopadWARP, duplo, plusminus
+  args: ''
+  ballopt: True # Optional Mutually exclusive with: workhard, boxopt
+  bandpass: (0,)
+  baxopt: True # Optional Mutually exclusive with: workhard, ballopt
+  blur: 0.0
+  duplo: True # Optional Mutually exclusive with: gridlist, maxlev, inilev, iniwarp, plusminus, allsave
+  emask: "path"
+  environ: {}
+  expad: 0 # Optional Mutually exclusive with: nopadWARP
+  gridlist: "path" # Optional Mutually exclusive with: duplo, plusminus
+  hel: True # Optional Mutually exclusive with: nmi, mi, lpc, lpa, pear
+  inilev: 0 # Optional Mutually exclusive with: duplo
+  iniwarp: ["path"] # Optional Mutually exclusive with: duplo
+  iwarp: True # Optional Mutually exclusive with: plusminus
+  lpa: True # Optional Mutually exclusive with: nmi, mi, lpc, hel, pear
+  lpc: True # Optional Mutually exclusive with: nmi, mi, hel, lpa, pear
+  maxlev: 0 # Optional Mutually exclusive with: duplo
+  mi: True # Optional Mutually exclusive with: mi, hel, lpc, lpa, pear
+  minpatch: 0
+  nmi: True # Optional Mutually exclusive with: nmi, hel, lpc, lpa, pear
+  noXdis: True
+  noYdis: True
+  noZdis: True
+  noneg: True
+  nopad: True
+  nopadWARP: True # Optional Mutually exclusive with: allsave, expad
+  nopenalty: True
+  nowarp: True
+  noweight: True
+  num_threads: 0
+  out_file: "path"
+  out_weight_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  overwrite: True
+  pblur: 0.0
+  pear: True
+  penfac: 0.0
+  plusminus: True # Optional Mutually exclusive with: duplo, allsave, iwarp
+  quiet: True # Optional Mutually exclusive with: verb
+  resample: True
+  source_file: "path"
+  verb: True # Optional Mutually exclusive with: quiet
+  wball: 0 # Optional Mutually exclusive with: wmask
+  weight: "path"
+  wmask: (0,) # Optional Mutually exclusive with: wball
+  workhard: True # Optional Mutually exclusive with: boxopt, ballopt
+afni_ROIStats:
+  args: ''
+  debug: True
+  environ: {}
+  format1D: True # Optional Mutually exclusive with: format1DR
+  format1DR: True # Optional Mutually exclusive with: format1D
+  mask: "path"
+  mask_f2short: True
+  mask_file: "path"
+  nobriklab: True
+  nomeanout: True
+  num_roi: 0
+  out_file: "path"
+  quiet: True
+  roisel: "path"
+  stat: "enumerate(('mean','sum','voxels','minmax','sigma','median','mode','summary','zerominmax','zerosigma','zeromedian','zeromode'))"
+  zerofill: ''
+afni_ReHo:
+  args: ''
+  chi_sq: True
+  ellipsoid: (0,) # Optional Mutually exclusive with: sphere, neighborhood
+  environ: {}
+  label_set: "path"
+  mask_file: "path"
+  neighborhood: "enumerate(('faces','edges','vertices'))" # Optional Mutually exclusive with: sphere, ellipsoid
+  out_file: "path"
+  overwrite: True
+  sphere: 0.0 # Optional Mutually exclusive with: neighborhood, ellipsoid
+afni_Refit:
+  args: ''
+  atrcopy: (0,)
+  atrfloat: (0,)
+  atrint: (0,)
+  atrstring: (0,)
+  deoblique: True
+  duporigin_file: "path"
+  environ: {}
+  nosaveatr: True
+  saveatr: True
+  space: "enumerate(('TLRC','MNI','ORIG'))"
+  xdel: 0.0
+  xorigin: ''
+  xyzscale: 0.0
+  ydel: 0.0
+  yorigin: ''
+  zdel: 0.0
+  zorigin: ''
+afni_Remlfit:
+  STATmask: "path"
+  addbase: ["path"]
+  args: ''
+  automask: True
+  dsort: "path"
+  dsort_nods: True
+  environ: {}
+  errts_file: "path"
+  fitts_file: "path"
+  fout: True
+  glt_file: "path"
+  gltsym: [(0,)]
+  goforit: True
+  mask: "path"
+  matim: "path" # Optional Mutually exclusive with: matrix
+  nobout: True
+  nodmbase: True
+  nofdr: True
+  num_threads: 0
+  obeta: "path"
+  obuck: "path"
+  oerrts: "path"
+  ofitts: "path"
+  oglt: "path"
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  ovar: "path"
+  polort: 0 # Optional Mutually exclusive with: matrix
+  quiet: True
+  rbeta_file: "path"
+  rout: True
+  slibase: ["path"]
+  slibase_sm: ["path"]
+  tout: True
+  usetemp: True
+  var_file: "path"
+  verb: True
+  wherr_file: "path"
+afni_Resample:
+  args: ''
+  environ: {}
+  master: "path"
+  num_threads: 0
+  orientation: ''
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  resample_mode: "enumerate(('NN','Li','Cu','Bk'))"
+  voxel_size: (0,)
+afni_Retroicor:
+  args: ''
+  card: "path"
+  cardphase: "path"
+  environ: {}
+  num_threads: 0
+  order: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  resp: "path"
+  respphase: "path"
+  threshold: 0
+afni_SVMTest:
+  args: ''
+  classout: True
+  environ: {}
+  multiclass: True
+  nodetrend: True
+  nopredcensord: True
+  num_threads: 0
+  options: ''
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  testlabels: "path"
+afni_SVMTrain:
+  alphas: "path"
+  args: ''
+  censor: "path"
+  environ: {}
+  kernel: ''
+  mask: "path"
+  max_iterations: 0
+  model: "path"
+  nomodelmask: True
+  num_threads: 0
+  options: ''
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  trainlabels: "path"
+  w_out: True
+afni_Seg:
+  args: ''
+  bias_classes: ''
+  bias_fwhm: 0.0
+  blur_meth: "enumerate(('BFT','BIM'))"
+  bmrf: 0.0
+  classes: ''
+  environ: {}
+  main_N: 0
+  mixfloor: 0.0
+  mixfrac: ''
+  prefix: ''
+afni_SkullStrip:
+  args: ''
+  environ: {}
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+afni_Synthesize:
+  TR: 0.0
+  args: ''
+  cenfill: "enumerate(('zero','nbhr','none'))"
+  dry_run: True
+  environ: {}
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+afni_TCat:
+  args: ''
+  environ: {}
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  rlt: "enumerate(('','+','++'))"
+  verbose: True
+afni_TCatSubBrick:
+  args: ''
+  environ: {}
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  rlt: "enumerate(('','+','++'))"
+afni_TCorr1D:
+  args: ''
+  environ: {}
+  ktaub: True # Optional Mutually exclusive with: pearson, spearman, quadrant
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  pearson: True # Optional Mutually exclusive with: spearman, quadrant, ktaub
+  quadrant: True # Optional Mutually exclusive with: pearson, spearman, ktaub
+  spearman: True # Optional Mutually exclusive with: pearson, quadrant, ktaub
+afni_TCorrMap:
+  absolute_threshold: "path" # Optional Mutually exclusive with: absolute_threshold, var_absolute_threshold, var_absolute_threshold_normalize
+  args: ''
+  automask: True
+  average_expr: "path" # Optional Mutually exclusive with: average_expr, average_expr_nonzero, sum_expr
+  average_expr_nonzero: "path" # Optional Mutually exclusive with: average_expr, average_expr_nonzero, sum_expr
+  bandpass: (0,)
+  blur_fwhm: 0.0
+  correlation_maps: "path"
+  correlation_maps_masked: "path"
+  environ: {}
+  expr: ''
+  histogram: "path"
+  histogram_bin_numbers: 0
+  mask: "path"
+  mean_file: "path"
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  pmean: "path"
+  polort: 0
+  qmean: "path"
+  regress_out_timeseries: "path"
+  seeds: "path" # Optional Mutually exclusive with: s, e, e, d, s, _, w, i, d, t, h
+  seeds_width: 0.0 # Optional Mutually exclusive with: s, e, e, d, s
+  sum_expr: "path" # Optional Mutually exclusive with: average_expr, average_expr_nonzero, sum_expr
+  thresholds: [0]
+  var_absolute_threshold: "path" # Optional Mutually exclusive with: absolute_threshold, var_absolute_threshold, var_absolute_threshold_normalize
+  var_absolute_threshold_normalize: "path" # Optional Mutually exclusive with: absolute_threshold, var_absolute_threshold, var_absolute_threshold_normalize
+  zmean: "path"
+afni_TCorrelate:
+  args: ''
+  environ: {}
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  pearson: True
+  polort: 0
+afni_TNorm:
+  L1fit: True
+  args: ''
+  environ: {}
+  norm1: True
+  norm2: True
+  normR: True
+  normx: True
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  polort: 0
+afni_TProject:
+  TR: 0.0
+  args: ''
+  automask: True # Optional Mutually exclusive with: mask
+  bandpass: (0,)
+  blur: 0.0
+  cenmode: "enumerate(('KILL','ZERO','NTRP'))"
+  censor: "path"
+  censortr: ['']
+  concat: "path"
+  dsort: ["path"]
+  environ: {}
+  mask: "path"
+  noblock: True
+  norm: True
+  num_threads: 0
+  ort: "path"
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  polort: 0
+  stopband: (0,)
+afni_TShift:
+  args: ''
+  environ: {}
+  ignore: 0
+  interp: "enumerate(('Fourier','linear','cubic','quintic','heptic'))"
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  rlt: True
+  rltplus: True
+  slice_encoding_direction: "enumerate(('k','k-'))"
+  slice_timing: ["path"] # Optional Mutually exclusive with: tpattern
+  tpattern: "enumerate(('alt+z','altplus','alt+z2','alt-z','altminus','alt-z2','seq+z','seqplus','seq-z','seqminus'))" # Optional Mutually exclusive with: slice_timing
+  tr: ''
+  tslice: 0 # Optional Mutually exclusive with: tzero
+  tzero: 0.0 # Optional Mutually exclusive with: tslice
+afni_TSmooth:
+  adaptive: 0
+  args: ''
+  blackman: 0
+  custom: "path"
+  datum: ''
+  environ: {}
+  hamming: 0
+  lin: True
+  lin3: 0
+  med: True
+  num_threads: 0
+  osf: True
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+afni_TStat:
+  args: ''
+  environ: {}
+  mask: "path"
+  num_threads: 0
+  options: ''
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+afni_To3D:
+  args: ''
+  assumemosaic: True
+  datatype: "enumerate(('short','float','byte','complex'))"
+  environ: {}
+  filetype: "enumerate(('spgr','fse','epan','anat','ct','spct','pet','mra','bmap','diff','omri','abuc','fim','fith','fico','fitt','fift','fizt','fict','fibt','fibn','figt','fipt','fbuc'))"
+  funcparams: ''
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  skipoutliers: True
+afni_Undump:
+  args: ''
+  coordinates_specification: "enumerate(('ijk','xyz'))"
+  datatype: "enumerate(('short','float','byte'))"
+  default_value: 0.0
+  environ: {}
+  fill_value: 0.0
+  head_only: True
+  mask_file: "path"
+  num_threads: 0
+  orient: "enumerate(('R','L','A','P','I','S'))"
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  srad: 0.0
+afni_Unifize:
+  args: ''
+  cl_frac: 0.0
+  environ: {}
+  epi: True # Optional Mutually exclusive with: gm requires: no_duplo, t2
+  gm: True
+  no_duplo: True
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  quiet: True
+  rbt: (0,)
+  scale_file: "path"
+  t2: True
+  t2_up: 0.0
+  urad: 0.0
+afni_Volreg:
+  args: ''
+  basefile: "path"
+  copyorigin: True
+  environ: {}
+  in_weight_volume: (0,)
+  interp: "enumerate(('Fourier','cubic','heptic','quintic','linear'))"
+  md1d_file: "path"
+  num_threads: 0
+  oned_file: "path"
+  oned_matrix_save: "path"
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  timeshift: True
+  verbose: True
+  zpad: 0
+afni_Warp:
+  args: ''
+  deoblique: True
+  environ: {}
+  gridset: "path"
+  interp: "enumerate(('linear','cubic','NN','quintic'))"
+  matparent: "path"
+  mni2tta: True
+  newgrid: 0.0
+  num_threads: 0
+  oblique_parent: "path"
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  save_warp: True
+  tta2mni: True
+  verbose: True
+  zpad: 0
+afni_ZCutUp:
+  args: ''
+  environ: {}
+  keep: ''
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+afni_Zcat:
+  args: ''
+  datum: "enumerate(('byte','short','float'))"
+  environ: {}
+  fscale: True # Optional Mutually exclusive with: nscale
+  nscale: True # Optional Mutually exclusive with: fscale
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  verb: True
+afni_Zeropad:
+  A: 0 # Optional Mutually exclusive with: master
+  AP: 0 # Optional Mutually exclusive with: master
+  I: 0 # Optional Mutually exclusive with: master
+  IS: 0 # Optional Mutually exclusive with: master
+  L: 0 # Optional Mutually exclusive with: master
+  P: 0 # Optional Mutually exclusive with: master
+  R: 0 # Optional Mutually exclusive with: master
+  RL: 0 # Optional Mutually exclusive with: master
+  S: 0 # Optional Mutually exclusive with: master
+  args: ''
+  environ: {}
+  master: "path" # Optional Mutually exclusive with: I, S, A, P, L, R, z, RL, AP, IS, mm
+  mm: True # Optional Mutually exclusive with: master
+  num_threads: 0
+  out_file: "path"
+  outputtype: "enumerate(('NIFTI','AFNI','NIFTI_GZ'))"
+  z: 0 # Optional Mutually exclusive with: master

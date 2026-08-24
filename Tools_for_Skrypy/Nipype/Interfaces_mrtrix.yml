@@ -1,0 +1,281 @@
+mrtrix_ConstrainedSphericalDeconvolution:
+  args: ''
+  debug: True
+  directions_file: "path"
+  encoding_file: "path"
+  environ: {}
+  filter_file: "path"
+  iterations: 0
+  lambda_value: 0.0
+  mask_image: "path"
+  maximum_harmonic_order: 0
+  normalise: True
+  out_filename: "path"
+  threshold_value: 0.0
+mrtrix_DWI2SphericalHarmonicsImage:
+  args: ''
+  environ: {}
+  maximum_harmonic_order: 0.0
+  normalise: True
+  out_filename: "path"
+mrtrix_DWI2Tensor:
+  args: ''
+  debug: True
+  encoding_file: "path"
+  environ: {}
+  ignore_slice_by_volume: 0
+  ignore_volumes: 0
+  mask: "path"
+  out_filename: "path"
+  quiet: True
+mrtrix_DiffusionTensorStreamlineTrack:
+  args: ''
+  cutoff_value: 0.0
+  desired_number_of_tracks: 0
+  do_not_precompute: True
+  environ: {}
+  exclude_file: "path" # Optional Mutually exclusive with: exclude_file, exclude_spec
+  exclude_spec: 0.0 # Optional Mutually exclusive with: exclude_file, exclude_spec
+  include_file: "path" # Optional Mutually exclusive with: include_file, include_spec
+  include_spec: 0.0 # Optional Mutually exclusive with: include_file, include_spec
+  initial_cutoff_value: 0.0
+  initial_direction: 0
+  inputmodel: "enumerate(('DT_STREAM','SD_PROB','SD_STREAM'))"
+  mask_file: "path" # Optional Mutually exclusive with: mask_file, mask_spec
+  mask_spec: 0.0 # Optional Mutually exclusive with: mask_file, mask_spec
+  maximum_number_of_tracks: 0
+  maximum_tract_length: 0.0
+  minimum_radius_of_curvature: 0.0
+  minimum_tract_length: 0.0
+  no_mask_interpolation: True
+  out_file: "path"
+  seed_file: "path" # Optional Mutually exclusive with: seed_file, seed_spec
+  seed_spec: 0.0 # Optional Mutually exclusive with: seed_file, seed_spec
+  step_size: 0.0
+  stop: True
+  unidirectional: True
+mrtrix_Directions2Amplitude:
+  args: ''
+  display_debug: True
+  display_info: True
+  environ: {}
+  num_peaks: 0
+  out_file: "path"
+  peak_directions: 0.0
+  peaks_image: "path"
+  quiet_display: True
+mrtrix_Erode:
+  args: ''
+  debug: True
+  dilate: True
+  environ: {}
+  number_of_passes: 0
+  out_filename: "path"
+  quiet: True
+mrtrix_EstimateResponseForSH:
+  args: ''
+  debug: True
+  environ: {}
+  maximum_harmonic_order: 0
+  normalise: True
+  out_filename: "path"
+  quiet: True
+mrtrix_FSL2MRTrix:
+  invert_x: True
+  invert_y: True
+  invert_z: True
+  out_encoding_file: "path"
+mrtrix_FilterTracks:
+  args: ''
+  debug: True
+  environ: {}
+  exclude_file: "path" # Optional Mutually exclusive with: exclude_file, exclude_spec
+  exclude_spec: 0.0 # Optional Mutually exclusive with: exclude_file, exclude_spec
+  include_file: "path" # Optional Mutually exclusive with: include_file, include_spec
+  include_spec: 0.0 # Optional Mutually exclusive with: include_file, include_spec
+  invert: True
+  minimum_tract_length: 0.0
+  no_mask_interpolation: True
+  out_file: "path"
+  quiet: True
+mrtrix_FindShPeaks:
+  args: ''
+  display_debug: True
+  display_info: True
+  environ: {}
+  num_peaks: 0
+  out_file: "path"
+  peak_directions: 0.0
+  peak_threshold: 0.0
+  peaks_image: "path"
+  quiet_display: True
+mrtrix_GenerateDirections:
+  args: ''
+  display_debug: True
+  display_info: True
+  environ: {}
+  niter: 0
+  out_file: "path"
+  power: 0.0
+  quiet_display: True
+mrtrix_GenerateWhiteMatterMask:
+  args: ''
+  environ: {}
+  noise_level_margin: 0.0
+  out_WMProb_filename: "path"
+mrtrix_MRConvert:
+  args: ''
+  environ: {}
+  extension: "enumerate(('mif','nii','float','char','short','int','long','double'))"
+  extract_at_axis: ''
+  extract_at_coordinate: 0.0
+  layout: "enumerate(('nii','float','char','short','int','long','double'))"
+  offset_bias: 0.0
+  out_filename: "path"
+  output_datatype: "enumerate(('nii','float','char','short','int','long','double'))"
+  prs: True
+  replace_NaN_with_zero: True
+  resample: 0.0
+  voxel_dims: 0.0
+mrtrix_MRMultiply:
+  args: ''
+  debug: True
+  environ: {}
+  out_filename: "path"
+  quiet: True
+mrtrix_MRTrix2TrackVis:
+  image_file: "path"
+  matrix_file: "path"
+  out_filename: "path"
+  registration_image_file: "path"
+mrtrix_MRTrixInfo:
+  args: ''
+  environ: {}
+mrtrix_MRTrixViewer:
+  args: ''
+  debug: True
+  environ: {}
+  quiet: True
+mrtrix_MedianFilter3D:
+  args: ''
+  debug: True
+  environ: {}
+  out_filename: "path"
+  quiet: True
+mrtrix_ProbabilisticSphericallyDeconvolutedStreamlineTrack:
+  args: ''
+  cutoff_value: 0.0
+  desired_number_of_tracks: 0
+  do_not_precompute: True
+  environ: {}
+  exclude_file: "path" # Optional Mutually exclusive with: exclude_file, exclude_spec
+  exclude_spec: 0.0 # Optional Mutually exclusive with: exclude_file, exclude_spec
+  include_file: "path" # Optional Mutually exclusive with: include_file, include_spec
+  include_spec: 0.0 # Optional Mutually exclusive with: include_file, include_spec
+  initial_cutoff_value: 0.0
+  initial_direction: 0
+  inputmodel: "enumerate(('DT_STREAM','SD_PROB','SD_STREAM'))"
+  mask_file: "path" # Optional Mutually exclusive with: mask_file, mask_spec
+  mask_spec: 0.0 # Optional Mutually exclusive with: mask_file, mask_spec
+  maximum_number_of_tracks: 0
+  maximum_number_of_trials: 0
+  maximum_tract_length: 0.0
+  minimum_radius_of_curvature: 0.0
+  minimum_tract_length: 0.0
+  no_mask_interpolation: True
+  out_file: "path"
+  seed_file: "path" # Optional Mutually exclusive with: seed_file, seed_spec
+  seed_spec: 0.0 # Optional Mutually exclusive with: seed_file, seed_spec
+  step_size: 0.0
+  stop: True
+  unidirectional: True
+mrtrix_SphericallyDeconvolutedStreamlineTrack:
+  args: ''
+  cutoff_value: 0.0
+  desired_number_of_tracks: 0
+  do_not_precompute: True
+  environ: {}
+  exclude_file: "path" # Optional Mutually exclusive with: exclude_file, exclude_spec
+  exclude_spec: 0.0 # Optional Mutually exclusive with: exclude_file, exclude_spec
+  include_file: "path" # Optional Mutually exclusive with: include_file, include_spec
+  include_spec: 0.0 # Optional Mutually exclusive with: include_file, include_spec
+  initial_cutoff_value: 0.0
+  initial_direction: 0
+  inputmodel: "enumerate(('DT_STREAM','SD_PROB','SD_STREAM'))"
+  mask_file: "path" # Optional Mutually exclusive with: mask_file, mask_spec
+  mask_spec: 0.0 # Optional Mutually exclusive with: mask_file, mask_spec
+  maximum_number_of_tracks: 0
+  maximum_tract_length: 0.0
+  minimum_radius_of_curvature: 0.0
+  minimum_tract_length: 0.0
+  no_mask_interpolation: True
+  out_file: "path"
+  seed_file: "path" # Optional Mutually exclusive with: seed_file, seed_spec
+  seed_spec: 0.0 # Optional Mutually exclusive with: seed_file, seed_spec
+  step_size: 0.0
+  stop: True
+  unidirectional: True
+mrtrix_StreamlineTrack:
+  args: ''
+  cutoff_value: 0.0
+  desired_number_of_tracks: 0
+  do_not_precompute: True
+  environ: {}
+  exclude_file: "path" # Optional Mutually exclusive with: exclude_file, exclude_spec
+  exclude_spec: 0.0 # Optional Mutually exclusive with: exclude_file, exclude_spec
+  include_file: "path" # Optional Mutually exclusive with: include_file, include_spec
+  include_spec: 0.0 # Optional Mutually exclusive with: include_file, include_spec
+  initial_cutoff_value: 0.0
+  initial_direction: 0
+  inputmodel: "enumerate(('DT_STREAM','SD_PROB','SD_STREAM'))"
+  mask_file: "path" # Optional Mutually exclusive with: mask_file, mask_spec
+  mask_spec: 0.0 # Optional Mutually exclusive with: mask_file, mask_spec
+  maximum_number_of_tracks: 0
+  maximum_tract_length: 0.0
+  minimum_radius_of_curvature: 0.0
+  minimum_tract_length: 0.0
+  no_mask_interpolation: True
+  out_file: "path"
+  seed_file: "path" # Optional Mutually exclusive with: seed_file, seed_spec
+  seed_spec: 0.0 # Optional Mutually exclusive with: seed_file, seed_spec
+  step_size: 0.0
+  stop: True
+  unidirectional: True
+mrtrix_Tensor2ApparentDiffusion:
+  args: ''
+  debug: True
+  environ: {}
+  out_filename: "path"
+  quiet: True
+mrtrix_Tensor2FractionalAnisotropy:
+  args: ''
+  debug: True
+  environ: {}
+  out_filename: "path"
+  quiet: True
+mrtrix_Tensor2Vector:
+  args: ''
+  debug: True
+  environ: {}
+  out_filename: "path"
+  quiet: True
+mrtrix_Threshold:
+  absolute_threshold_value: 0.0
+  args: ''
+  debug: True
+  environ: {}
+  invert: True
+  out_filename: "path"
+  percentage_threshold_value: 0.0
+  quiet: True
+  replace_zeros_with_NaN: True
+mrtrix_Tracks2Prob:
+  args: ''
+  colour: True
+  environ: {}
+  fraction: True
+  out_filename: "path"
+  output_datatype: "enumerate(('Bit','Int8','UInt8','Int16','UInt16','Int32','UInt32','float32','float64'))"
+  resample: 0.0
+  template_file: "path"
+  voxel_dims: 0.0

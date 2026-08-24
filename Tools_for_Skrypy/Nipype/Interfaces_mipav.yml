@@ -1,0 +1,315 @@
+mipav_JistBrainMgdmSegmentation:
+  args: ''
+  environ: {}
+  inAdjust: "enumerate(('true','false'))"
+  inAtlas: "path"
+  inCompute: "enumerate(('true','false'))"
+  inCurvature: 0.0
+  inData: 0.0
+  inFLAIR: "path"
+  inMP2RAGE: "path"
+  inMP2RAGE2: "path"
+  inMPRAGE: "path"
+  inMax: 0
+  inMin: 0.0
+  inOutput: "enumerate(('segmentation','memberships'))"
+  inPV: "path"
+  inPosterior: 0.0
+  inSteps: 0
+  inTopology: "enumerate(('26/6','6/26','18/6','6/18','6/6','wcs','wco','no'))"
+  null: ''
+  outLevelset: "path"
+  outPosterior2: "path"
+  outPosterior3: "path"
+  outSegmented: "path"
+  xDefaultMem: 0
+  xMaxProcess: 0
+  xPrefExt: ''
+mipav_JistBrainMp2rageDuraEstimation:
+  inDistance: 0.0
+  inSecond: "path"
+  inSkull: "path"
+  inoutput: "enumerate(('dura_region','boundary','dura_prior','bg_prior','intens_prior'))"
+mipav_JistBrainMp2rageSkullStripping:
+  args: ''
+  environ: {}
+  inFilter: "path"
+  inSecond: "path"
+  inSkip: "enumerate(('true','false'))"
+  inT1: "path"
+  inT1weighted: "path"
+  null: ''
+  outBrain: "path"
+  outMasked: "path"
+  outMasked2: "path"
+  outMasked3: "path"
+  xDefaultMem: 0
+  xMaxProcess: 0
+  xPrefExt: ''
+mipav_JistBrainPartialVolumeFilter:
+  inInput: "path"
+  inPV: "enumerate(('bright','dark','both'))"
+mipav_JistCortexSurfaceMeshInflation:
+  args: ''
+  environ: {}
+  inLevelset: "path"
+  inLorentzian: "enumerate(('true','false'))"
+  inMax: 0
+  inMean: 0.0
+  inSOR: 0.0
+  inStep: 0
+  inTopology: "enumerate(('26/6','6/26','18/6','6/18','6/6','wcs','wco','no'))"
+  null: ''
+  outInflated: "path"
+  outOriginal: "path"
+  xDefaultMem: 0
+  xMaxProcess: 0
+  xPrefExt: ''
+mipav_JistIntensityMp2rageMasking:
+  args: ''
+  environ: {}
+  inBackground: "enumerate(('exponential','half-normal'))"
+  inMasking: "enumerate(('binary','proba'))"
+  inQuantitative: "path"
+  inSecond: "path"
+  inSkip: "enumerate(('true','false'))"
+  inT1weighted: "path"
+  null: ''
+  outMasked: "path"
+  outMasked2: "path"
+  outSignal: "path"
+  outSignal2: "path"
+  xDefaultMem: 0
+  xMaxProcess: 0
+  xPrefExt: ''
+mipav_JistLaminarProfileCalculator:
+  args: ''
+  environ: {}
+  inIntensity: "path"
+  inMask: "path"
+  incomputed: "enumerate(('mean','stdev','skewness','kurtosis'))"
+  null: ''
+  outResult: "path"
+  xDefaultMem: 0
+  xMaxProcess: 0
+  xPrefExt: ''
+mipav_JistLaminarProfileGeometry:
+  args: ''
+  environ: {}
+  inProfile: "path"
+  incomputed: "enumerate(('thickness','curvedness','shape_index','mean_curvature','gauss_curvature','profile_length','profile_curvature','profile_torsion'))"
+  inoutside: 0.0
+  inregularization: "enumerate(('none','Gaussian'))"
+  insmoothing: 0.0
+  null: ''
+  outResult: "path"
+  xDefaultMem: 0
+  xMaxProcess: 0
+  xPrefExt: ''
+mipav_JistLaminarProfileSampling:
+  args: ''
+  environ: {}
+  inCortex: "path"
+  inIntensity: "path"
+  inProfile: "path"
+  null: ''
+  outProfile2: "path"
+  outProfilemapped: "path"
+  xDefaultMem: 0
+  xMaxProcess: 0
+  xPrefExt: ''
+mipav_JistLaminarROIAveraging:
+  args: ''
+  environ: {}
+  inIntensity: "path"
+  inMask: "path"
+  inROI: "path"
+  inROI2: ''
+  null: ''
+  outROI3: "path"
+  xDefaultMem: 0
+  xMaxProcess: 0
+  xPrefExt: ''
+mipav_JistLaminarVolumetricLayering:
+  args: ''
+  environ: {}
+  inInner: "path"
+  inLayering: "enumerate(('distance-preserving','volume-preserving'))"
+  inLayering2: "enumerate(('outward','inward'))"
+  inMax: 0
+  inMin: 0.0
+  inNumber: 0
+  inOuter: "path"
+  inTopology: "enumerate(('26/6','6/26','18/6','6/18','6/6','wcs','wco','no'))"
+  incurvature: 0
+  inpresmooth: "enumerate(('true','false'))"
+  inratio: 0.0
+  null: ''
+  outContinuous: "path"
+  outDiscrete: "path"
+  outLayer: "path"
+  xDefaultMem: 0
+  xMaxProcess: 0
+  xPrefExt: ''
+mipav_MedicAlgorithmImageCalculator:
+  args: ''
+  environ: {}
+  inOperation: "enumerate(('Add','Subtract','Multiply','Divide','Min','Max'))"
+  inVolume: "path"
+  inVolume2: "path"
+  null: ''
+  outResult: "path"
+  xDefaultMem: 0
+  xMaxProcess: 0
+  xPrefExt: ''
+mipav_MedicAlgorithmLesionToads:
+  args: ''
+  environ: {}
+  inAtlas: "enumerate(('With Lesion','No Lesion'))"
+  inAtlas2: "path"
+  inAtlas3: "path"
+  inAtlas4: "path"
+  inAtlas5: 0.0
+  inAtlas6: "enumerate(('rigid','multi_fully_affine'))"
+  inConnectivity: ''
+  inCorrect: "enumerate(('true','false'))"
+  inFLAIR: "path"
+  inInclude: "enumerate(('true','false'))"
+  inMaximum: 0
+  inMaximum2: 0
+  inMaximum3: 0
+  inMaximum4: 0.0
+  inMaximum5: 0
+  inOutput: "enumerate(('hard segmentation','hard segmentation+memberships','cruise inputs','dura removal inputs'))"
+  inOutput2: "enumerate(('true','false'))"
+  inOutput3: "enumerate(('true','false'))"
+  inSmooting: 0.0
+  inT1_MPRAGE: "path"
+  inT1_SPGR: "path"
+  null: ''
+  outCortical: "path"
+  outFilled: "path"
+  outHard: "path"
+  outHard2: "path"
+  outInhomogeneity: "path"
+  outLesion: "path"
+  outMembership: "path"
+  outSulcal: "path"
+  outWM: "path"
+  xDefaultMem: 0
+  xMaxProcess: 0
+  xPrefExt: ''
+mipav_MedicAlgorithmMipavReorient:
+  args: ''
+  environ: {}
+  inInterpolation: "enumerate(('Nearest Neighbor','Trilinear','Bspline 3rd order','Bspline 4th order','Cubic Lagrangian','Quintic Lagrangian','Heptic Lagrangian','Windowed Sinc'))"
+  inNew: "enumerate(('Dicom axial','Dicom coronal','Dicom sagittal','User defined'))"
+  inResolution: "enumerate(('Unchanged','Finest cubic','Coarsest cubic','Same as template'))"
+  inSource: ["path"]
+  inTemplate: "path"
+  inUser: "enumerate(('Unknown','Patient Right to Left','Patient Left to Right','Patient Posterior to Anterior','Patient Anterior to Posterior','Patient Inferior to Superior','Patient Superior to Inferior'))"
+  inUser2: "enumerate(('Unknown','Patient Right to Left','Patient Left to Right','Patient Posterior to Anterior','Patient Anterior to Posterior','Patient Inferior to Superior','Patient Superior to Inferior'))"
+  inUser3: "enumerate(('Unknown','Patient Right to Left','Patient Left to Right','Patient Posterior to Anterior','Patient Anterior to Posterior','Patient Inferior to Superior','Patient Superior to Inferior'))"
+  inUser4: "enumerate(('Axial','Coronal','Sagittal','Unknown'))"
+  null: ''
+  outReoriented: ["path"]
+  xDefaultMem: 0
+  xMaxProcess: 0
+  xPrefExt: ''
+mipav_MedicAlgorithmN3:
+  args: ''
+  environ: {}
+  inAutomatic: "enumerate(('true','false'))"
+  inEnd: 0.0
+  inField: 0.0
+  inInput: "path"
+  inKernel: 0.0
+  inMaximum: 0
+  inSignal: 0.0
+  inSubsample: 0.0
+  inWeiner: 0.0
+  null: ''
+  outInhomogeneity: "path"
+  outInhomogeneity2: "path"
+  xDefaultMem: 0
+  xMaxProcess: 0
+  xPrefExt: ''
+mipav_MedicAlgorithmSPECTRE2010:
+  args: ''
+  environ: {}
+  inApply: "enumerate(('All','X','Y','Z'))"
+  inAtlas: "path"
+  inBackground: 0.0
+  inCoarse: 0.0
+  inCost: "enumerate(('Correlation ratio','Least squares','Normalized cross correlation','Normalized mutual information'))"
+  inDegrees: "enumerate(('Rigid - 6','Global rescale - 7','Specific rescale - 9','Affine - 12'))"
+  inFind: "enumerate(('true','false'))"
+  inFine: 0.0
+  inImage: "enumerate(('T1_SPGR','T1_ALT','T1_MPRAGE','T2','FLAIR'))"
+  inInhomogeneity: "enumerate(('true','false'))"
+  inInitial: 0
+  inInitial2: 0.0
+  inInput: "path"
+  inMMC: 0
+  inMMC2: 0
+  inMaximum: 0.0
+  inMinimum: 0.0
+  inMinimum2: 0.0
+  inMultiple: 0
+  inMultithreading: "enumerate(('true','false'))"
+  inNumber: 0
+  inNumber2: 0
+  inOutput: "enumerate(('true','false'))"
+  inOutput2: "enumerate(('true','false'))"
+  inOutput3: "enumerate(('true','false'))"
+  inOutput4: "enumerate(('true','false'))"
+  inOutput5: "enumerate(('Trilinear','Bspline 3rd order','Bspline 4th order','Cubic Lagrangian','Quintic Lagrangian','Heptic Lagrangian','Windowed sinc','Nearest Neighbor'))"
+  inRegistration: "enumerate(('Trilinear','Bspline 3rd order','Bspline 4th order','Cubic Lagrangian','Quintic Lagrangian','Heptic Lagrangian','Windowed sinc'))"
+  inResample: "enumerate(('true','false'))"
+  inRun: "enumerate(('true','false'))"
+  inSkip: "enumerate(('true','false'))"
+  inSmoothing: 0.0
+  inSubsample: "enumerate(('true','false'))"
+  inUse: "enumerate(('true','false'))"
+  null: ''
+  outFANTASM: "path"
+  outMask: "path"
+  outMidsagittal: "path"
+  outOriginal: "path"
+  outPrior: "path"
+  outSegmentation: "path"
+  outSplitHalves: "path"
+  outStripped: "path"
+  outd0: "path"
+  xDefaultMem: 0
+  xMaxProcess: 0
+  xPrefExt: ''
+mipav_MedicAlgorithmThresholdToBinaryMask:
+  args: ''
+  environ: {}
+  inLabel: ["path"]
+  inMaximum: 0.0
+  inMinimum: 0.0
+  inUse: "enumerate(('true','false'))"
+  null: ''
+  outBinary: ["path"]
+  xDefaultMem: 0
+  xMaxProcess: 0
+  xPrefExt: ''
+mipav_RandomVol:
+  args: ''
+  environ: {}
+  inField: "enumerate(('Uniform','Normal','Exponential'))"
+  inLambda: 0.0
+  inMaximum: 0
+  inMinimum: 0
+  inSize: 0
+  inSize2: 0
+  inSize3: 0
+  inSize4: 0
+  inStandard: 0
+  null: ''
+  outRand1: "path"
+  xDefaultMem: 0
+  xMaxProcess: 0
+  xPrefExt: ''

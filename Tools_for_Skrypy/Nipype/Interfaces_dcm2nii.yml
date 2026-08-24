@@ -1,0 +1,42 @@
+dcm2nii_Dcm2nii:
+  source_dir: "path" # Mandatory Mutually exclusive with: source_names
+  source_names: ["path"] # Mandatory Mutually exclusive with: source_dir
+  anonymize: True
+  args: ''
+  collapse_folders: True
+  config_file: "path"
+  convert_all_pars: True
+  date_in_filename: True
+  environ: {}
+  events_in_filename: True
+  gzip_output: True
+  id_in_filename: True
+  nii_output: True
+  output_dir: "path"
+  protocol_in_filename: True
+  reorient: True
+  reorient_and_crop: True
+  source_in_filename: True
+  spm_analyze: True # Optional Mutually exclusive with: nii_output
+dcm2nii_Dcm2niix:
+  source_dir: "path" # Mandatory Mutually exclusive with: source_names
+  source_names: ["path"] # Mandatory Mutually exclusive with: source_dir
+  anon_bids: True
+  args: ''
+  bids_format: True
+  comment: ''
+  compress: "enumerate(('y','i','n','3'))"
+  compression: ''
+  crop: True
+  environ: {}
+  has_private: True
+  ignore_deriv: True
+  merge_imgs: 0
+  name_conflicts: 1
+  out_filename: ''
+  output_dir: "path"
+  philips_float: True
+  series_numbers: ['']
+  single_file: True
+  to_nrrd: True
+  verbose: True

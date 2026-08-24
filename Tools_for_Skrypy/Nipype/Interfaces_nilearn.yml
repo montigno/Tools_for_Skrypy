@@ -1,0 +1,5 @@
+nilearn_SignalExtraction:
+  detrend: True
+  incl_shared_variance: True
+  include_global: True
+  out_file: "path"

@@ -1,0 +1,111 @@
+niftyseg_BinaryMaths:
+  operand_file: "path" # Mandatory Mutually exclusive with: operand_value, operand_str
+  operand_str: "enumerate(('x','y','z'))" # Mandatory Mutually exclusive with: operand_value, operand_file
+  operand_value: 0.0 # Mandatory Mutually exclusive with: operand_file, operand_str
+  args: ''
+  environ: {}
+  out_file: "path"
+  output_datatype: "enumerate(('float','char','int','short','double','input'))"
+niftyseg_BinaryMathsInteger:
+  args: ''
+  environ: {}
+  out_file: "path"
+  output_datatype: "enumerate(('float','char','int','short','double','input'))"
+niftyseg_BinaryStats:
+  operand_file: "path" # Mandatory Mutually exclusive with: operand_value
+  operand_value: 0.0 # Mandatory Mutually exclusive with: operand_file
+  args: ''
+  environ: {}
+  larger_voxel: 0.0
+  mask_file: "path"
+niftyseg_CalcTopNCC:
+  args: ''
+  environ: {}
+  mask_file: "path"
+niftyseg_EM:
+  no_prior: 0 # Mandatory Mutually exclusive with: prior_4D, priors
+  prior_4D: "path" # Mandatory Mutually exclusive with: no_prior, priors
+  priors: [''] # Mandatory Mutually exclusive with: no_prior, prior_4D
+  args: ''
+  bc_order_val: 0
+  bc_thresh_val: 0.0
+  environ: {}
+  mask_file: "path"
+  max_iter: 0
+  min_iter: 0
+  mrf_beta_val: 0.0
+  out_bc_file: "path"
+  out_file: "path"
+  out_outlier_file: "path"
+  outlier_val: (0,)
+  reg_val: 0.0
+  relax_priors: (0,)
+niftyseg_FillLesions:
+  args: ''
+  bin_mask: "path"
+  cwf: 0.0
+  debug: True
+  environ: {}
+  in_dilation: 0
+  match: 0.0
+  other: True
+  out_datatype: ''
+  out_file: "path"
+  search: 0.0
+  size: 0
+  smooth: 0.0
+  use_2d: True
+  verbose: True
+niftyseg_LabelFusion:
+  args: ''
+  conv: 0.0
+  dilation_roi: 0
+  environ: {}
+  kernel_size: 0.0
+  mask_file: "path"
+  max_iter: 0
+  mrf_value: 0.0
+  out_file: "path"
+  prob_flag: True
+  prob_update_flag: True
+  proportion: 0.0
+  set_pq: (0,)
+  sm_ranking: "enumerate(('ALL','GNCC','ROINCC','LNCC'))"
+  template_file: "path"
+  template_num: 0
+  unc: True
+  unc_thresh: 0.0
+  verbose: "enumerate(('0','1','2'))"
+niftyseg_Merge:
+  args: ''
+  environ: {}
+  out_file: "path"
+  output_datatype: "enumerate(('float','char','int','short','double','input'))"
+niftyseg_PatchMatch:
+  args: ''
+  cs_size: 0
+  environ: {}
+  it_num: 0
+  match_num: 0
+  out_file: "path"
+  patch_size: 0
+  pm_num: 0
+niftyseg_TupleMaths:
+  operand_file1: "path" # Mandatory Mutually exclusive with: operand_value1
+  operand_file2: "path" # Mandatory Mutually exclusive with: operand_value2
+  operand_value1: 0.0 # Mandatory Mutually exclusive with: operand_file1
+  operand_value2: 0.0 # Mandatory Mutually exclusive with: operand_file2
+  args: ''
+  environ: {}
+  out_file: "path"
+  output_datatype: "enumerate(('float','char','int','short','double','input'))"
+niftyseg_UnaryMaths:
+  args: ''
+  environ: {}
+  out_file: "path"
+  output_datatype: "enumerate(('float','char','int','short','double','input'))"
+niftyseg_UnaryStats:
+  args: ''
+  environ: {}
+  larger_voxel: 0.0
+  mask_file: "path"

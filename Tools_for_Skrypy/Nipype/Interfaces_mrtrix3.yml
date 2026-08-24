@@ -1,0 +1,460 @@
+mrtrix3_ACTPrepareFSL:
+  args: ''
+  environ: {}
+mrtrix3_BrainMask:
+  args: ''
+  bval_scale: "enumerate(('yes','no'))"
+  environ: {}
+  grad_file: "path" # Optional Mutually exclusive with: grad_fsl
+  grad_fsl: (0,) # Optional Mutually exclusive with: grad_file
+  in_bval: "path"
+  in_bvec: "path"
+  nthreads: 0
+  out_bval: "path"
+  out_bvec: "path"
+mrtrix3_BuildConnectome:
+  args: ''
+  environ: {}
+  in_parc: "path"
+  in_scalar: "path"
+  in_weights: "path"
+  keep_unassigned: True
+  metric: "enumerate(('count','meanlength','invlength','invnodevolume','mean_scalar','invlength_invnodevolume'))"
+  nthreads: 0
+  search_forward: 0.0
+  search_radius: 0.0
+  search_reverse: 0.0
+  vox_lookup: True
+  zero_diagonal: True
+mrtrix3_ComputeTDI:
+  args: ''
+  contrast: "enumerate(('tdi','length','invlength','scalar_map','scalar_map_conut','fod_amp','curvature'))"
+  data_type: "enumerate(('float','unsigned int'))"
+  dixel: "path"
+  ends_only: True
+  environ: {}
+  fwhm_tck: 0.0
+  in_map: "path"
+  map_zero: True
+  max_tod: 0
+  nthreads: 0
+  out_file: "path"
+  precise: True
+  reference: "path"
+  stat_tck: "enumerate(('mean','sum','min','max','median','mean_nonzero','gaussian','ends_min','ends_mean','ends_max','ends_prod'))"
+  stat_vox: "enumerate(('sum','min','mean','max'))"
+  tck_weights: "path"
+  upsample: 0
+  use_dec: True
+  vox_size: [0]
+mrtrix3_ConstrainedSphericalDeconvolution:
+  args: ''
+  bval_scale: "enumerate(('yes','no'))"
+  csf_odf: "path"
+  csf_txt: "path"
+  environ: {}
+  gm_odf: "path"
+  gm_txt: "path"
+  grad_file: "path" # Optional Mutually exclusive with: grad_fsl
+  grad_fsl: (0,) # Optional Mutually exclusive with: grad_file
+  in_bval: "path"
+  in_bvec: "path"
+  in_dirs: "path"
+  mask_file: "path"
+  max_sh: [0]
+  nthreads: 0
+  out_bval: "path"
+  out_bvec: "path"
+  predicted_signal: "path"
+  shell: [0.0]
+mrtrix3_DWIBiasCorrect:
+  use_ants: True # Mandatory Mutually exclusive with: use_fsl
+  use_fsl: True # Mandatory Mutually exclusive with: use_ants
+  args: ''
+  bias: "path"
+  bval_scale: "enumerate(('yes','no'))"
+  environ: {}
+  grad_file: "path" # Optional Mutually exclusive with: grad_fsl
+  grad_fsl: (0,) # Optional Mutually exclusive with: grad_file
+  in_bval: "path"
+  in_bvec: "path"
+  in_mask: "path"
+  nthreads: 0
+  out_bval: "path"
+  out_bvec: "path"
+  out_file: "path"
+mrtrix3_DWIDenoise:
+  args: ''
+  bval_scale: "enumerate(('yes','no'))"
+  environ: {}
+  extent: (0,)
+  grad_file: "path" # Optional Mutually exclusive with: grad_fsl
+  grad_fsl: (0,) # Optional Mutually exclusive with: grad_file
+  in_bval: "path"
+  in_bvec: "path"
+  mask: "path"
+  noise: "path"
+  nthreads: 0
+  out_bval: "path"
+  out_bvec: "path"
+  out_file: "path"
+mrtrix3_DWIExtract:
+  args: ''
+  bval_scale: "enumerate(('yes','no'))"
+  bzero: True
+  environ: {}
+  grad_file: "path" # Optional Mutually exclusive with: grad_fsl
+  grad_fsl: (0,) # Optional Mutually exclusive with: grad_file
+  in_bval: "path"
+  in_bvec: "path"
+  nobzero: True
+  nthreads: 0
+  out_bval: "path"
+  out_bvec: "path"
+  shell: [0.0]
+  singleshell: True
+mrtrix3_DWIPreproc:
+  align_seepi: True
+  args: ''
+  bval_scale: "enumerate(('yes','no'))"
+  eddy_mask: "path"
+  eddy_options: ''
+  eddy_slspec: "path"
+  eddyqc_all: "path"
+  eddyqc_text: "path"
+  environ: {}
+  grad_file: "path" # Optional Mutually exclusive with: grad_fsl
+  grad_fsl: (0,) # Optional Mutually exclusive with: grad_file
+  in_bval: "path"
+  in_bvec: "path"
+  in_epi: "path"
+  json_import: "path"
+  nthreads: 0
+  out_bval: "path"
+  out_bvec: "path"
+  out_grad_fsl: (0,)
+  out_grad_mrtrix: "path"
+  pe_dir: ''
+  ro_time: 0.0
+  topup_options: ''
+mrtrix3_EstimateFOD:
+  args: ''
+  bval_scale: "enumerate(('yes','no'))"
+  csf_odf: "path"
+  csf_txt: "path"
+  environ: {}
+  gm_odf: "path"
+  gm_txt: "path"
+  grad_file: "path" # Optional Mutually exclusive with: grad_fsl
+  grad_fsl: (0,) # Optional Mutually exclusive with: grad_file
+  in_bval: "path"
+  in_bvec: "path"
+  in_dirs: "path"
+  mask_file: "path"
+  max_sh: [0]
+  nthreads: 0
+  out_bval: "path"
+  out_bvec: "path"
+  predicted_signal: "path"
+  shell: [0.0]
+mrtrix3_FitTensor:
+  args: ''
+  bval_scale: "enumerate(('yes','no'))"
+  environ: {}
+  grad_file: "path" # Optional Mutually exclusive with: grad_fsl
+  grad_fsl: (0,) # Optional Mutually exclusive with: grad_file
+  in_bval: "path"
+  in_bvec: "path"
+  in_mask: "path"
+  method: "enumerate(('nonlinear','loglinear','sech','rician'))"
+  nthreads: 0
+  out_bval: "path"
+  out_bvec: "path"
+  predicted_signal: "path"
+  reg_term: 0.0
+mrtrix3_Generate5tt:
+  args: ''
+  bval_scale: "enumerate(('yes','no'))"
+  environ: {}
+  grad_file: "path" # Optional Mutually exclusive with: grad_fsl
+  grad_fsl: (0,) # Optional Mutually exclusive with: grad_file
+  hippocampi: "enumerate(('subfields','first','aseg'))"
+  in_bval: "path"
+  in_bvec: "path"
+  lut_file: "path"
+  mask_file: "path"
+  nocrop: True
+  nthreads: 0
+  out_bval: "path"
+  out_bvec: "path"
+  premasked: True
+  sgm_amyg_hipp: True
+  t2_image: "path"
+  template: "path"
+  white_stem: True
+mrtrix3_Generate5tt2gmwmi:
+  args: ''
+  bval_scale: "enumerate(('yes','no'))"
+  environ: {}
+  grad_file: "path" # Optional Mutually exclusive with: grad_fsl
+  grad_fsl: (0,) # Optional Mutually exclusive with: grad_file
+  in_bval: "path"
+  in_bvec: "path"
+  mask_in: "path"
+  nthreads: 0
+  out_bval: "path"
+  out_bvec: "path"
+mrtrix3_LabelConfig:
+  args: ''
+  environ: {}
+  in_config: "path"
+  lut_aal: "path"
+  lut_basic: "path"
+  lut_fs: "path"
+  lut_itksnap: "path"
+  nthreads: 0
+  spine: "path"
+mrtrix3_LabelConvert:
+  args: ''
+  environ: {}
+  in_config: "path"
+  num_threads: 0
+  spine: "path"
+mrtrix3_MRCat:
+  args: ''
+  axis: 0
+  bval_scale: "enumerate(('yes','no'))"
+  datatype: "enumerate(('float32','float32le','float32be','float64','float64le','float64be','int64','uint64','int64le','uint64le','int64be','uint64be','int32','uint32','int32le','uint32le','int32be','uint32be','int16','uint16','int16le','uint16le','int16be','uint16be','cfloat32','cfloat32le','cfloat32be','cfloat64','cfloat64le','cfloat64be','int8','uint8','bit'))"
+  environ: {}
+  grad_file: "path" # Optional Mutually exclusive with: grad_fsl
+  grad_fsl: (0,) # Optional Mutually exclusive with: grad_file
+  in_bval: "path"
+  in_bvec: "path"
+  nthreads: 0
+  out_bval: "path"
+  out_bvec: "path"
+mrtrix3_MRConvert:
+  args: ''
+  axes: [0]
+  bval_scale: "enumerate(('yes','no'))"
+  coord: [0]
+  environ: {}
+  grad_file: "path" # Optional Mutually exclusive with: grad_fsl
+  grad_fsl: (0,) # Optional Mutually exclusive with: grad_file
+  in_bval: "path"
+  in_bvec: "path"
+  json_export: "path"
+  json_import: "path"
+  nthreads: 0
+  out_bval: "path"
+  out_bvec: "path"
+  scaling: [0.0]
+  vox: [0.0]
+mrtrix3_MRDeGibbs:
+  args: ''
+  axes: 0
+  bval_scale: "enumerate(('yes','no'))"
+  environ: {}
+  grad_file: "path" # Optional Mutually exclusive with: grad_fsl
+  grad_fsl: (0,) # Optional Mutually exclusive with: grad_file
+  in_bval: "path"
+  in_bvec: "path"
+  maxW: 0
+  minW: 0
+  nshifts: 0
+  nthreads: 0
+  out_bval: "path"
+  out_bvec: "path"
+  out_file: "path"
+mrtrix3_MRMath:
+  args: ''
+  axis: 0
+  bval_scale: "enumerate(('yes','no'))"
+  environ: {}
+  grad_file: "path" # Optional Mutually exclusive with: grad_fsl
+  grad_fsl: (0,) # Optional Mutually exclusive with: grad_file
+  in_bval: "path"
+  in_bvec: "path"
+  nthreads: 0
+  out_bval: "path"
+  out_bvec: "path"
+mrtrix3_MRResize:
+  image_size: (0,) # Mandatory Mutually exclusive with: voxel_size, scale_factor
+  scale_factor: (0,) # Mandatory Mutually exclusive with: image_size, voxel_size
+  voxel_size: (0,) # Mandatory Mutually exclusive with: image_size, scale_factor
+  args: ''
+  bval_scale: "enumerate(('yes','no'))"
+  environ: {}
+  grad_file: "path" # Optional Mutually exclusive with: grad_fsl
+  grad_fsl: (0,) # Optional Mutually exclusive with: grad_file
+  in_bval: "path"
+  in_bvec: "path"
+  interpolation: "enumerate(('cubic','nearest','linear','sinc'))"
+  nthreads: 0
+  out_bval: "path"
+  out_bvec: "path"
+  out_file: "path"
+mrtrix3_MRTransform:
+  args: ''
+  bval_scale: "enumerate(('yes','no'))"
+  debug: True
+  environ: {}
+  flip_x: True
+  grad_file: "path" # Optional Mutually exclusive with: grad_fsl
+  grad_fsl: (0,) # Optional Mutually exclusive with: grad_file
+  in_bval: "path"
+  in_bvec: "path"
+  invert: True
+  linear_transform: "path"
+  nthreads: 0
+  out_bval: "path"
+  out_bvec: "path"
+  out_file: "path"
+  quiet: True
+  reference_image: "path"
+  replace_transform: True
+  template_image: "path"
+  transformation_file: "path"
+mrtrix3_MTNormalise:
+  args: ''
+  bval_scale: "enumerate(('yes','no'))"
+  csf_fod: "path"
+  environ: {}
+  gm_fod: "path"
+  grad_file: "path" # Optional Mutually exclusive with: grad_fsl
+  grad_fsl: (0,) # Optional Mutually exclusive with: grad_file
+  in_bval: "path"
+  in_bvec: "path"
+  mask: "path"
+  nthreads: 0
+  out_bval: "path"
+  out_bvec: "path"
+  out_file_csf: "path"
+  out_file_gm: "path"
+  out_file_wm: "path"
+  wm_fod: "path"
+mrtrix3_MaskFilter:
+  args: ''
+  environ: {}
+  npass: 0
+mrtrix3_Mesh2PVE:
+  args: ''
+  environ: {}
+  in_first: "path"
+mrtrix3_ReplaceFSwithFIRST:
+  args: ''
+  environ: {}
+  in_config: "path"
+mrtrix3_ResponseSD:
+  args: ''
+  bval_scale: "enumerate(('yes','no'))"
+  csf_file: "path"
+  environ: {}
+  gm_file: "path"
+  grad_file: "path" # Optional Mutually exclusive with: grad_fsl
+  grad_fsl: (0,) # Optional Mutually exclusive with: grad_file
+  in_bval: "path"
+  in_bvec: "path"
+  in_mask: "path"
+  max_sh: [0]
+  mtt_file: "path"
+  nthreads: 0
+  out_bval: "path"
+  out_bvec: "path"
+  wm_file: "path"
+mrtrix3_SH2Amp:
+  args: ''
+  environ: {}
+  nonnegative: True
+  out_file: "path"
+mrtrix3_SHConv:
+  args: ''
+  environ: {}
+  out_file: "path"
+mrtrix3_TCK2VTK:
+  args: ''
+  environ: {}
+  nthreads: 0
+  out_file: "path"
+  reference: "path"
+  voxel: "path"
+mrtrix3_TensorMetrics:
+  args: ''
+  bval_scale: "enumerate(('yes','no'))"
+  component: ['']
+  environ: {}
+  grad_file: "path" # Optional Mutually exclusive with: grad_fsl
+  grad_fsl: (0,) # Optional Mutually exclusive with: grad_file
+  in_bval: "path"
+  in_bvec: "path"
+  in_mask: "path"
+  modulate: "enumerate(('FA','none','eval'))"
+  nthreads: 0
+  out_ad: "path"
+  out_adc: "path"
+  out_bval: "path"
+  out_bvec: "path"
+  out_cl: "path"
+  out_cp: "path"
+  out_cs: "path"
+  out_eval: "path"
+  out_evec: "path"
+  out_fa: "path"
+  out_rd: "path"
+mrtrix3_Tractography:
+  act_file: "path"
+  algorithm: "enumerate(('iFOD2','FACT','iFOD1','Nulldist','SD_Stream','Tensor_Det','Tensor_Prob'))"
+  angle: 0.0
+  args: ''
+  backtrack: True
+  bval_scale: "enumerate(('yes','no'))"
+  crop_at_gmwmi: True
+  cutoff: 0.0
+  cutoff_init: 0.0
+  downsample: 0.0
+  environ: {}
+  grad_file: "path" # Optional Mutually exclusive with: grad_fsl
+  grad_fsl: (0,) # Optional Mutually exclusive with: grad_file
+  in_bval: "path"
+  in_bvec: "path"
+  init_dir: (0,)
+  max_length: 0.0
+  max_seed_attempts: 0
+  max_tracks: 0
+  min_length: 0.0
+  n_samples: 0
+  n_tracks: 0
+  n_trials: 0
+  noprecompt: True
+  nthreads: 0
+  out_bval: "path"
+  out_bvec: "path"
+  out_seeds: "path"
+  power: 0
+  roi_excl: (0,)
+  roi_incl: (0,)
+  roi_mask: (0,)
+  seed_dynamic: "path"
+  seed_gmwmi: "path"
+  seed_grid_voxel: (0,) # Optional Mutually exclusive with: seed_image, seed_rnd_voxel
+  seed_image: "path"
+  seed_rejection: "path"
+  seed_rnd_voxel: (0,) # Optional Mutually exclusive with: seed_image, seed_grid_voxel
+  seed_sphere: (0,)
+  select: 0
+  sph_trait: (0,)
+  step_size: 0.0
+  stop: True
+  unidirectional: True
+  use_rk4: True
+mrtrix3_TransformFSLConvert:
+  args: ''
+  bval_scale: "enumerate(('yes','no'))"
+  environ: {}
+  grad_file: "path" # Optional Mutually exclusive with: grad_fsl
+  grad_fsl: (0,) # Optional Mutually exclusive with: grad_file
+  in_bval: "path"
+  in_bvec: "path"
+  nthreads: 0
+  out_bval: "path"
+  out_bvec: "path"

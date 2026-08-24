@@ -1,0 +1,157 @@
+niftyreg_RegAladin:
+  aff_direct_flag: True
+  aff_file: "path"
+  args: ''
+  cog_flag: True
+  environ: {}
+  flo_low_val: 0.0
+  flo_up_val: 0.0
+  fmask_file: "path"
+  gpuid_val: 0
+  i_val: 0
+  in_aff_file: "path"
+  ln_val: 0
+  lp_val: 0
+  maxit_val: 0
+  nac_flag: True
+  nosym_flag: True
+  omp_core_val: 0
+  platform_val: 0
+  ref_low_val: 0.0
+  ref_up_val: 0.0
+  res_file: "path"
+  rig_only_flag: True
+  rmask_file: "path"
+  smoo_f_val: 0.0
+  smoo_r_val: 0.0
+  v_val: 0
+  verbosity_off_flag: True
+niftyreg_RegAverage:
+  args: ''
+  avg_files: ["path"] # Optional Mutually exclusive with: avg_lts_files, avg_ref_file, demean1_ref_file, demean2_ref_file, demean3_ref_file, warp_files
+  avg_lts_files: ["path"] # Optional Mutually exclusive with: avg_files, avg_ref_file, demean1_ref_file, demean2_ref_file, demean3_ref_file, warp_files
+  avg_ref_file: "path" # Optional Mutually exclusive with: avg_files, avg_lts_files, demean1_ref_file, demean2_ref_file, demean3_ref_file requires: warp_files
+  demean1_ref_file: "path" # Optional Mutually exclusive with: avg_files, avg_lts_files, avg_ref_file, demean2_ref_file, demean3_ref_file requires: warp_files
+  demean2_ref_file: "path" # Optional Mutually exclusive with: avg_files, avg_lts_files, avg_ref_file, demean1_ref_file, demean3_ref_file requires: warp_files
+  demean3_ref_file: "path" # Optional Mutually exclusive with: avg_files, avg_lts_files, avg_ref_file, demean1_ref_file, demean2_ref_file requires: warp_files
+  environ: {}
+  omp_core_val: 0
+  out_file: "path"
+  warp_files: ["path"] # Optional Mutually exclusive with: avg_files, avg_lts_files
+niftyreg_RegF3D:
+  aff_file: "path"
+  amc_flag: True
+  args: ''
+  be_val: 0.0
+  cpp_file: "path"
+  environ: {}
+  fbn2_val: (0,)
+  fbn_val: 0
+  flo_smooth_val: 0.0
+  flwth2_thr_val: (0,)
+  flwth_thr_val: 0.0
+  fmask_file: "path"
+  fupth2_thr_val: (0,)
+  fupth_thr_val: 0.0
+  incpp_file: "path"
+  jl_val: 0.0
+  kld2_flag: 0
+  kld_flag: True
+  le_val: 0.0
+  ln_val: 0
+  lncc2_val: (0,)
+  lncc_val: 0.0
+  lp_val: 0
+  maxit_val: 0
+  nmi_flag: True
+  no_app_jl_flag: True
+  noconj_flag: True
+  nopy_flag: True
+  nox_flag: True
+  noy_flag: True
+  noz_flag: True
+  omp_core_val: 0
+  pad_val: 0.0
+  pert_val: 0
+  rbn2_val: (0,)
+  rbn_val: 0
+  ref_smooth_val: 0.0
+  res_file: "path"
+  rlwth2_thr_val: (0,)
+  rlwth_thr_val: 0.0
+  rmask_file: "path"
+  rupth2_thr_val: (0,)
+  rupth_thr_val: 0.0
+  smooth_grad_val: 0.0
+  ssd2_flag: 0
+  ssd_flag: True
+  sx_val: 0.0
+  sy_val: 0.0
+  sz_val: 0.0
+  vel_flag: True
+  verbosity_off_flag: True
+niftyreg_RegJacobian:
+  args: ''
+  environ: {}
+  omp_core_val: 0
+  out_file: "path"
+  ref_file: "path"
+  type: "enumerate(('jac','jacL','jacM'))"
+niftyreg_RegMeasure:
+  args: ''
+  environ: {}
+  omp_core_val: 0
+  out_file: "path"
+niftyreg_RegResample:
+  args: ''
+  environ: {}
+  inter_val: "enumerate(('NN','LIN','CUB','SINC'))"
+  omp_core_val: 0
+  out_file: "path"
+  pad_val: 0.0
+  psf_alg: 0
+  psf_flag: True
+  tensor_flag: True
+  trans_file: "path"
+  type: "enumerate(('res','blank'))"
+  verbosity_off_flag: True
+niftyreg_RegTools:
+  add_val: "path"
+  args: ''
+  bin_flag: True
+  chg_res_val: (0,)
+  div_val: "path"
+  down_flag: True
+  environ: {}
+  inter_val: "enumerate(('NN','LIN','CUB','SINC'))"
+  iso_flag: True
+  mask_file: "path"
+  mul_val: "path"
+  noscl_flag: True
+  omp_core_val: 0
+  out_file: "path"
+  rms_val: "path"
+  smo_g_val: (0,)
+  smo_s_val: (0,)
+  sub_val: "path"
+  thr_val: 0.0
+niftyreg_RegTransform:
+  aff_2_rig_input: "path" # Optional Mutually exclusive with: def_input, disp_input, flow_input, comp_input, upd_s_form_input, inv_aff_input, inv_nrr_input, half_input, make_aff_input, flirt_2_nr_input
+  args: ''
+  comp_input: "path" # Optional Mutually exclusive with: def_input, disp_input, flow_input, upd_s_form_input, inv_aff_input, inv_nrr_input, half_input, make_aff_input, aff_2_rig_input, flirt_2_nr_input requires: comp_input2
+  comp_input2: "path"
+  def_input: "path" # Optional Mutually exclusive with: disp_input, flow_input, comp_input, upd_s_form_input, inv_aff_input, inv_nrr_input, half_input, make_aff_input, aff_2_rig_input, flirt_2_nr_input
+  disp_input: "path" # Optional Mutually exclusive with: def_input, flow_input, comp_input, upd_s_form_input, inv_aff_input, inv_nrr_input, half_input, make_aff_input, aff_2_rig_input, flirt_2_nr_input
+  environ: {}
+  flirt_2_nr_input: (0,) # Optional Mutually exclusive with: def_input, disp_input, flow_input, comp_input, upd_s_form_input, inv_aff_input, inv_nrr_input, half_input, make_aff_input, aff_2_rig_input
+  flow_input: "path" # Optional Mutually exclusive with: def_input, disp_input, comp_input, upd_s_form_input, inv_aff_input, inv_nrr_input, half_input, make_aff_input, aff_2_rig_input, flirt_2_nr_input
+  half_input: "path" # Optional Mutually exclusive with: def_input, disp_input, flow_input, comp_input, upd_s_form_input, inv_aff_input, inv_nrr_input, make_aff_input, aff_2_rig_input, flirt_2_nr_input
+  inv_aff_input: "path" # Optional Mutually exclusive with: def_input, disp_input, flow_input, comp_input, upd_s_form_input, inv_nrr_input, half_input, make_aff_input, aff_2_rig_input, flirt_2_nr_input
+  inv_nrr_input: (0,) # Optional Mutually exclusive with: def_input, disp_input, flow_input, comp_input, upd_s_form_input, inv_aff_input, half_input, make_aff_input, aff_2_rig_input, flirt_2_nr_input
+  make_aff_input: (0,) # Optional Mutually exclusive with: def_input, disp_input, flow_input, comp_input, upd_s_form_input, inv_aff_input, inv_nrr_input, half_input, aff_2_rig_input, flirt_2_nr_input
+  omp_core_val: 0
+  out_file: "path"
+  ref1_file: "path"
+  ref2_file: "path"
+  upd_s_form_input: "path" # Optional Mutually exclusive with: def_input, disp_input, flow_input, comp_input, inv_aff_input, inv_nrr_input, half_input, make_aff_input, aff_2_rig_input, flirt_2_nr_input requires: upd_s_form_input2
+  upd_s_form_input2: "path"

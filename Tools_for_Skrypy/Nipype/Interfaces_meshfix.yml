@@ -1,0 +1,31 @@
+meshfix_MeshFix:
+  args: ''
+  cut_inner: 0
+  cut_outer: 0
+  decouple_inin: 0
+  decouple_outin: 0
+  decouple_outout: 0
+  dilation: 0
+  dont_clean: True
+  environ: {}
+  epsilon_angle: 0.0
+  finetuning_distance: 0.0
+  finetuning_inwards: True
+  finetuning_outwards: True # Optional Mutually exclusive with: finetuning_inwards requires: finetuning_distance, finetuning_substeps
+  finetuning_substeps: 0
+  in_file2: "path"
+  join_closest_components: True # Optional Mutually exclusive with: join_closest_components
+  join_overlapping_largest_components: True # Optional Mutually exclusive with: join_closest_components
+  laplacian_smoothing_steps: 0
+  number_of_biggest_shells: 0
+  out_filename: "path"
+  output_type: "enumerate(('stl','msh','wrl','vrml','fs','off'))"
+  quiet_mode: True
+  remove_handles: True
+  save_as_freesurfer_mesh: True # Optional Mutually exclusive with: save_as_vrml, save_as_stl
+  save_as_stl: True # Optional Mutually exclusive with: save_as_vrml, save_as_freesurfer_mesh
+  save_as_vrml: True # Optional Mutually exclusive with: save_as_stl, save_as_freesurfer_mesh
+  set_intersections_to_one: True
+  uniform_remeshing_steps: 0
+  uniform_remeshing_vertices: 0
+  x_shift: 0

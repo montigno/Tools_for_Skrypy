@@ -1,0 +1,74 @@
+io_BIDSDataGrabber:
+  extra_derivatives: ["path"]
+  load_layout: "path"
+  output_query: {}
+  raise_on_empty: True
+io_DataFinder:
+  ignore_regexes: ['']
+  match_regex: ''
+  max_depth: 0
+  min_depth: 0
+  unpack_single: True
+io_DataGrabber:
+  base_directory: "path"
+  drop_blank_outputs: True
+  raise_on_empty: True
+  template_args: [[{}]]
+io_DataSink:
+  _outputs: {}
+  base_directory: ''
+  bucket: ''
+  container: ''
+  creds_path: ''
+  encrypt_bucket_keys: True
+  local_copy: ''
+  parameterization: True
+  regexp_substitutions: [(0,)]
+  remove_dest_dir: True
+  strip_dir: ''
+  substitutions: [(0,)]
+io_ExportFile:
+  check_extension: True
+  clobber: True
+io_FreeSurferSource:
+  hemi: "enumerate(('both','lh','rh'))"
+io_JSONFileGrabber:
+  defaults: {}
+  in_file: "path"
+io_JSONFileSink:
+  _outputs: {}
+  in_dict: {}
+  out_file: "path"
+io_S3DataGrabber:
+  anon: True
+  bucket_path: ''
+  local_directory: "path"
+  raise_on_empty: True
+  region: ''
+  template_args: [[{}]]
+io_SSHDataGrabber:
+  download_files: True
+  drop_blank_outputs: True
+  password: ''
+  raise_on_empty: True
+  ssh_log_to_file: ''
+  template_args: [[{}]]
+  template_expression: "enumerate(('fnmatch','regexp'))"
+  username: ''
+io_XNATSink:
+  config: "path" # Mandatory Mutually exclusive with: server
+  server: '' # Mandatory Mutually exclusive with: config requires: user, pwd
+  _outputs: {}
+  assessor_id: '' # Optional Mutually exclusive with: reconstruction_id
+  cache_dir: "path"
+  pwd: ''
+  reconstruction_id: '' # Optional Mutually exclusive with: assessor_id
+  share: True
+  user: ''
+io_XNATSource:
+  config: "path" # Mandatory Mutually exclusive with: server
+  server: '' # Mandatory Mutually exclusive with: config requires: user, pwd
+  cache_dir: "path"
+  pwd: ''
+  query_template_args: [[{}]]
+  user: ''

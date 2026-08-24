@@ -1,6 +1,6 @@
 import yaml
 
-module = 'dcmstack'
+module = 'dipy'
 
 fichier1_yaml = "/home/olivier/Documents/eclipse-workspace-2026/Tools_for_Skrypy/Nipype/Interfaces_{}.yml".format(module)
 fichier2_yaml = "/home/olivier/Applications/skrypy_venv/skrypy-pyqt5/NodeEditor/modules/Nipype/Interfaces_{}.yml".format(module)

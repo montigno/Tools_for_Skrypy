@@ -1,0 +1,24 @@
+nipy_ComputeMask:
+  M: 0.0
+  cc: True
+  m: 0.0
+  reference_volume: "path"
+nipy_EstimateContrast:
+  mask: "path"
+nipy_FitGLM:
+  drift_model: "enumerate(('Cosine','Polynomial','Blank'))"
+  hrf_model: "enumerate(('Canonical','Canonical With Derivative','FIR'))"
+  mask: "path"
+  method: "enumerate(('kalman','ols'))"
+  model: "enumerate(('ar1','spherical'))"
+  normalize_design_matrix: True
+  plot_design_matrix: True
+  save_residuals: True
+nipy_Similarity:
+  mask1: "path"
+  mask2: "path"
+  metric: "enumerate(('cc','cr','crl1','mi','nmi','slr'))"
+nipy_SpaceTimeRealigner:
+  slice_info: [0]
+  slice_times: "enumerate(('asc_alt_2','asc_alt_2_1','asc_alt_half','asc_alt_siemens','ascending','desc_alt_2','desc_alt_half','descending'))"
+  tr: 0.0

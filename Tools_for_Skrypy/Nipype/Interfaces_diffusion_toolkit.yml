@@ -1,0 +1,87 @@
+diffusion_toolkit_DTIRecon:
+  args: ''
+  b0_threshold: 0.0
+  environ: {}
+  image_orientation_vectors: 0.0
+  n_averages: 0
+  oblique_correction: True
+  out_prefix: ''
+  output_type: "enumerate(('nii','analyze','ni1','nii.gz'))"
+diffusion_toolkit_DTITracker:
+  angle_threshold: 0.0
+  angle_threshold_weight: 0.0
+  args: ''
+  environ: {}
+  input_data_prefix: ''
+  input_type: "enumerate(('nii','analyze','ni1','nii.gz'))"
+  invert_x: True
+  invert_y: True
+  invert_z: True
+  mask1_threshold: 0.0
+  mask2_file: "path"
+  mask2_threshold: 0.0
+  output_file: path
+  output_mask: "path"
+  primary_vector: "enumerate(('v2','v3'))"
+  random_seed: 0
+  step_length: 0.0
+  swap_xy: True
+  swap_yz: True
+  swap_zx: True
+  tensor_file: "path"
+  tracking_method: "enumerate(('fact','rk2','tl','sl'))"
+diffusion_toolkit_HARDIMat:
+  args: ''
+  environ: {}
+  image_info: "path"
+  image_orientation_vectors: 0.0
+  oblique_correction: True
+  odf_file: "path"
+  order: 0
+  out_file: "path"
+  reference_file: "path"
+diffusion_toolkit_ODFRecon:
+  args: ''
+  dsi: True
+  environ: {}
+  filter: True
+  image_orientation_vectors: 0.0
+  oblique_correction: True
+  out_prefix: ''
+  output_entropy: True
+  output_type: "enumerate(('nii','analyze','ni1','nii.gz'))"
+  sharpness: 0.0
+  subtract_background: True
+diffusion_toolkit_ODFTracker:
+  angle_threshold: 0.0
+  args: ''
+  disc: True
+  dsi: True
+  environ: {}
+  image_orientation_vectors: 0.0
+  input_data_prefix: ''
+  input_output_type: "enumerate(('nii','analyze','ni1','nii.gz'))"
+  invert_x: True
+  invert_y: True
+  invert_z: True
+  limit: 0
+  mask1_threshold: 0.0
+  mask2_file: "path"
+  mask2_threshold: 0.0
+  out_file: "path"
+  random_seed: 0
+  runge_kutta2: True
+  slice_order: 0
+  step_length: 0.0
+  swap_xy: True
+  swap_yz: True
+  swap_zx: True
+  voxel_order: "enumerate(('RAS','RPS','RAI','RPI','LAI','LAS','LPS','LPI'))"
+diffusion_toolkit_SplineFilter:
+  args: ''
+  environ: {}
+  output_file: path
+diffusion_toolkit_TrackMerge:
+  args: ''
+  environ: {}
+  output_file: path

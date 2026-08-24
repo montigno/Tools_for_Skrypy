@@ -1,0 +1,11 @@
+camino2trackvis_Camino2Trackvis:
+  args: ''
+  environ: {}
+  min_length: 0.0
+  nifti_file: "path"
+  out_file: "path"
+camino2trackvis_Trackvis2Camino:
+  append_file: "path"
+  args: ''
+  environ: {}
+  out_file: "path"

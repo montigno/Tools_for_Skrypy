@@ -1,0 +1,69 @@
+cmtk_AverageNetworks:
+  group_id: ''
+  out_gexf_groupavg: "path"
+  out_gpickled_groupavg: "path"
+  resolution_network_file: "path"
+cmtk_CFFConverter:
+  creator: ''
+  data_files: ["path"]
+  description: ''
+  email: ''
+  gifti_labels: ["path"]
+  gifti_surfaces: ["path"]
+  gpickled_networks: ["path"]
+  graphml_networks: ["path"]
+  license: ''
+  nifti_volumes: ["path"]
+  out_file: "path"
+  publisher: ''
+  references: ''
+  relation: ''
+  rights: ''
+  script_files: ["path"]
+  species: ''
+  timeseries_files: ["path"]
+  title: ''
+  tract_files: ["path"]
+cmtk_CreateMatrix:
+  count_region_intersections: True
+  out_endpoint_array_name: "path"
+  out_fiber_length_std_matrix_mat_file: "path"
+  out_intersection_matrix_mat_file: "path"
+  out_matrix_file: "path"
+  out_matrix_mat_file: "path"
+  out_mean_fiber_length_matrix_mat_file: "path"
+  out_median_fiber_length_matrix_mat_file: "path"
+cmtk_CreateNodes:
+  out_filename: "path"
+cmtk_MergeCNetworks:
+  out_file: "path"
+cmtk_NetworkBasedStatistic:
+  edge_key: ''
+  node_position_network: "path"
+  number_of_permutations: 0
+  out_nbs_network: "path"
+  out_nbs_pval_network: "path"
+  t_tail: "enumerate(('left','right','both'))"
+  threshold: 0.0
+cmtk_NetworkXMetrics:
+  compute_clique_related_measures: True
+  out_edge_metrics_matlab: "path"
+  out_global_metrics_matlab: "path"
+  out_k_core: "path"
+  out_k_crust: "path"
+  out_k_shell: "path"
+  out_node_metrics_matlab: "path"
+  out_pickled_extra_measures: "path"
+  treat_as_weighted_graph: True
+cmtk_Parcellate:
+  dilation: True
+  freesurfer_dir: "path"
+  out_roi_file: "path"
+  parcellation_name: "enumerate(('scale33','scale60','scale125','scale250','scale500'))"
+  subjects_dir: "path"
+cmtk_ROIGen:
+  LUT_file: "path" # Optional Mutually exclusive with: use_freesurfer_LUT
+  freesurfer_dir: "path"
+  out_dict_file: "path"
+  out_roi_file: "path"
+  use_freesurfer_LUT: True # Optional Mutually exclusive with: LUT_file

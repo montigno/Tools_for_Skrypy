@@ -1,0 +1,142 @@
+niftyfit_DwiTool:
+  args: ''
+  b0_file: "path"
+  ball_flag: True # Optional Mutually exclusive with: mono_flag, ivim_flag, dti_flag, dti_flag2, ballv_flag, nod_flag, nodv_flag
+  ballv_flag: True # Optional Mutually exclusive with: mono_flag, ivim_flag, dti_flag, dti_flag2, ball_flag, nod_flag, nodv_flag
+  bvec_file: "path"
+  diso_val: 0.0
+  dpr_val: 0.0
+  dti_flag: True # Optional Mutually exclusive with: mono_flag, ivim_flag, dti_flag2, ball_flag, ballv_flag, nod_flag, nodv_flag
+  dti_flag2: True # Optional Mutually exclusive with: mono_flag, ivim_flag, dti_flag, ball_flag, ballv_flag, nod_flag, nodv_flag
+  environ: {}
+  famap_file: "path"
+  ivim_flag: True # Optional Mutually exclusive with: mono_flag, dti_flag, dti_flag2, ball_flag, ballv_flag, nod_flag, nodv_flag
+  logdti_file: "path"
+  mask_file: "path"
+  mcmap_file: "path"
+  mdmap_file: "path"
+  mono_flag: True # Optional Mutually exclusive with: ivim_flag, dti_flag, dti_flag2, ball_flag, ballv_flag, nod_flag, nodv_flag
+  nod_flag: True # Optional Mutually exclusive with: mono_flag, ivim_flag, dti_flag, dti_flag2, ball_flag, ballv_flag, nodv_flag
+  nodv_flag: True # Optional Mutually exclusive with: mono_flag, ivim_flag, dti_flag, dti_flag2, ball_flag, ballv_flag, nod_flag
+  rgbmap_file: "path"
+  syn_file: "path"
+  v1map_file: "path"
+niftyfit_FitAsl:
+  args: ''
+  cbf_file: "path"
+  dpld: 0.0
+  dt_inv2: 0.0
+  eff: 0.0
+  environ: {}
+  error_file: "path"
+  gm_plasma: 0.0
+  gm_t1: 0.0
+  gm_ttt: 0.0
+  ir_output: "path"
+  ir_volume: "path"
+  ldd: 0.0
+  m0map: "path"
+  m0mape: "path"
+  mask: "path"
+  mul: 0.0
+  mulgm: True
+  out: 0.0
+  pasl: True
+  pcasl: True
+  plasma_coeff: 0.0
+  pld: 0.0
+  pv0: 0
+  pv2: 0
+  pv3: (0,)
+  pv_threshold: True
+  seg: "path"
+  segstyle: True
+  sig: True
+  syn_file: "path"
+  t1_art_cmp: 0.0
+  t1map: "path"
+  t_inv1: 0.0
+  t_inv2: 0.0
+  wm_plasma: 0.0
+  wm_t1: 0.0
+  wm_ttt: 0.0
+niftyfit_FitDwi:
+  acceptance: 0.0
+  args: ''
+  ball_flag: True # Optional Mutually exclusive with: mono_flag, ivim_flag, dti_flag, ballv_flag, nod_flag, nodv_flag
+  ballv_flag: True # Optional Mutually exclusive with: mono_flag, ivim_flag, dti_flag, ball_flag, nod_flag, nodv_flag
+  cov_file: "path"
+  csf_t2_val: 0.0
+  diso_val: 0.0
+  dpr_val: 0.0
+  dti_flag: True # Optional Mutually exclusive with: mono_flag, ivim_flag, ball_flag, ballv_flag, nod_flag, nodv_flag
+  environ: {}
+  error_file: "path"
+  famap_file: "path"
+  gn_flag: True # Optional Mutually exclusive with: wls_flag
+  ivim_flag: True # Optional Mutually exclusive with: mono_flag, dti_flag, ball_flag, ballv_flag, nod_flag, nodv_flag
+  lm_vals: (0,)
+  mask_file: "path"
+  maxit_val: 0
+  mcmap_file: "path"
+  mcmaxit: 0
+  mcout: "path"
+  mcsamples: 0
+  mdmap_file: "path"
+  mono_flag: True # Optional Mutually exclusive with: ivim_flag, dti_flag, ball_flag, ballv_flag, nod_flag, nodv_flag
+  nod_flag: True # Optional Mutually exclusive with: mono_flag, ivim_flag, dti_flag, ball_flag, ballv_flag, nodv_flag
+  nodiff_file: "path"
+  nodv_flag: True # Optional Mutually exclusive with: mono_flag, ivim_flag, dti_flag, ball_flag, ballv_flag, nod_flag
+  perf_thr: 0.0
+  prior_file: "path"
+  res_file: "path"
+  rgbmap_file: "path"
+  rot_sform_flag: 0
+  slice_no: 0
+  swls_val: 0.0
+  syn_file: "path"
+  te_file: "path" # Optional Mutually exclusive with: te_file
+  te_value: "path" # Optional Mutually exclusive with: te_file
+  ten_type: "enumerate(('lower-tri','diag-off-diag'))"
+  tenmap2_file: "path"
+  tenmap_file: "path"
+  v1map_file: "path"
+  vb_flag: True
+  voxel: (0,)
+  wls_flag: True # Optional Mutually exclusive with: gn_flag
+  wm_t2_val: 0.0
+niftyfit_FitQt1:
+  acceptance: 0.0
+  args: ''
+  b1map: "path"
+  comp_file: "path"
+  environ: {}
+  error_file: "path"
+  flips: [0.0]
+  flips_list: "path"
+  gn_flag: True
+  ir_flag: True
+  lm_val: (0,)
+  m0map_file: "path"
+  mask: "path"
+  maxit: 0
+  mcmap_file: "path"
+  mcmaxit: 0
+  mcout: "path"
+  mcsamples: 0
+  nb_comp: 0
+  prior: "path"
+  res_file: "path"
+  slice_no: 0
+  spgr: True
+  sr_flag: True
+  syn_file: "path"
+  t1_list: "path"
+  t1map_file: "path"
+  t1max: 0.0
+  t1min: 0.0
+  te_value: 0.0
+  tis: [0.0]
+  tis_list: "path"
+  tr_value: 0.0
+  voxel: (0,)

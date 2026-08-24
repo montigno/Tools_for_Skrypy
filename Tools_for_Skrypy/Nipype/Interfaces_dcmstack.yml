@@ -1,0 +1,30 @@
+dcmstack_CopyMeta:
+  exclude_classes: ['']
+  include_classes: ['']
+dcmstack_DcmStack:
+  embed_meta: True
+  exclude_regexes: ['']
+  force_read: True
+  include_regexes: ['']
+  out_ext: ''
+  out_format: ''
+  out_path: "path"
+dcmstack_GroupAndStack:
+  embed_meta: True
+  exclude_regexes: ['']
+  force_read: True
+  include_regexes: ['']
+  out_ext: ''
+  out_format: ''
+  out_path: "path"
+dcmstack_MergeNifti:
+  merge_dim: 0
+  out_ext: ''
+  out_format: ''
+  out_path: "path"
+  sort_order: ['']
+dcmstack_SplitNifti:
+  out_ext: ''
+  out_format: ''
+  out_path: "path"
+  split_dim: 0

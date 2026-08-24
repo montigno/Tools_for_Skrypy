@@ -1,0 +1,9 @@
+vista_Vnifti2Image:
+  args: ''
+  attributes: "path"
+  environ: {}
+  out_file: "path"
+vista_VtoMat:
+  args: ''
+  environ: {}
+  out_file: "path"

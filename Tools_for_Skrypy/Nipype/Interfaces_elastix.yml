@@ -1,0 +1,29 @@
+elastix_AnalyzeWarp:
+  args: ''
+  environ: {}
+  jac: ''
+  jacmat: ''
+  moving_image: "path"
+  num_threads: 0
+  points: ''
+elastix_ApplyWarp:
+  args: ''
+  environ: {}
+  num_threads: 0
+elastix_EditTransform:
+  interpolation: "enumerate(('cubic','linear','nearest'))"
+  output_file: path
+  output_format: "enumerate(('nii.gz','nii','mhd','hdr','vtk'))"
+  output_type: "enumerate(('float','unsigned char','unsigned short','short','unsigned long','long','double'))"
+  reference_image: "path"
+elastix_PointsWarp:
+  args: ''
+  environ: {}
+  num_threads: 0
+elastix_Registration:
+  args: ''
+  environ: {}
+  fixed_mask: "path"
+  initial_transform: "path"
+  moving_mask: "path"
+  num_threads: 0

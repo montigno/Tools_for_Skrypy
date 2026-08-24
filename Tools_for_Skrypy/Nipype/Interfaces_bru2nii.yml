@@ -1,0 +1,8 @@
+bru2nii_Bru2:
+  actual_size: True
+  append_protocol_name: True
+  args: ''
+  compress: True
+  environ: {}
+  force_conversion: True
+  output_filename: ''

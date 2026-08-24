@@ -1,0 +1,101 @@
+dtitk_AffScalarVol:
+  args: ''
+  deformation: (0,) # Optional Mutually exclusive with: transform
+  environ: {}
+  euler: (0,) # Optional Mutually exclusive with: transform
+  interpolation: "enumerate(('trilinear','NN'))"
+  out_file: "path"
+  target: "path" # Optional Mutually exclusive with: transform
+  transform: "path" # Optional Mutually exclusive with: target, translation, euler, deformation
+  translation: (0,) # Optional Mutually exclusive with: transform
+dtitk_AffSymTensor3DVol:
+  args: ''
+  deformation: (0,) # Optional Mutually exclusive with: transform
+  environ: {}
+  euler: (0,) # Optional Mutually exclusive with: transform
+  interpolation: "enumerate(('LEI','EI'))"
+  out_file: "path"
+  reorient: "enumerate(('PPD','NO','FS'))"
+  target: "path" # Optional Mutually exclusive with: transform
+  transform: "path" # Optional Mutually exclusive with: target, translation, euler, deformation
+  translation: (0,) # Optional Mutually exclusive with: transform
+dtitk_Affine:
+  args: ''
+  environ: {}
+  initialize_xfm: "path"
+dtitk_BinThresh:
+  args: ''
+  environ: {}
+  out_file: "path"
+dtitk_ComposeXfm:
+  args: ''
+  environ: {}
+  out_file: "path"
+dtitk_Diffeo:
+  args: ''
+  environ: {}
+  fixed_file: "path"
+  mask_file: "path"
+  moving_file: "path"
+dtitk_DiffeoScalarVol:
+  args: ''
+  environ: {}
+  flip: (0,)
+  interpolation: "enumerate(('trilinear','NN'))"
+  out_file: "path"
+  resampling_type: "enumerate(('backward','forward'))"
+  target: "path" # Optional Mutually exclusive with: voxel_size
+  voxel_size: (0,) # Optional Mutually exclusive with: target
+dtitk_DiffeoSymTensor3DVol:
+  args: ''
+  df: ''
+  environ: {}
+  flip: (0,)
+  interpolation: "enumerate(('LEI','EI'))"
+  out_file: "path"
+  reorient: "enumerate(('PPD','FS'))"
+  resampling_type: "enumerate(('backward','forward'))"
+  target: "path" # Optional Mutually exclusive with: voxel_size
+  voxel_size: (0,) # Optional Mutually exclusive with: target
+dtitk_Rigid:
+  args: ''
+  environ: {}
+  initialize_xfm: "path"
+dtitk_SVAdjustVoxSp:
+  args: ''
+  environ: {}
+  origin: (0,) # Optional Mutually exclusive with: target_file
+  out_file: "path"
+  target_file: "path" # Optional Mutually exclusive with: voxel_size, origin
+  voxel_size: (0,) # Optional Mutually exclusive with: target_file
+dtitk_SVResample:
+  align: "enumerate(('center','origin'))"
+  args: ''
+  array_size: (0,) # Optional Mutually exclusive with: target_file
+  environ: {}
+  origin: (0,) # Optional Mutually exclusive with: target_file
+  out_file: "path"
+  target_file: "path" # Optional Mutually exclusive with: array_size, voxel_size, origin
+  voxel_size: (0,) # Optional Mutually exclusive with: target_file
+dtitk_TVAdjustVoxSp:
+  args: ''
+  environ: {}
+  origin: (0,) # Optional Mutually exclusive with: target_file
+  out_file: "path"
+  target_file: "path" # Optional Mutually exclusive with: voxel_size, origin
+  voxel_size: (0,) # Optional Mutually exclusive with: target_file
+dtitk_TVResample:
+  align: "enumerate(('center','origin'))"
+  args: ''
+  array_size: (0,) # Optional Mutually exclusive with: target_file
+  environ: {}
+  interpolation: "enumerate(('LEI','EI'))"
+  origin: (0,) # Optional Mutually exclusive with: target_file
+  out_file: "path"
+  target_file: "path" # Optional Mutually exclusive with: array_size, voxel_size, origin
+  voxel_size: (0,) # Optional Mutually exclusive with: target_file
+dtitk_TVtool:
+  args: ''
+  environ: {}
+  in_flag: "enumerate(('fa','tr','ad','rd','pd','rgb'))"
+  out_file: "path"

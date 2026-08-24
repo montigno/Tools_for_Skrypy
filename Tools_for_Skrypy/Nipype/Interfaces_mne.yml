@@ -1,0 +1,6 @@
+mne_WatershedBEM:
+  args: ''
+  atlas_mode: True
+  environ: {}
+  overwrite: True
+  volume: "enumerate(('T1','aparc+aseg','aseg','brain','orig','brainmask','ribbon'))"

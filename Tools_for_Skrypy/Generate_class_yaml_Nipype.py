@@ -9,26 +9,26 @@ import re
 
 class CodeGenerator:
 
-     def __init__(self, indentation=' '*4):
-         self.indentation = indentation
-         self.level = 0
-         self.code = ''
+    def __init__(self, indentation=' '*4):
+        self.indentation = indentation
+        self.level = 0
+        self.code = ''
 
-     def indent(self):
-         self.level += 1
+    def indent(self):
+        self.level += 1
 
-     def dedent(self):
-         if self.level > 0:
-             self.level -= 1
+    def dedent(self):
+        if self.level > 0:
+            self.level -= 1
 
-     def __add__(self, value):
-         temp = CodeGenerator(indentation=self.indentation)
-         temp.level = self.level
-         temp.code = str(self) + ''.join([self.indentation for i in range(0, self.level)]) + str(value)
-         return temp
+    def __add__(self, value):
+        temp = CodeGenerator(indentation=self.indentation)
+        temp.level = self.level
+        temp.code = str(self) + ''.join([self.indentation for i in range(0, self.level)]) + str(value)
+        return temp
 
-     def __str__(self):
-         return str(self.code)
+    def __str__(self):
+        return str(self.code)
 
 def detectMutuallyExclusive(docstr):
     if 'mutually_exclusive' in docstr:
@@ -40,8 +40,9 @@ def detectMutuallyExclusive2(docstr):
     if 'mutually_exclusive' in docstr:
         return docstr[docstr.index('mutually_exclusive') + 20:]
     return None
-    
+
 def initial_values(line, mut_exc):
+    # print('line=', line)
     br = line[line.index('(') + 1:line.index(')')]
     value_init, type_init = '{}', '{}'
 
@@ -61,7 +62,7 @@ def initial_values(line, mut_exc):
             value = '{}'
             type = 'dict'
         elif 'pathlike' in br:
-            value = 'path'
+            value = '"path"'
             type = 'None'
         elif 'boolean' in br:
             value = 'True'
@@ -77,15 +78,15 @@ def initial_values(line, mut_exc):
             type = 'int'
         return value, type
 
-    if "’ or ‘" in br or "\' or \'" in  br:
+    if ("’ or ‘" in br or "\' or \'" in br):
         value_init_tmp = re.findall(r"""["']([^"']*)["']""", br)
         value_init = []
         for vi in value_init_tmp:
             if vi not in value_init:
                 value_init.append(vi)
         value_init = "','".join(value_init)
-        value_init = 'enumerate((\'' + value_init + '\'))'
-    elif 'list of items which are a list of items which are' in br:
+        value_init = '"enumerate((\'' + value_init + '\'))"'
+    if 'list of items which are a list of items which are' in br:
         gv = get_value(br)
         value_init = "[[" + gv[0]+ "]]"
         type_init = "list[list[{}]]".format(gv[1])
@@ -93,6 +94,18 @@ def initial_values(line, mut_exc):
         gv = get_value(br)
         value_init = "[" + gv[0]+ "]"
         type_init = "list[{}]".format(gv[1])
+    elif 'a tuple of the form' in br and 'default value:' in line:
+        print('tuple')
+        sub_br = br[br.index('default value:')]
+    elif ("’ or ‘" in br or "\' or \'" in br):
+        value_init_tmp = re.findall(r"""["']([^"']*)["']""", br)
+        value_init = []
+        for vi in value_init_tmp:
+            if vi not in value_init:
+                value_init.append(vi)
+        value_init = "','".join(value_init)
+        value_init = '"enumerate((\'' + value_init + '\'))"'
+        type_init = 'enumerate'
     else:
         gv = get_value(br)
         value_init = gv[0]

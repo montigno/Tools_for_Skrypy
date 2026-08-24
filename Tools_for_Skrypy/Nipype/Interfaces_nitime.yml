@@ -1,0 +1,10 @@
+nitime_CoherenceAnalyzer:
+  NFFT: 0
+  TR: 0.0
+  figure_type: "enumerate(('matrix','network'))"
+  frequency_range: ''
+  in_TS: ''
+  in_file: "path"
+  n_overlap: 0
+  output_csv_file: "path"
+  output_figure_file: "path"

@@ -1,0 +1,1342 @@
+fsl_AR1Image:
+  args: ''
+  dimension: "enumerate(('T','X','Y','Z'))"
+  environ: {}
+  internal_datatype: "enumerate(('float','char','int','short','double','input'))"
+  nan2zeros: True
+  out_file: "path"
+  output_datatype: "enumerate(('float','char','int','short','double','input'))"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_ApplyMask:
+  args: ''
+  environ: {}
+  internal_datatype: "enumerate(('float','char','int','short','double','input'))"
+  nan2zeros: True
+  out_file: "path"
+  output_datatype: "enumerate(('float','char','int','short','double','input'))"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_ApplyTOPUP:
+  args: ''
+  datatype: "enumerate(('char','short','int','float','double'))"
+  environ: {}
+  in_index: [0]
+  in_topup_fieldcoef: "path"
+  in_topup_movpar: "path"
+  interp: "enumerate(('trilinear','spline'))"
+  method: "enumerate(('jac','lsr'))"
+  out_corrected: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_ApplyWarp:
+  abswarp: True # Optional Mutually exclusive with: relwarp
+  args: ''
+  datatype: "enumerate(('char','short','int','float','double'))"
+  environ: {}
+  field_file: "path"
+  interp: "enumerate(('nn','trilinear','sinc','spline'))"
+  mask_file: "path"
+  out_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  postmat: "path"
+  premat: "path"
+  relwarp: True # Optional Mutually exclusive with: abswarp
+  superlevel: 0
+  supersample: True
+fsl_ApplyXFM:
+  angle_rep: "enumerate(('quaternion','euler'))"
+  apply_isoxfm: 0.0 # Optional Mutually exclusive with: apply_xfm
+  apply_xfm: True
+  args: ''
+  bbrslope: 0.0
+  bbrtype: "enumerate(('signed','global_abs','local_abs'))"
+  bgvalue: 0.0
+  bins: 0
+  coarse_search: 0
+  cost: "enumerate(('mutualinfo','corratio','normcorr','normmi','leastsq','labeldiff','bbr'))"
+  cost_func: "enumerate(('mutualinfo','corratio','normcorr','normmi','leastsq','labeldiff','bbr'))"
+  datatype: "enumerate(('char','short','int','float','double'))"
+  display_init: True
+  dof: 0
+  echospacing: 0.0
+  environ: {}
+  fieldmap: "path"
+  fieldmapmask: "path"
+  fine_search: 0
+  force_scaling: True
+  in_matrix_file: "path"
+  in_weight: "path"
+  interp: "enumerate(('trilinear','nearestneighbour','sinc','spline'))"
+  min_sampling: 0.0
+  no_clamp: True
+  no_resample: True
+  no_resample_blur: True
+  no_search: True
+  out_file: "path"
+  out_log: "path"
+  out_matrix_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  padding_size: 0
+  pedir: 0
+  ref_weight: "path"
+  rigid2D: True
+  save_log: True
+  schedule: "path"
+  searchr_x: 0
+  searchr_y: 0
+  searchr_z: 0
+  sinc_width: 0
+  sinc_window: "enumerate(('rectangular','hanning','blackman'))"
+  uses_qform: True
+  verbose: 0
+  wm_seg: "path"
+  wmcoords: "path"
+  wmnorms: "path"
+fsl_AvScale:
+  all_param: True
+  args: ''
+  environ: {}
+  mat_file: "path"
+  ref_file: "path"
+fsl_B0Calc:
+  args: ''
+  chi_air: 0.0
+  compute_xyz: True
+  delta: 0.0
+  directconv: True
+  environ: {}
+  extendboundary: 0.0
+  out_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  x_b0: 0.0 # Optional Mutually exclusive with: xyz_b0
+  x_grad: 0.0
+  xyz_b0: (0,) # Optional Mutually exclusive with: x_b0, y_b0, z_b0
+  y_b0: 0.0 # Optional Mutually exclusive with: xyz_b0
+  y_grad: 0.0
+  z_b0: 0.0 # Optional Mutually exclusive with: xyz_b0
+  z_grad: 0.0
+fsl_BEDPOSTX:
+  all_ard: True # Optional Mutually exclusive with: no_ard, all_ard
+  args: ''
+  burn_in: 0
+  burn_in_no_ard: 0
+  cnlinear: True # Optional Mutually exclusive with: no_spat, non_linear, cnlinear
+  environ: {}
+  f0_ard: True # Optional Mutually exclusive with: f0_noard, f0_ard, all_ard
+  f0_noard: True # Optional Mutually exclusive with: f0_noard, f0_ard
+  force_dir: True
+  fudge: 0
+  grad_dev: "path"
+  gradnonlin: True
+  logdir: "path"
+  model: ''
+  n_jumps: 0
+  no_ard: True # Optional Mutually exclusive with: no_ard, all_ard
+  no_spat: True # Optional Mutually exclusive with: no_spat, non_linear, cnlinear
+  non_linear: True # Optional Mutually exclusive with: no_spat, non_linear, cnlinear
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  rician: True
+  sample_every: 0
+  seed: 0
+  update_proposal_every: 0
+  use_gpu: True
+fsl_BEDPOSTX5:
+  all_ard: True # Optional Mutually exclusive with: no_ard, all_ard
+  args: ''
+  burn_in: 0
+  burn_in_no_ard: 0
+  cnlinear: True # Optional Mutually exclusive with: no_spat, non_linear, cnlinear
+  environ: {}
+  f0_ard: True # Optional Mutually exclusive with: f0_noard, f0_ard, all_ard
+  f0_noard: True # Optional Mutually exclusive with: f0_noard, f0_ard
+  force_dir: True
+  fudge: 0
+  grad_dev: "path"
+  gradnonlin: True
+  logdir: "path"
+  model: ''
+  n_jumps: 0
+  no_ard: True # Optional Mutually exclusive with: no_ard, all_ard
+  no_spat: True # Optional Mutually exclusive with: no_spat, non_linear, cnlinear
+  non_linear: True # Optional Mutually exclusive with: no_spat, non_linear, cnlinear
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  rician: True
+  sample_every: 0
+  seed: 0
+  update_proposal_every: 0
+  use_gpu: True
+fsl_BET:
+  args: ''
+  center: 0
+  environ: {}
+  frac: 0.0
+  functional: True # Optional Mutually exclusive with: functional, reduce_bias, robust, padding, remove_eyes, surfaces, t2_guided
+  mask: True
+  mesh: True
+  no_output: True
+  out_file: "path"
+  outline: True
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  padding: True # Optional Mutually exclusive with: functional, reduce_bias, robust, padding, remove_eyes, surfaces, t2_guided
+  radius: 0
+  reduce_bias: True # Optional Mutually exclusive with: functional, reduce_bias, robust, padding, remove_eyes, surfaces, t2_guided
+  remove_eyes: True # Optional Mutually exclusive with: functional, reduce_bias, robust, padding, remove_eyes, surfaces, t2_guided
+  robust: True # Optional Mutually exclusive with: functional, reduce_bias, robust, padding, remove_eyes, surfaces, t2_guided
+  skull: True
+  surfaces: True # Optional Mutually exclusive with: functional, reduce_bias, robust, padding, remove_eyes, surfaces, t2_guided
+  t2_guided: "path" # Optional Mutually exclusive with: functional, reduce_bias, robust, padding, remove_eyes, surfaces, t2_guided
+  threshold: True
+  vertical_gradient: 0.0
+fsl_BinaryMaths:
+  operand_file: "path" # Mandatory Mutually exclusive with: operand_value
+  operand_value: 0.0 # Mandatory Mutually exclusive with: operand_file
+  args: ''
+  environ: {}
+  internal_datatype: "enumerate(('float','char','int','short','double','input'))"
+  nan2zeros: True
+  out_file: "path"
+  output_datatype: "enumerate(('float','char','int','short','double','input'))"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_ChangeDataType:
+  args: ''
+  environ: {}
+  internal_datatype: "enumerate(('float','char','int','short','double','input'))"
+  nan2zeros: True
+  out_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_Cluster:
+  args: ''
+  connectivity: 0
+  cope_file: "path"
+  dlh: 0.0
+  environ: {}
+  find_min: True
+  fractional: True
+  minclustersize: True
+  no_table: True
+  num_maxima: 0
+  out_index_file: "path"
+  out_localmax_txt_file: "path"
+  out_localmax_vol_file: "path"
+  out_max_file: "path"
+  out_mean_file: "path"
+  out_pval_file: "path"
+  out_size_file: "path"
+  out_threshold_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  peak_distance: 0.0
+  pthreshold: 0.0
+  std_space_file: "path"
+  use_mm: True
+  volume: 0
+  warpfield_file: "path"
+  xfm_file: "path"
+fsl_Complex:
+  args: ''
+  complex_cartesian: True # Optional Mutually exclusive with: real_polar, real_cartesian, complex_cartesian, complex_polar, complex_split, complex_merge
+  complex_in_file: "path"
+  complex_in_file2: "path"
+  complex_merge: True # Optional Mutually exclusive with: real_polar, real_cartesian, complex_cartesian, complex_polar, complex_split, complex_merge, start_vol, end_vol
+  complex_out_file: "path" # Optional Mutually exclusive with: complex_out_file, magnitude_out_file, phase_out_file, real_out_file, imaginary_out_file, real_polar, real_cartesian
+  complex_polar: True # Optional Mutually exclusive with: real_polar, real_cartesian, complex_cartesian, complex_polar, complex_split, complex_merge
+  complex_split: True # Optional Mutually exclusive with: real_polar, real_cartesian, complex_cartesian, complex_polar, complex_split, complex_merge
+  end_vol: 0
+  environ: {}
+  imaginary_in_file: "path"
+  imaginary_out_file: "path" # Optional Mutually exclusive with: complex_out_file, magnitude_out_file, phase_out_file, real_polar, complex_cartesian, complex_polar, complex_split, complex_merge
+  magnitude_in_file: "path"
+  magnitude_out_file: "path" # Optional Mutually exclusive with: complex_out_file, real_out_file, imaginary_out_file, real_cartesian, complex_cartesian, complex_polar, complex_split, complex_merge
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  phase_in_file: "path"
+  phase_out_file: "path" # Optional Mutually exclusive with: complex_out_file, real_out_file, imaginary_out_file, real_cartesian, complex_cartesian, complex_polar, complex_split, complex_merge
+  real_cartesian: True # Optional Mutually exclusive with: real_polar, real_cartesian, complex_cartesian, complex_polar, complex_split, complex_merge
+  real_in_file: "path"
+  real_out_file: "path" # Optional Mutually exclusive with: complex_out_file, magnitude_out_file, phase_out_file, real_polar, complex_cartesian, complex_polar, complex_split, complex_merge
+  real_polar: True # Optional Mutually exclusive with: real_polar, real_cartesian, complex_cartesian, complex_polar, complex_split, complex_merge
+  start_vol: 0
+fsl_ContrastMgr:
+  args: ''
+  contrast_num: 0
+  environ: {}
+  fcon_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  suffix: ''
+fsl_ConvertWarp:
+  abswarp: True # Optional Mutually exclusive with: relwarp
+  args: ''
+  cons_jacobian: True
+  environ: {}
+  jacobian_max: 0.0
+  jacobian_min: 0.0
+  midmat: "path"
+  out_abswarp: True # Optional Mutually exclusive with: out_relwarp
+  out_file: "path"
+  out_relwarp: True # Optional Mutually exclusive with: out_abswarp
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  postmat: "path"
+  premat: "path"
+  relwarp: True # Optional Mutually exclusive with: abswarp
+  shift_direction: "enumerate(('y-','y','x','x-','z','z-'))"
+  shift_in_file: "path"
+  warp1: "path"
+  warp2: "path"
+fsl_ConvertXFM:
+  args: ''
+  concat_xfm: True # Optional Mutually exclusive with: invert_xfm, concat_xfm, fix_scale_skew requires: in_file2
+  environ: {}
+  fix_scale_skew: True # Optional Mutually exclusive with: invert_xfm, concat_xfm, fix_scale_skew requires: in_file2
+  in_file2: "path"
+  invert_xfm: True # Optional Mutually exclusive with: invert_xfm, concat_xfm, fix_scale_skew
+  out_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_CopyGeom:
+  args: ''
+  environ: {}
+  ignore_dims: True
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_DTIFit:
+  args: ''
+  base_name: ''
+  cni: "path"
+  environ: {}
+  gradnonlin: "path"
+  little_bit: True
+  max_x: 0
+  max_y: 0
+  max_z: 0
+  min_x: 0
+  min_y: 0
+  min_z: 0
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  save_tensor: True
+  sse: True
+fsl_DilateImage:
+  args: ''
+  environ: {}
+  internal_datatype: "enumerate(('float','char','int','short','double','input'))"
+  kernel_file: "path" # Optional Mutually exclusive with: kernel_size
+  kernel_shape: "enumerate(('3D','2D','box','boxv','gauss','sphere','file'))"
+  kernel_size: 0.0 # Optional Mutually exclusive with: kernel_file
+  nan2zeros: True
+  out_file: "path"
+  output_datatype: "enumerate(('float','char','int','short','double','input'))"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_DistanceMap:
+  args: ''
+  distance_map: "path"
+  environ: {}
+  invert_input: True
+  local_max_file: "path"
+  mask_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_EPIDeWarp:
+  args: ''
+  cleanup: True
+  environ: {}
+  epi_file: "path"
+  epidw: "path"
+  esp: 0.0
+  exf_file: "path"
+  exfdw: "path"
+  nocleanup: True
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  sigma: 0
+  tediff: 0.0
+  tmpdir: "path"
+  vsm: "path"
+fsl_Eddy:
+  args: ''
+  cnr_maps: True
+  dont_peas: True
+  dont_sep_offs_move: True
+  environ: {}
+  estimate_move_by_susceptibility: True
+  fep: True
+  field: "path"
+  field_mat: "path"
+  flm: "enumerate(('quadratic','linear','cubic'))"
+  fudge_factor: 0.0
+  fwhm: 0.0
+  in_topup_fieldcoef: "path"
+  in_topup_movpar: "path"
+  initrand: True
+  interp: "enumerate(('spline','trilinear'))"
+  is_shelled: True
+  json: "path" # Optional Mutually exclusive with: slice_order requires: mporder
+  mbs_ksp: 0
+  mbs_lambda: 0
+  mbs_niter: 0
+  method: "enumerate(('jac','lsr'))"
+  mporder: 0
+  multiband_factor: 0
+  multiband_offset: 0
+  niter: 0
+  num_threads: 0
+  nvoxhp: 0
+  out_base: "path"
+  outlier_nstd: 0
+  outlier_nvox: 0
+  outlier_pos: True
+  outlier_sqr: True
+  outlier_type: "enumerate(('sw','gw','both'))"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  repol: True
+  residuals: True
+  session: "path"
+  slice2vol_interp: "enumerate(('trilinear','spline'))"
+  slice2vol_lambda: 0
+  slice2vol_niter: 0
+  slice_order: "path" # Optional Mutually exclusive with: json requires: mporder
+  slm: "enumerate(('none','linear','quadratic'))"
+  use_cuda: True
+fsl_EddyCorrect:
+  args: ''
+  environ: {}
+  out_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_EddyQuad:
+  args: ''
+  base_name: ''
+  bvec_file: "path"
+  environ: {}
+  field: "path"
+  output_dir: ''
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  slice_spec: "path"
+  verbose: True
+fsl_EpiReg:
+  args: ''
+  echospacing: 0.0
+  environ: {}
+  fmap: "path"
+  fmapmag: "path"
+  fmapmagbrain: "path"
+  no_clean: True
+  no_fmapreg: True
+  out_base: ''
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  pedir: "enumerate(('x','y','z','-x','-y','-z'))"
+  weight_image: "path"
+  wmseg: "path"
+fsl_ErodeImage:
+  args: ''
+  environ: {}
+  internal_datatype: "enumerate(('float','char','int','short','double','input'))"
+  kernel_file: "path" # Optional Mutually exclusive with: kernel_size
+  kernel_shape: "enumerate(('3D','2D','box','boxv','gauss','sphere','file'))"
+  kernel_size: 0.0 # Optional Mutually exclusive with: kernel_file
+  minimum_filter: True
+  nan2zeros: True
+  out_file: "path"
+  output_datatype: "enumerate(('float','char','int','short','double','input'))"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_ExtractROI:
+  args: ''
+  crop_list: [(0,)] # Optional Mutually exclusive with: x_min, x_size, y_min, y_size, z_min, z_size, t_min, t_size
+  environ: {}
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  roi_file: "path"
+  t_min: 0
+  t_size: 0
+  x_min: 0
+  x_size: 0
+  y_min: 0
+  y_size: 0
+  z_min: 0
+  z_size: 0
+fsl_FAST:
+  args: ''
+  bias_iters: 0
+  bias_lowpass: 0
+  environ: {}
+  hyper: 0.0
+  img_type: ''
+  init_seg_smooth: 0.0
+  init_transform: "path"
+  iters_afterbias: 0
+  manual_seg: "path"
+  mixel_smooth: 0.0
+  no_bias: True
+  no_pve: True
+  number_classes: 0
+  other_priors: "path"
+  out_basename: "path"
+  output_biascorrected: True
+  output_biasfield: True
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  probability_maps: True
+  segment_iters: 0
+  segments: True
+  use_priors: True
+  verbose: True
+fsl_FEAT:
+  args: ''
+  environ: {}
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_FEATModel:
+  args: ''
+  environ: {}
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_FEATRegister:
+  reg_dof: 0
+fsl_FILMGLS:
+  args: ''
+  autocorr_estimate_only: True # Optional Mutually exclusive with: autocorr_estimate_only, fit_armodel, tukey_window, multitaper_product, use_pava, autocorr_noestimate
+  autocorr_noestimate: True # Optional Mutually exclusive with: autocorr_estimate_only, fit_armodel, tukey_window, multitaper_product, use_pava, autocorr_noestimate
+  brightness_threshold: 0
+  design_file: "path"
+  environ: {}
+  fcon_file: "path"
+  fit_armodel: True # Optional Mutually exclusive with: autocorr_estimate_only, fit_armodel, tukey_window, multitaper_product, use_pava, autocorr_noestimate
+  full_data: True
+  mask_size: 0
+  mode: "enumerate(('volumetric','surface'))"
+  multitaper_product: 0 # Optional Mutually exclusive with: autocorr_estimate_only, fit_armodel, tukey_window, multitaper_product, use_pava, autocorr_noestimate
+  output_pwdata: True
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  results_dir: "path"
+  smooth_autocorr: True
+  surface: "path"
+  tcon_file: "path"
+  threshold: 0.0
+  tukey_window: 0 # Optional Mutually exclusive with: autocorr_estimate_only, fit_armodel, tukey_window, multitaper_product, use_pava, autocorr_noestimate
+  use_pava: True
+fsl_FIRST:
+  affine_file: "path"
+  args: ''
+  brain_extracted: True
+  environ: {}
+  list_of_specific_structures: ''
+  method: "enumerate(('auto','fast','none'))" # Optional Mutually exclusive with: method_as_numerical_threshold
+  method_as_numerical_threshold: 0.0
+  no_cleanup: True
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  verbose: True
+fsl_FLAMEO:
+  args: ''
+  burnin: 0
+  dof_var_cope_file: "path"
+  environ: {}
+  f_con_file: "path"
+  fix_mean: True
+  infer_outliers: True
+  log_dir: "path"
+  n_jumps: 0
+  no_pe_outputs: True
+  outlier_iter: 0
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  sample_every: 0
+  sigma_dofs: 0
+  var_cope_file: "path"
+fsl_FLIRT:
+  angle_rep: "enumerate(('quaternion','euler'))"
+  apply_isoxfm: 0.0 # Optional Mutually exclusive with: apply_xfm
+  apply_xfm: True
+  args: ''
+  bbrslope: 0.0
+  bbrtype: "enumerate(('signed','global_abs','local_abs'))"
+  bgvalue: 0.0
+  bins: 0
+  coarse_search: 0
+  cost: "enumerate(('mutualinfo','corratio','normcorr','normmi','leastsq','labeldiff','bbr'))"
+  cost_func: "enumerate(('mutualinfo','corratio','normcorr','normmi','leastsq','labeldiff','bbr'))"
+  datatype: "enumerate(('char','short','int','float','double'))"
+  display_init: True
+  dof: 0
+  echospacing: 0.0
+  environ: {}
+  fieldmap: "path"
+  fieldmapmask: "path"
+  fine_search: 0
+  force_scaling: True
+  in_matrix_file: "path"
+  in_weight: "path"
+  interp: "enumerate(('trilinear','nearestneighbour','sinc','spline'))"
+  min_sampling: 0.0
+  no_clamp: True
+  no_resample: True
+  no_resample_blur: True
+  no_search: True
+  out_file: "path"
+  out_log: "path"
+  out_matrix_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  padding_size: 0
+  pedir: 0
+  ref_weight: "path"
+  rigid2D: True
+  save_log: True
+  schedule: "path"
+  searchr_x: 0
+  searchr_y: 0
+  searchr_z: 0
+  sinc_width: 0
+  sinc_window: "enumerate(('rectangular','hanning','blackman'))"
+  uses_qform: True
+  verbose: 0
+  wm_seg: "path"
+  wmcoords: "path"
+  wmnorms: "path"
+fsl_FNIRT:
+  affine_file: "path"
+  apply_inmask: [0] # Optional Mutually exclusive with: skip_inmask
+  apply_intensity_mapping: [0] # Optional Mutually exclusive with: skip_intensity_mapping
+  apply_refmask: [0] # Optional Mutually exclusive with: skip_refmask
+  args: ''
+  bias_regularization_lambda: 0.0
+  biasfield_resolution: (0,)
+  config_file: "enumerate(('T1_2_MNI152_2mm','FA_2_FMRIB58_1mm'))"
+  derive_from_ref: True
+  environ: {}
+  field_file: "path"
+  fieldcoeff_file: "path"
+  hessian_precision: "enumerate(('double','float'))"
+  in_fwhm: [0]
+  in_intensitymap_file: "path"
+  inmask_file: "path"
+  inmask_val: 0.0
+  intensity_mapping_model: "enumerate(('none','global_linear','global_non_linear','local_linear','global_non_linear_with_bias','local_non_linear'))"
+  intensity_mapping_order: 0
+  inwarp_file: "path"
+  jacobian_file: "path"
+  jacobian_range: (0,)
+  log_file: "path"
+  max_nonlin_iter: [0]
+  modulatedref_file: "path"
+  out_intensitymap_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  ref_fwhm: [0]
+  refmask_file: "path"
+  refmask_val: 0.0
+  regularization_lambda: [0.0]
+  regularization_model: "enumerate(('membrane_energy','bending_energy'))"
+  skip_implicit_in_masking: True
+  skip_implicit_ref_masking: True
+  skip_inmask: True # Optional Mutually exclusive with: apply_inmask
+  skip_intensity_mapping: True # Optional Mutually exclusive with: apply_intensity_mapping
+  skip_lambda_ssq: True
+  skip_refmask: True # Optional Mutually exclusive with: apply_refmask
+  spline_order: 0
+  subsampling_scheme: [0]
+  warp_resolution: (0,)
+  warped_file: "path"
+fsl_FUGUE:
+  args: ''
+  asym_se_time: 0.0
+  despike_2dfilter: True
+  despike_threshold: 0.0
+  dwell_time: 0.0
+  dwell_to_asym_ratio: 0.0
+  environ: {}
+  fmap_in_file: "path"
+  fmap_out_file: "path"
+  forward_warping: True
+  fourier_order: 0
+  icorr: True
+  icorr_only: True
+  in_file: "path"
+  mask_file: "path"
+  median_2dfilter: True
+  no_extend: True
+  no_gap_fill: True
+  nokspace: True
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  pava: True
+  phase_conjugate: True
+  phasemap_in_file: "path"
+  poly_order: 0
+  save_fmap: True # Optional Mutually exclusive with: save_unmasked_fmap
+  save_shift: True # Optional Mutually exclusive with: save_unmasked_shift
+  save_unmasked_fmap: True # Optional Mutually exclusive with: save_fmap
+  save_unmasked_shift: True # Optional Mutually exclusive with: save_shift
+  shift_in_file: "path"
+  shift_out_file: "path"
+  smooth2d: 0.0
+  smooth3d: 0.0
+  unwarp_direction: "enumerate(('x','y','z','x-','y-','z-'))"
+  unwarped_file: "path" # Optional Mutually exclusive with: warped_file requires: in_file
+  warped_file: "path" # Optional Mutually exclusive with: unwarped_file requires: in_file
+fsl_FilterRegressor:
+  filter_all: True # Mandatory Mutually exclusive with: filter_columns
+  filter_columns: [0] # Mandatory Mutually exclusive with: filter_all
+  args: ''
+  environ: {}
+  mask: "path"
+  out_file: "path"
+  out_vnscales: True
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  var_norm: True
+fsl_FindTheBiggest:
+  args: ''
+  environ: {}
+  out_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_GLM:
+  args: ''
+  contrasts: "path"
+  dat_norm: True
+  demean: True
+  des_norm: True
+  dof: 0
+  environ: {}
+  mask: "path"
+  out_cope: "path"
+  out_data_name: "path"
+  out_f_name: "path"
+  out_file: "path"
+  out_p_name: "path"
+  out_pf_name: "path"
+  out_res_name: "path"
+  out_sigsq_name: "path"
+  out_t_name: "path"
+  out_varcb_name: "path"
+  out_vnscales_name: "path"
+  out_z_name: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  var_norm: True
+fsl_ICA_AROMA:
+  feat_dir: "path" # Mandatory Mutually exclusive with: in_file, mat_file, fnirt_warp_file, motion_parameters
+  in_file: "path" # Mandatory Mutually exclusive with: feat_dir
+  motion_parameters: "path" # Mandatory Mutually exclusive with: feat_dir
+  TR: 0.0
+  args: ''
+  dim: 0
+  environ: {}
+  fnirt_warp_file: "path" # Optional Mutually exclusive with: feat_dir
+  mask: "path" # Optional Mutually exclusive with: feat_dir
+  mat_file: "path" # Optional Mutually exclusive with: feat_dir
+  melodic_dir: "path"
+fsl_ImageMaths:
+  args: ''
+  environ: {}
+  in_file2: "path"
+  mask_file: "path"
+  op_string: ''
+  out_data_type: "enumerate(('char','short','int','float','double','input'))"
+  out_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  suffix: ''
+fsl_ImageMeants:
+  args: ''
+  eig: True
+  environ: {}
+  mask: "path"
+  nobin: True
+  order: 0
+  out_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  show_all: True
+  spatial_coord: [0]
+  transpose: True
+  use_mm: True
+fsl_ImageStats:
+  args: ''
+  environ: {}
+  index_mask_file: "path"
+  mask_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  split_4d: True
+fsl_InvWarp:
+  absolute: True # Optional Mutually exclusive with: relative
+  args: ''
+  environ: {}
+  inverse_warp: "path"
+  jacobian_max: 0.0
+  jacobian_min: 0.0
+  niter: 0
+  noconstraint: True
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  regularise: 0.0
+  relative: True # Optional Mutually exclusive with: absolute
+fsl_IsotropicSmooth:
+  fwhm: 0.0 # Mandatory Mutually exclusive with: sigma
+  sigma: 0.0 # Mandatory Mutually exclusive with: fwhm
+  args: ''
+  environ: {}
+  internal_datatype: "enumerate(('float','char','int','short','double','input'))"
+  nan2zeros: True
+  out_file: "path"
+  output_datatype: "enumerate(('float','char','int','short','double','input'))"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_Level1Design:
+  contrasts: [(0,)]
+  orthogonalization: {}
+fsl_MCFLIRT:
+  args: ''
+  bins: 0
+  cost: "enumerate(('mutualinfo','woods','corratio','normcorr','normmi','leastsquares'))"
+  dof: 0
+  environ: {}
+  init: "path"
+  interpolation: "enumerate(('spline','nn','sinc'))"
+  mean_vol: True
+  out_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  ref_file: "path"
+  ref_vol: 0
+  rotation: 0
+  save_mats: True
+  save_plots: True
+  save_rms: True
+  scaling: 0.0
+  smooth: 0.0
+  stages: 0
+  stats_imgs: True
+  use_contour: True
+  use_gradient: True
+fsl_MELODIC:
+  ICs: "path"
+  approach: ''
+  args: ''
+  bg_image: "path"
+  bg_threshold: 0.0
+  cov_weight: 0.0
+  dim: 0
+  dim_est: ''
+  environ: {}
+  epsilon: 0.0
+  epsilonS: 0.0
+  log_power: True
+  mask: "path"
+  max_restart: 0
+  maxit: 0
+  migp: True
+  migpN: 0
+  migp_factor: 0
+  migp_shuffle: True
+  mix: "path"
+  mm_thresh: 0.0
+  no_bet: True
+  no_mask: True
+  no_mm: True
+  non_linearity: ''
+  num_ICs: 0
+  out_all: True
+  out_dir: "path"
+  out_mean: True
+  out_orig: True
+  out_pca: True
+  out_stats: True
+  out_unmix: True
+  out_white: True
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  pbsc: True
+  rem_cmp: [0]
+  remove_deriv: True
+  report: True
+  report_maps: ''
+  s_con: "path"
+  s_des: "path"
+  sep_vn: True
+  sep_whiten: True
+  smode: "path"
+  t_con: "path"
+  t_des: "path"
+  tr_sec: 0.0
+  update_mask: True
+  var_norm: True
+fsl_MakeDyadicVectors:
+  args: ''
+  environ: {}
+  mask: "path"
+  output: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  perc: 0.0
+fsl_MaxnImage:
+  args: ''
+  dimension: "enumerate(('T','X','Y','Z'))"
+  environ: {}
+  internal_datatype: "enumerate(('float','char','int','short','double','input'))"
+  nan2zeros: True
+  out_file: "path"
+  output_datatype: "enumerate(('float','char','int','short','double','input'))"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_MeanImage:
+  args: ''
+  dimension: "enumerate(('T','X','Y','Z'))"
+  environ: {}
+  internal_datatype: "enumerate(('float','char','int','short','double','input'))"
+  nan2zeros: True
+  out_file: "path"
+  output_datatype: "enumerate(('float','char','int','short','double','input'))"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_MedianImage:
+  args: ''
+  dimension: "enumerate(('T','X','Y','Z'))"
+  environ: {}
+  internal_datatype: "enumerate(('float','char','int','short','double','input'))"
+  nan2zeros: True
+  out_file: "path"
+  output_datatype: "enumerate(('float','char','int','short','double','input'))"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_Merge:
+  args: ''
+  environ: {}
+  merged_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  tr: 0.0
+fsl_MinImage:
+  args: ''
+  dimension: "enumerate(('T','X','Y','Z'))"
+  environ: {}
+  internal_datatype: "enumerate(('float','char','int','short','double','input'))"
+  nan2zeros: True
+  out_file: "path"
+  output_datatype: "enumerate(('float','char','int','short','double','input'))"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_MotionOutliers:
+  args: ''
+  dummy: 0
+  environ: {}
+  mask: "path"
+  metric: "enumerate(('refrms','dvars','refmse','fd','fdrms'))"
+  no_motion_correction: True
+  out_file: "path"
+  out_metric_plot: "path"
+  out_metric_values: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  threshold: 0.0
+fsl_MultiImageMaths:
+  args: ''
+  environ: {}
+  internal_datatype: "enumerate(('float','char','int','short','double','input'))"
+  nan2zeros: True
+  out_file: "path"
+  output_datatype: "enumerate(('float','char','int','short','double','input'))"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_MultipleRegressDesign:
+  groups: [0]
+fsl_Overlay:
+  auto_thresh_bg: True # Mandatory Mutually exclusive with: auto_thresh_bg, full_bg_range, bg_thresh
+  bg_thresh: (0,) # Mandatory Mutually exclusive with: auto_thresh_bg, full_bg_range, bg_thresh
+  full_bg_range: True # Mandatory Mutually exclusive with: auto_thresh_bg, full_bg_range, bg_thresh
+  args: ''
+  environ: {}
+  out_file: "path"
+  out_type: "enumerate(('float','int'))"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  show_negative_stats: True # Optional Mutually exclusive with: stat_image2
+  stat_image2: "path" # Optional Mutually exclusive with: show_negative_stats
+  stat_thresh2: (0,)
+  transparency: True
+  use_checkerboard: True
+fsl_PRELUDE:
+  complex_phase_file: "path" # Mandatory Mutually exclusive with: magnitude_file, phase_file
+  magnitude_file: "path" # Mandatory Mutually exclusive with: complex_phase_file
+  phase_file: "path" # Mandatory Mutually exclusive with: complex_phase_file
+  args: ''
+  end: 0
+  environ: {}
+  label_file: "path"
+  labelprocess2d: True
+  mask_file: "path"
+  num_partitions: 0
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  process2d: True # Optional Mutually exclusive with: labelprocess2d
+  process3d: True # Optional Mutually exclusive with: labelprocess2d, process2d
+  rawphase_file: "path"
+  removeramps: True
+  savemask_file: "path"
+  start: 0
+  threshold: 0.0
+  unwrapped_phase_file: "path"
+fsl_PercentileImage:
+  args: ''
+  dimension: "enumerate(('T','X','Y','Z'))"
+  environ: {}
+  internal_datatype: "enumerate(('float','char','int','short','double','input'))"
+  nan2zeros: True
+  out_file: "path"
+  output_datatype: "enumerate(('float','char','int','short','double','input'))"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  perc: 0
+fsl_PlotMotionParams:
+  args: ''
+  environ: {}
+  out_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  plot_size: (0,)
+fsl_PlotTimeSeries:
+  args: ''
+  environ: {}
+  labels: ['']
+  legend_file: "path"
+  out_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  plot_finish: 0 # Optional Mutually exclusive with: plot_range
+  plot_range: (0,) # Optional Mutually exclusive with: plot_start, plot_finish
+  plot_size: (0,)
+  plot_start: 0 # Optional Mutually exclusive with: plot_range
+  sci_notation: True
+  title: ''
+  x_precision: 0
+  x_units: 0
+  y_max: 0.0 # Optional Mutually exclusive with: y_range
+  y_min: 0.0 # Optional Mutually exclusive with: y_range
+  y_range: (0,) # Optional Mutually exclusive with: y_min, y_max
+fsl_PowerSpectrum:
+  args: ''
+  environ: {}
+  out_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_PrepareFieldmap:
+  args: ''
+  environ: {}
+  nocheck: True
+  out_fieldmap: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  scanner: ''
+fsl_ProbTrackX:
+  correct_path_distribution: True
+  force_dir: True
+  mask2: "path"
+  mesh: "path"
+  mode: "enumerate(('simple','two_mask_symm','seedmask'))"
+  network: True
+  opd: True
+  os2t: True
+  out_dir: "path"
+  samples_base_name: ''
+  seed_ref: "path"
+  target_masks: ["path"]
+  waypoints: "path"
+fsl_ProbTrackX2:
+  colmask4: "path"
+  correct_path_distribution: True
+  distthresh1: 0.0
+  distthresh3: 0.0
+  fopd: "path"
+  force_dir: True
+  lrtarget3: "path"
+  meshspace: "enumerate(('caret','freesurfer','first','vox'))"
+  network: True
+  omatrix1: True
+  omatrix2: True
+  omatrix3: True
+  omatrix4: True
+  onewaycondition: True
+  opd: True
+  os2t: True
+  out_dir: "path"
+  samples_base_name: ''
+  seed_ref: "path"
+  simple: True
+  target2: "path"
+  target3: "path"
+  target4: "path"
+  target_masks: ["path"]
+  waycond: "enumerate(('OR','AND'))"
+  wayorder: True
+  waypoints: "path"
+fsl_ProjThresh:
+  args: ''
+  environ: {}
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_Randomise:
+  args: ''
+  base_name: ''
+  c_thresh: 0.0
+  cm_thresh: 0.0
+  demean: True
+  design_mat: "path"
+  environ: {}
+  f_c_thresh: 0.0
+  f_cm_thresh: 0.0
+  f_only: True
+  fcon: "path"
+  mask: "path"
+  num_perm: 0
+  one_sample_group_mean: True
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  p_vec_n_dist_files: True
+  raw_stats_imgs: True
+  seed: 0
+  show_info_parallel_mode: True
+  show_total_perms: True
+  tcon: "path"
+  tfce: True
+  tfce2D: True
+  tfce_C: 0.0
+  tfce_E: 0.0
+  tfce_H: 0.0
+  var_smooth: 0
+  vox_p_values: True
+  x_block_labels: "path"
+fsl_Reorient2Std:
+  args: ''
+  environ: {}
+  out_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_RobustFOV:
+  args: ''
+  brainsize: 0
+  environ: {}
+  out_roi: "path"
+  out_transform: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_SMM:
+  args: ''
+  environ: {}
+  no_deactivation_class: True
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_SUSAN:
+  args: ''
+  dimension: ''
+  environ: {}
+  out_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  usans: (0,)
+  use_median: 1
+fsl_SigLoss:
+  args: ''
+  echo_time: 0.0
+  environ: {}
+  mask_file: "path"
+  out_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  slice_direction: "enumerate(('x','y','z'))"
+fsl_Slice:
+  args: ''
+  environ: {}
+  out_base_name: ''
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_SliceTimer:
+  args: ''
+  custom_order: "path"
+  custom_timings: "path"
+  environ: {}
+  global_shift: 0.0
+  index_dir: True
+  interleaved: True
+  out_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  slice_direction: ''
+  time_repetition: 0.0
+fsl_Slicer:
+  all_axial: True # Optional Mutually exclusive with: single_slice, middle_slices, all_axial, sample_axial requires: image_width
+  args: ''
+  colour_map: "path"
+  dither_edges: True
+  environ: {}
+  image_edges: "path"
+  image_width: 0
+  intensity_range: (0,)
+  label_slices: True
+  middle_slices: True # Optional Mutually exclusive with: single_slice, middle_slices, all_axial, sample_axial
+  nearest_neighbour: True
+  out_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  sample_axial: 0 # Optional Mutually exclusive with: single_slice, middle_slices, all_axial, sample_axial requires: image_width
+  scaling: 0.0
+  show_orientation: True
+  single_slice: "enumerate(('x','y','z'))" # Optional Mutually exclusive with: single_slice, middle_slices, all_axial, sample_axial requires: slice_number
+  slice_number: 0
+  threshold_edges: 0.0
+fsl_Smooth:
+  fwhm: 0.0 # Mandatory Mutually exclusive with: sigma
+  sigma: 0.0 # Mandatory Mutually exclusive with: fwhm
+  args: ''
+  environ: {}
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  smoothed_file: "path"
+fsl_SmoothEstimate:
+  dof: 0 # Mandatory Mutually exclusive with: zstat_file
+  args: ''
+  environ: {}
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  residual_fit_file: "path"
+  zstat_file: "path" # Optional Mutually exclusive with: dof
+fsl_SpatialFilter:
+  args: ''
+  environ: {}
+  internal_datatype: "enumerate(('float','char','int','short','double','input'))"
+  kernel_file: "path" # Optional Mutually exclusive with: kernel_size
+  kernel_shape: "enumerate(('3D','2D','box','boxv','gauss','sphere','file'))"
+  kernel_size: 0.0 # Optional Mutually exclusive with: kernel_file
+  nan2zeros: True
+  out_file: "path"
+  output_datatype: "enumerate(('float','char','int','short','double','input'))"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_Split:
+  args: ''
+  environ: {}
+  out_base_name: ''
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_SwapDimensions:
+  args: ''
+  environ: {}
+  out_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_TOPUP:
+  encoding_direction: "enumerate(('y','x','z','x-','y-','z-'))" # Mandatory Mutually exclusive with: encoding_file requires: readout_times
+  encoding_file: "path" # Mandatory Mutually exclusive with: encoding_direction
+  readout_times: [0.0] # Mandatory Mutually exclusive with: encoding_file requires: encoding_direction
+  args: ''
+  config: ''
+  environ: {}
+  estmov: 1
+  fwhm: 0.0
+  interp: "enumerate(('spline','linear'))"
+  max_iter: 0
+  minmet: 0
+  numprec: "enumerate(('double','float'))"
+  out_base: "path"
+  out_corrected: "path"
+  out_field: "path"
+  out_jac_prefix: ''
+  out_logfile: "path"
+  out_mat_prefix: ''
+  out_warp_prefix: ''
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  reg_lambda: 0.0
+  regmod: "enumerate(('bending_energy','membrane_energy'))"
+  regrid: 1
+  scale: 0
+  splineorder: 0
+  ssqlambda: 1
+  subsamp: 0
+  warp_res: 0.0
+fsl_TemporalFilter:
+  args: ''
+  environ: {}
+  highpass_sigma: 0.0
+  internal_datatype: "enumerate(('float','char','int','short','double','input'))"
+  lowpass_sigma: 0.0
+  nan2zeros: True
+  out_file: "path"
+  output_datatype: "enumerate(('float','char','int','short','double','input'))"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_Text2Vest:
+  args: ''
+  environ: {}
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_Threshold:
+  args: ''
+  direction: "enumerate(('below','above'))"
+  environ: {}
+  internal_datatype: "enumerate(('float','char','int','short','double','input'))"
+  nan2zeros: True
+  out_file: "path"
+  output_datatype: "enumerate(('float','char','int','short','double','input'))"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  use_nonzero_voxels: True
+  use_robust_range: True
+fsl_TractSkeleton:
+  alt_data_file: "path"
+  alt_skeleton: "path"
+  args: ''
+  data_file: "path"
+  distance_map: "path"
+  environ: {}
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  project_data: True
+  projected_data: "path"
+  search_mask_file: "path" # Optional Mutually exclusive with: use_cingulum_mask
+  skeleton_file: "path"
+  threshold: 0.0
+  use_cingulum_mask: True # Optional Mutually exclusive with: search_mask_file
+fsl_TrainingSetCreator:
+  mel_icas_in: ["path"]
+fsl_UnaryMaths:
+  args: ''
+  environ: {}
+  internal_datatype: "enumerate(('float','char','int','short','double','input'))"
+  nan2zeros: True
+  out_file: "path"
+  output_datatype: "enumerate(('float','char','int','short','double','input'))"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_VecReg:
+  affine_mat: "path"
+  args: ''
+  environ: {}
+  interpolation: "enumerate(('nearestneighbour','trilinear','sinc','spline'))"
+  mask: "path"
+  out_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  ref_mask: "path"
+  rotation_mat: "path"
+  rotation_warp: "path"
+  warp_field: "path"
+fsl_Vest2Text:
+  args: ''
+  environ: {}
+  out_file: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+fsl_WarpPoints:
+  args: ''
+  coord_mm: True # Optional Mutually exclusive with: coord_vox
+  coord_vox: True # Optional Mutually exclusive with: coord_mm
+  environ: {}
+  out_file: "path"
+  warp_file: "path" # Optional Mutually exclusive with: xfm_file
+  xfm_file: "path" # Optional Mutually exclusive with: warp_file
+fsl_WarpPointsFromStd:
+  args: ''
+  coord_mm: True # Optional Mutually exclusive with: coord_vox
+  coord_vox: True # Optional Mutually exclusive with: coord_mm
+  environ: {}
+  warp_file: "path" # Optional Mutually exclusive with: xfm_file
+  xfm_file: "path" # Optional Mutually exclusive with: warp_file
+fsl_WarpPointsToStd:
+  args: ''
+  coord_mm: True # Optional Mutually exclusive with: coord_vox
+  coord_vox: True # Optional Mutually exclusive with: coord_mm
+  environ: {}
+  out_file: "path"
+  premat_file: "path"
+  warp_file: "path" # Optional Mutually exclusive with: xfm_file
+  xfm_file: "path" # Optional Mutually exclusive with: warp_file
+fsl_WarpUtils:
+  args: ''
+  environ: {}
+  knot_space: (0,)
+  out_file: "path"
+  out_format: "enumerate(('spline','field'))"
+  out_jacobian: "path"
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  warp_resolution: (0,)
+  with_affine: True
+fsl_XFibres:
+  all_ard: True # Optional Mutually exclusive with: no_ard, all_ard
+  args: ''
+  burn_in: 0
+  burn_in_no_ard: 0
+  cnlinear: True # Optional Mutually exclusive with: no_spat, non_linear, cnlinear
+  environ: {}
+  f0_ard: True # Optional Mutually exclusive with: f0_noard, f0_ard, all_ard
+  f0_noard: True # Optional Mutually exclusive with: f0_noard, f0_ard
+  force_dir: True
+  fudge: 0
+  gradnonlin: "path"
+  logdir: "path"
+  model: ''
+  n_jumps: 0
+  no_ard: True # Optional Mutually exclusive with: no_ard, all_ard
+  no_spat: True # Optional Mutually exclusive with: no_spat, non_linear, cnlinear
+  non_linear: True # Optional Mutually exclusive with: no_spat, non_linear, cnlinear
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  rician: True
+  sample_every: 0
+  seed: 0
+  update_proposal_every: 0
+fsl_XFibres5:
+  all_ard: True # Optional Mutually exclusive with: no_ard, all_ard
+  args: ''
+  burn_in: 0
+  burn_in_no_ard: 0
+  cnlinear: True # Optional Mutually exclusive with: no_spat, non_linear, cnlinear
+  environ: {}
+  f0_ard: True # Optional Mutually exclusive with: f0_noard, f0_ard, all_ard
+  f0_noard: True # Optional Mutually exclusive with: f0_noard, f0_ard
+  force_dir: True
+  fudge: 0
+  gradnonlin: "path"
+  logdir: "path"
+  model: ''
+  n_jumps: 0
+  no_ard: True # Optional Mutually exclusive with: no_ard, all_ard
+  no_spat: True # Optional Mutually exclusive with: no_spat, non_linear, cnlinear
+  non_linear: True # Optional Mutually exclusive with: no_spat, non_linear, cnlinear
+  output_type: "enumerate(('NIFTI','NIFTI_PAIR','NIFTI_GZ','NIFTI_PAIR_GZ','GIFTI'))"
+  rician: True
+  sample_every: 0
+  seed: 0
+  update_proposal_every: 0
