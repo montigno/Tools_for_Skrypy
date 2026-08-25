@@ -1,8 +1,13 @@
 import json
+import yaml
 
 # --------------------------------------------------
 # Lecture du fichier JSON
 # --------------------------------------------------
+
+# yaml_file = "/home/honorom/eclipse-workspace/skrypy-pyqt5/NodeEditor/modules/Nipype/Interfaces_afni.yml"
+# with open(yaml_file, "r", encoding="utf-8") as f:
+#     yaml1 = yaml.safe_load(f)
 
 with open("nipype_interfaces_v2.json", "r", encoding="utf-8") as f:
     data = json.load(f)
@@ -64,6 +69,7 @@ def get_values_list(structure_info):
 
 def get_values_MultiObject(structure_info):
     element_type = structure_info['element']['type']
+    value_default = None
     if element_type == 'Enum':
         value_default = structure_info['element']['values']
         return value_default 
@@ -81,7 +87,7 @@ def get_values_MultiObject(structure_info):
             value_default = value_default['values']
         # elif value_default['type'] == "Tuple":
             
-    return value_default   
+    return value_default
 
 def get_values_TraitCompound(structure_info):
     value_default = structure_info['types'][0]
@@ -117,21 +123,33 @@ def get_input_mandatory_no_exclusive(class_name, nom_info):
     set_inputs = {}
     interf_inputs = nom_info['inputs']
     for input_name, input_info in interf_inputs.items():
-        print(" " * 2, class_name, input_name)
-        if input_info['mandatory']:
-            print(" " * 4, "Mandatory")
-            if "xor" not in input_info:
-                print(" " * 8, "mutually exclusive", ',', input_name)
-                def_value = get_default_value(input_info)
-                print(" " * 10, input_name, input_info['type'], def_value)
+        # print(" " * 2, class_name, input_name)
+        def_value = get_default_value(input_info)
+        if input_info['type'] != 'Event':
+            if input_info['mandatory']:
+                # print(" " * 4, "Mandatory")
+                if "xor" in input_info:
+                    print(" " * 8, "mutually exclusive", ',', input_name)
+                    set_inputs[input_name] = def_value
+            else:
+                set_inputs[input_name] = def_value
 
-module = 'mrtrix3'
+        # print(" " * 10, input_name, input_info['type'], def_value)
+    return set_inputs
+
+module = 'utility'
 codeMain = CodeGenerator()
 pkg = data[module]
+options_dict = {}
+
 
 for pkg_name, pkg_info in pkg.items():
     print(pkg_name)
     interf = pkg_info['interfaces']
     for interf_name, interf_info in interf.items():
         class_name = module + '_' + interf_name
-        get_input_mandatory_no_exclusive(class_name, interf_info)
+        options_mod = get_input_mandatory_no_exclusive(class_name, interf_info)
+        options_dict[class_name] = options_mod
+        
+with open('data_v2.yml', 'w') as outfile:
+    yaml.dump(options_dict, outfile, default_flow_style=False)

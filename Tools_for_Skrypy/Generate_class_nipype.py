@@ -5,7 +5,7 @@ import sys
 
 # interf = 'slicer.utilities'
 # interf = "fsl"
-interf = "mipav"
+interf = "mrtrix3"
 out_path = os.path.expanduser('~')
 
 try:

@@ -1,9 +1,9 @@
 import yaml
 
-module = 'dipy'
+module = 'utility'
 
-fichier1_yaml = "/home/olivier/Documents/eclipse-workspace-2026/Tools_for_Skrypy/Nipype/Interfaces_{}.yml".format(module)
-fichier2_yaml = "/home/olivier/Applications/skrypy_venv/skrypy-pyqt5/NodeEditor/modules/Nipype/Interfaces_{}.yml".format(module)
+fichier1_yaml = "/home/olivier/Documents/eclipse-workspace-2026/skrypy-pyqt5/NodeEditor/modules/Nipype/Interfaces_{}.yml".format(module)
+fichier2_yaml = "data_v2.yml".format(module)
 
 with open(fichier1_yaml, "r", encoding="utf-8") as f:
     yaml1 = yaml.safe_load(f)
