@@ -1,0 +1,675 @@
+mrtrix3_ACTPrepareFSL:
+  args: ''
+  environ: {}
+mrtrix3_BrainMask:
+  args: ''
+  bval_scale:
+  - 'yes'
+  - 'no'
+  environ: {}
+  grad_file: path
+  grad_fsl:
+  - 
+  - 
+  in_bval: path
+  in_bvec: path
+  nthreads: 0
+  out_bval: path
+  out_bvec: path
+mrtrix3_BuildConnectome:
+  args: ''
+  environ: {}
+  in_parc: path
+  in_scalar: path
+  in_weights: path
+  keep_unassigned: true
+  metric:
+  - count
+  - meanlength
+  - invlength
+  - invnodevolume
+  - mean_scalar
+  - invlength_invnodevolume
+  nthreads: 0
+  search_forward: 0.0
+  search_radius: 0.0
+  search_reverse: 0.0
+  vox_lookup: true
+  zero_diagonal: true
+mrtrix3_ComputeTDI:
+  args: ''
+  contrast:
+  - tdi
+  - length
+  - invlength
+  - scalar_map
+  - scalar_map_conut
+  - fod_amp
+  - curvature
+  data_type:
+  - float
+  - unsigned int
+  dixel: path
+  ends_only: true
+  environ: {}
+  fwhm_tck: 0.0
+  in_map: path
+  map_zero: true
+  max_tod: 0
+  nthreads: 0
+  out_file: tdi.mif
+  precise: true
+  reference: path
+  stat_tck:
+  - mean
+  - sum
+  - min
+  - max
+  - median
+  - mean_nonzero
+  - gaussian
+  - ends_min
+  - ends_mean
+  - ends_max
+  - ends_prod
+  stat_vox:
+  - sum
+  - min
+  - mean
+  - max
+  tck_weights: path
+  upsample: 0
+  use_dec: true
+  vox_size:
+  - 0
+mrtrix3_ConstrainedSphericalDeconvolution:
+  args: ''
+  bval_scale:
+  - 'yes'
+  - 'no'
+  csf_odf: path
+  csf_txt: path
+  environ: {}
+  gm_odf: path
+  gm_txt: path
+  grad_file: path
+  grad_fsl:
+  - 
+  - 
+  in_bval: path
+  in_bvec: path
+  in_dirs: path
+  mask_file: path
+  max_sh:
+  - 0
+  nthreads: 0
+  out_bval: path
+  out_bvec: path
+  predicted_signal: path
+  shell:
+  - 0.0
+mrtrix3_DWIBiasCorrect:
+  args: ''
+  bias: path
+  bval_scale:
+  - 'yes'
+  - 'no'
+  environ: {}
+  grad_file: path
+  grad_fsl:
+  - 
+  - 
+  in_bval: path
+  in_bvec: path
+  in_mask: path
+  nthreads: 0
+  out_bval: path
+  out_bvec: path
+  out_file: path
+  use_ants: true
+  use_fsl: true
+mrtrix3_DWIDenoise:
+  args: ''
+  bval_scale:
+  - 'yes'
+  - 'no'
+  environ: {}
+  extent:
+  - <class 'traits.trait_types.Int'>
+  - <class 'traits.trait_types.Int'>
+  - <class 'traits.trait_types.Int'>
+  grad_file: path
+  grad_fsl:
+  - 
+  - 
+  in_bval: path
+  in_bvec: path
+  mask: path
+  noise: path
+  nthreads: 0
+  out_bval: path
+  out_bvec: path
+  out_file: path
+mrtrix3_DWIExtract:
+  args: ''
+  bval_scale:
+  - 'yes'
+  - 'no'
+  bzero: true
+  environ: {}
+  grad_file: path
+  grad_fsl:
+  - 
+  - 
+  in_bval: path
+  in_bvec: path
+  nobzero: true
+  nthreads: 0
+  out_bval: path
+  out_bvec: path
+  shell:
+  - 0.0
+  singleshell: true
+mrtrix3_DWIPreproc:
+  align_seepi: true
+  args: ''
+  bval_scale:
+  - 'yes'
+  - 'no'
+  eddy_mask: path
+  eddy_options: ''
+  eddy_slspec: path
+  eddyqc_all: path
+  eddyqc_text: path
+  environ: {}
+  grad_file: path
+  grad_fsl:
+  - 
+  - 
+  in_bval: path
+  in_bvec: path
+  in_epi: path
+  json_import: path
+  nthreads: 0
+  out_bval: path
+  out_bvec: path
+  out_grad_fsl:
+  - grad.bvecs
+  - grad.bvals
+  out_grad_mrtrix: grad.b
+  pe_dir: ''
+  ro_time: 0.0
+  topup_options: ''
+mrtrix3_EstimateFOD:
+  args: ''
+  bval_scale:
+  - 'yes'
+  - 'no'
+  csf_odf: csf.mif
+  csf_txt: path
+  environ: {}
+  gm_odf: gm.mif
+  gm_txt: path
+  grad_file: path
+  grad_fsl:
+  - 
+  - 
+  in_bval: path
+  in_bvec: path
+  in_dirs: path
+  mask_file: path
+  max_sh:
+  - 0
+  nthreads: 0
+  out_bval: path
+  out_bvec: path
+  predicted_signal: path
+  shell:
+  - 0.0
+mrtrix3_FitTensor:
+  args: ''
+  bval_scale:
+  - 'yes'
+  - 'no'
+  environ: {}
+  grad_file: path
+  grad_fsl:
+  - 
+  - 
+  in_bval: path
+  in_bvec: path
+  in_mask: path
+  method:
+  - nonlinear
+  - loglinear
+  - sech
+  - rician
+  nthreads: 0
+  out_bval: path
+  out_bvec: path
+  predicted_signal: path
+  reg_term: 0.0
+mrtrix3_Generate5tt:
+  args: ''
+  bval_scale:
+  - 'yes'
+  - 'no'
+  environ: {}
+  grad_file: path
+  grad_fsl:
+  - 
+  - 
+  hippocampi:
+  - subfields
+  - first
+  - aseg
+  in_bval: path
+  in_bvec: path
+  lut_file: path
+  mask_file: path
+  nocrop: true
+  nthreads: 0
+  out_bval: path
+  out_bvec: path
+  premasked: true
+  sgm_amyg_hipp: true
+  t2_image: path
+  template: path
+  white_stem: true
+mrtrix3_Generate5tt2gmwmi:
+  args: ''
+  bval_scale:
+  - 'yes'
+  - 'no'
+  environ: {}
+  grad_file: path
+  grad_fsl:
+  - 
+  - 
+  in_bval: path
+  in_bvec: path
+  mask_in: path
+  nthreads: 0
+  out_bval: path
+  out_bvec: path
+mrtrix3_LabelConfig:
+  args: ''
+  environ: {}
+  in_config: path
+  lut_aal: path
+  lut_basic: path
+  lut_fs: path
+  lut_itksnap: path
+  nthreads: 0
+  spine: path
+mrtrix3_LabelConvert:
+  args: ''
+  environ: {}
+  in_config: path
+  num_threads: 0
+  spine: path
+mrtrix3_MRCat:
+  args: ''
+  axis: 0
+  bval_scale:
+  - 'yes'
+  - 'no'
+  datatype:
+  - float32
+  - float32le
+  - float32be
+  - float64
+  - float64le
+  - float64be
+  - int64
+  - uint64
+  - int64le
+  - uint64le
+  - int64be
+  - uint64be
+  - int32
+  - uint32
+  - int32le
+  - uint32le
+  - int32be
+  - uint32be
+  - int16
+  - uint16
+  - int16le
+  - uint16le
+  - int16be
+  - uint16be
+  - cfloat32
+  - cfloat32le
+  - cfloat32be
+  - cfloat64
+  - cfloat64le
+  - cfloat64be
+  - int8
+  - uint8
+  - bit
+  environ: {}
+  grad_file: path
+  grad_fsl:
+  - 
+  - 
+  in_bval: path
+  in_bvec: path
+  nthreads: 0
+  out_bval: path
+  out_bvec: path
+mrtrix3_MRConvert:
+  args: ''
+  axes:
+  - 0
+  bval_scale:
+  - 'yes'
+  - 'no'
+  coord:
+  - 0
+  environ: {}
+  grad_file: path
+  grad_fsl:
+  - 
+  - 
+  in_bval: path
+  in_bvec: path
+  json_export: path
+  json_import: path
+  nthreads: 0
+  out_bval: path
+  out_bvec: path
+  scaling:
+  - 0.0
+  vox:
+  - 0.0
+mrtrix3_MRDeGibbs:
+  args: ''
+  axes:
+  - 0
+  bval_scale:
+  - 'yes'
+  - 'no'
+  environ: {}
+  grad_file: path
+  grad_fsl:
+  - 
+  - 
+  in_bval: path
+  in_bvec: path
+  maxW: 3
+  minW: 1
+  nshifts: 20
+  nthreads: 0
+  out_bval: path
+  out_bvec: path
+  out_file: path
+mrtrix3_MRMath:
+  args: ''
+  axis: 0
+  bval_scale:
+  - 'yes'
+  - 'no'
+  environ: {}
+  grad_file: path
+  grad_fsl:
+  - 
+  - 
+  in_bval: path
+  in_bvec: path
+  nthreads: 0
+  out_bval: path
+  out_bvec: path
+mrtrix3_MRResize:
+  args: ''
+  bval_scale:
+  - 'yes'
+  - 'no'
+  environ: {}
+  grad_file: path
+  grad_fsl:
+  - 
+  - 
+  image_size:
+  - <class 'traits.trait_types.Int'>
+  - <class 'traits.trait_types.Int'>
+  - <class 'traits.trait_types.Int'>
+  in_bval: path
+  in_bvec: path
+  interpolation:
+  - cubic
+  - nearest
+  - linear
+  - sinc
+  nthreads: 0
+  out_bval: path
+  out_bvec: path
+  out_file: path
+  scale_factor:
+  - <class 'traits.trait_types.Float'>
+  - <class 'traits.trait_types.Float'>
+  - <class 'traits.trait_types.Float'>
+  voxel_size:
+  - <class 'traits.trait_types.Float'>
+  - <class 'traits.trait_types.Float'>
+  - <class 'traits.trait_types.Float'>
+mrtrix3_MRTransform:
+  args: ''
+  bval_scale:
+  - 'yes'
+  - 'no'
+  debug: true
+  environ: {}
+  flip_x: true
+  grad_file: path
+  grad_fsl:
+  - 
+  - 
+  in_bval: path
+  in_bvec: path
+  invert: true
+  linear_transform: path
+  nthreads: 0
+  out_bval: path
+  out_bvec: path
+  out_file: path
+  quiet: true
+  reference_image: path
+  replace_transform: true
+  template_image: path
+  transformation_file: path
+mrtrix3_MRTrix3Base:
+  args: ''
+  environ: {}
+mrtrix3_MTNormalise:
+  args: ''
+  bval_scale:
+  - 'yes'
+  - 'no'
+  csf_fod: path
+  environ: {}
+  gm_fod: path
+  grad_file: path
+  grad_fsl:
+  - 
+  - 
+  in_bval: path
+  in_bvec: path
+  mask: path
+  nthreads: 0
+  out_bval: path
+  out_bvec: path
+  out_file_csf: path
+  out_file_gm: path
+  out_file_wm: path
+  wm_fod: path
+mrtrix3_MaskFilter:
+  args: ''
+  environ: {}
+  npass: 0
+mrtrix3_Mesh2PVE:
+  args: ''
+  environ: {}
+  in_first: path
+mrtrix3_ReplaceFSwithFIRST:
+  args: ''
+  environ: {}
+  in_config: path
+mrtrix3_ResponseSD:
+  args: ''
+  bval_scale:
+  - 'yes'
+  - 'no'
+  csf_file: path
+  environ: {}
+  gm_file: path
+  grad_file: path
+  grad_fsl:
+  - 
+  - 
+  in_bval: path
+  in_bvec: path
+  in_mask: path
+  max_sh:
+  - 0
+  mtt_file: path
+  nthreads: 0
+  out_bval: path
+  out_bvec: path
+  wm_file: wm.txt
+mrtrix3_SH2Amp:
+  args: ''
+  environ: {}
+  nonnegative: true
+  out_file: path
+mrtrix3_SHConv:
+  args: ''
+  environ: {}
+  out_file: path
+mrtrix3_TCK2VTK:
+  args: ''
+  environ: {}
+  nthreads: 0
+  out_file: tracks.vtk
+  reference: path
+  voxel: path
+mrtrix3_TensorMetrics:
+  args: ''
+  bval_scale:
+  - 'yes'
+  - 'no'
+  component:
+  environ: {}
+  grad_file: path
+  grad_fsl:
+  - 
+  - 
+  in_bval: path
+  in_bvec: path
+  in_mask: path
+  modulate:
+  - FA
+  - none
+  - eval
+  nthreads: 0
+  out_ad: path
+  out_adc: path
+  out_bval: path
+  out_bvec: path
+  out_cl: path
+  out_cp: path
+  out_cs: path
+  out_eval: path
+  out_evec: path
+  out_fa: path
+  out_rd: path
+mrtrix3_Tractography:
+  act_file: path
+  algorithm:
+  - iFOD2
+  - FACT
+  - iFOD1
+  - Nulldist
+  - SD_Stream
+  - Tensor_Det
+  - Tensor_Prob
+  angle: 0.0
+  args: ''
+  backtrack: true
+  bval_scale:
+  - 'yes'
+  - 'no'
+  crop_at_gmwmi: true
+  cutoff: 0.0
+  cutoff_init: 0.0
+  downsample: 0.0
+  environ: {}
+  grad_file: path
+  grad_fsl:
+  - 
+  - 
+  in_bval: path
+  in_bvec: path
+  init_dir:
+  - 0.0
+  - 0.0
+  - 0.0
+  max_length: 0.0
+  max_seed_attempts: 0
+  max_tracks: 0
+  min_length: 0.0
+  n_samples: 4
+  n_tracks: 0
+  n_trials: 0
+  noprecompt: true
+  nthreads: 0
+  out_bval: path
+  out_bvec: path
+  out_seeds: out_seeds.nii.gz
+  power: 0
+  roi_excl:
+    type: Unknown
+  roi_incl:
+    type: Unknown
+  roi_mask:
+    type: Unknown
+  seed_dynamic: path
+  seed_gmwmi: path
+  seed_grid_voxel:
+  - 
+  - 0
+  seed_image: path
+  seed_rejection: path
+  seed_rnd_voxel:
+  - 
+  - 0
+  seed_sphere:
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  select: 0
+  sph_trait:
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  step_size: 0.0
+  stop: true
+  unidirectional: true
+  use_rk4: true
+mrtrix3_TransformFSLConvert:
+  args: ''
+  bval_scale:
+  - 'yes'
+  - 'no'
+  environ: {}
+  grad_file: path
+  grad_fsl:
+  - 
+  - 
+  in_bval: path
+  in_bvec: path
+  nthreads: 0
+  out_bval: path
+  out_bvec: path

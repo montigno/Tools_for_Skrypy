@@ -15,5 +15,5 @@ def count_lines_py(repertory):
 rep = "/home/olivier/Documents/eclipse-workspace-2026/skrypy-pyqt5"
 print(count_lines_py(rep))
 
-rep = "/home/olivier/Applications/populse_mia/lib/python3.12/site-packages/populse_mia"
+rep = "/home/olivier/Documents/eclipse-workspace-2026/skrypy-pyqt6"
 print(count_lines_py(rep))

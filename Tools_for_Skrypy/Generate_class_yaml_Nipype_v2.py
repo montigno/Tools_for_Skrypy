@@ -37,6 +37,22 @@ class CodeGenerator:
 
     def __str__(self):
         return str(self.code)
+    
+
+class FlowStyleDumper(yaml.SafeDumper):
+    pass
+
+
+def represent_list(dumper, data):
+    """Représente les listes au format [a, b, c]."""
+    return dumper.represent_sequence(
+        "tag:yaml.org,2002:seq",
+        data,
+        flow_style=True
+    )
+
+
+FlowStyleDumper.add_representer(list, represent_list)
 
 def get_values_list(structure_info):
     element_type = structure_info['element']['type']
@@ -122,22 +138,38 @@ def get_default_value(value_type):
 def get_input_mandatory_no_exclusive(class_name, nom_info):
     set_inputs = {}
     interf_inputs = nom_info['inputs']
+    print(" " * 2, class_name, ':')
     for input_name, input_info in interf_inputs.items():
         # print(" " * 2, class_name, input_name)
+        n1, n2 = ' '*4 , ' '*(40 - len(input_name))
         def_value = get_default_value(input_info)
         if input_info['type'] != 'Event':
             if input_info['mandatory']:
                 # print(" " * 4, "Mandatory")
                 if "xor" in input_info:
-                    print(" " * 8, "mutually exclusive", ',', input_name)
+                    if "requires" in input_info:
+                        print(n1, input_name, n2, f"Mandatory Mutually exclusive with: {input_info['xor']} and requires: {input_info['requires']}", n1, def_value)
+                    else:
+                        print(n1, input_name, n2, f"Mandatory Mutually exclusive with: {input_info['xor']}", n1, def_value)
                     set_inputs[input_name] = def_value
+            elif "xor" in input_info:
+                print(n1, input_name, n2, f"Optional Mutually exclusive with: {input_info['xor']}", n1, def_value)
+                if "requires" in input_info:
+                    print(n1, input_name, n2, f"Optional Mutually exclusive  with: {input_info['xor']} and requires: {input_info['requires']}", n1, def_value)
+                else:
+                    print(n1, input_name, n2, f"Optional Mutually exclusive  with: {input_info['xor']}", n1, def_value)
+                set_inputs[input_name] = def_value
             else:
+                if "requires" in input_info:
+                    print(n1, input_name, n2, f"Optional requires: {input_info['requires']}", n1, def_value)
+                else:
+                    print(n1, input_name, n2, f"Optional", n1, def_value)
                 set_inputs[input_name] = def_value
 
         # print(" " * 10, input_name, input_info['type'], def_value)
     return set_inputs
 
-module = 'mipav'
+module = 'mrtrix3'
 codeMain = CodeGenerator()
 pkg = data[module]
 options_dict = {}
@@ -150,6 +182,13 @@ for pkg_name, pkg_info in pkg.items():
         class_name = module + '_' + interf_name
         options_mod = get_input_mandatory_no_exclusive(class_name, interf_info)
         options_dict[class_name] = options_mod
-        
-with open('data_v2.yml', 'w') as outfile:
-    yaml.dump(options_dict, outfile, default_flow_style=False)
+
+with open("data_v2.yml", "w", encoding="utf-8") as outfile:
+    yaml.dump(
+        options_dict,
+        outfile,
+        Dumper=FlowStyleDumper,
+        default_flow_style=False,
+        allow_unicode=True,
+        sort_keys=False
+    )

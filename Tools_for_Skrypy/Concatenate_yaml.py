@@ -3,16 +3,7 @@ from ruamel.yaml import YAML
 yaml = YAML()
 yaml.preserve_quotes = True
 
-files = ["Interfaces_legacy.converters_converters.yml",
-        "Interfaces_legacy.diffusion_diffusion.yml",
-        "Interfaces_legacy.filtering_filtering.yml",
-        "Interfaces_legacy.registration_registration.yml",
-        "Interfaces_legacy.segmentation_segmentation.yml",
-        "Interfaces_quantification.changequantification_changequantification.yml",
-        "Interfaces_quantification.petstandarduptakevaluecomputation_petstandarduptakevaluecomputation.yml",
-        "Interfaces_registration.brainsfit_brainsfit.yml",
-        "Interfaces_registration.brainsresample_brainsresample.yml",
-        "Interfaces_registration.specialized_specialized.yml"]
+files = ["data_v2.yml"]
 
 merged = {}
 

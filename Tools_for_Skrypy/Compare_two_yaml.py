@@ -1,9 +1,9 @@
 import yaml
 
-module = 'mipav'
+module = 'dipy'
 
 fichier1_yaml = "/home/olivier/Documents/eclipse-workspace-2026/skrypy-pyqt5/NodeEditor/modules/Nipype/Interfaces_{}.yml".format(module)
-fichier2_yaml = "data_v2.yml".format(module)
+fichier2_yaml = "nipype_modules_modified.yaml".format(module)
 
 with open(fichier1_yaml, "r", encoding="utf-8") as f:
     yaml1 = yaml.safe_load(f)

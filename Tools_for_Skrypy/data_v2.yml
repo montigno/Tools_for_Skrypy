@@ -1,598 +1,474 @@
-mipav_JistBrainMgdmSegmentation:
+mrtrix3_MRTrix3Base:
   args: ''
   environ: {}
-  inAdjust:
-  - 'true'
-  - 'false'
-  inAtlas: path
-  inCompute:
-  - 'true'
-  - 'false'
-  inCurvature: 0.0
-  inData: 0.0
-  inFLAIR: path
-  inMP2RAGE: path
-  inMP2RAGE2: path
-  inMPRAGE: path
-  inMax: 0
-  inMin: 0.0
-  inOutput:
-  - segmentation
-  - memberships
-  inPV: path
-  inPosterior: 0.0
-  inSteps: 0
-  inTopology:
-  - 26/6
-  - 6/26
-  - 18/6
-  - 6/18
-  - 6/6
-  - wcs
-  - wco
-  - 'no'
-
-  outLevelset:
-    type: Unknown
-  outPosterior2:
-    type: Unknown
-  outPosterior3:
-    type: Unknown
-  outSegmented:
-    type: Unknown
-  xDefaultMem: 0
-  xMaxProcess: 1
-  xPrefExt:
-  - nrrd
-mipav_JistBrainMp2rageDuraEstimation:
+mrtrix3_BuildConnectome:
+  in_parc: path
+  nthreads: 0
+  vox_lookup: true
+  search_radius: 0.0
+  search_reverse: 0.0
+  search_forward: 0.0
+  metric: [count, meanlength, invlength, invnodevolume, mean_scalar, invlength_invnodevolume]
+  in_scalar: path
+  in_weights: path
+  keep_unassigned: true
+  zero_diagonal: true
   args: ''
   environ: {}
-  inDistance: 0.0
-  inSecond: path
-  inSkull: path
-  inoutput:
-  - dura_region
-  - boundary
-  - dura_prior
-  - bg_prior
-  - intens_prior
-
-  outDura:
-    type: Unknown
-  xDefaultMem: 0
-  xMaxProcess: 1
-  xPrefExt:
-  - nrrd
-mipav_JistBrainMp2rageSkullStripping:
+mrtrix3_LabelConfig:
+  in_config: path
+  lut_basic: path
+  lut_fs: path
+  lut_aal: path
+  lut_itksnap: path
+  spine: path
+  nthreads: 0
   args: ''
   environ: {}
-  inFilter: path
-  inSecond: path
-  inSkip:
-  - 'true'
-  - 'false'
-  inT1: path
-  inT1weighted: path
-
-  outBrain:
-    type: Unknown
-  outMasked:
-    type: Unknown
-  outMasked2:
-    type: Unknown
-  outMasked3:
-    type: Unknown
-  xDefaultMem: 0
-  xMaxProcess: 1
-  xPrefExt:
-  - nrrd
-mipav_JistBrainPartialVolumeFilter:
+mrtrix3_LabelConvert:
+  in_config: path
+  spine: path
+  num_threads: 0
   args: ''
   environ: {}
-  inInput: path
-  inPV:
-  - bright
-  - dark
-  - both
-  inoutput:
-  - probability
-  - intensity
-
-  outPartial:
-    type: Unknown
-  xDefaultMem: 0
-  xMaxProcess: 1
-  xPrefExt:
-  - nrrd
-mipav_JistCortexSurfaceMeshInflation:
+mrtrix3_ACTPrepareFSL:
   args: ''
   environ: {}
-  inLevelset: path
-  inLorentzian:
-  - 'true'
-  - 'false'
-  inMax: 0
-  inMean: 0.0
-  inSOR: 0.0
-  inStep: 0
-  inTopology:
-  - 26/6
-  - 6/26
-  - 18/6
-  - 6/18
-  - 6/6
-  - wcs
-  - wco
-  - 'no'
-
-  outInflated:
-    type: Unknown
-  outOriginal:
-    type: Unknown
-  xDefaultMem: 0
-  xMaxProcess: 1
-  xPrefExt:
-  - nrrd
-mipav_JistIntensityMp2rageMasking:
+mrtrix3_DWIBiasCorrect:
+  in_mask: path
+  use_ants: true
+  use_fsl: true
+  bias: path
+  out_file: path
+  nthreads: 0
+  grad_file: path
+  grad_fsl: [null, null]
+  bval_scale: ['yes', 'no']
+  in_bvec: path
+  in_bval: path
+  out_bvec: path
+  out_bval: path
   args: ''
   environ: {}
-  inBackground:
-  - exponential
-  - half-normal
-  inMasking:
-  - binary
-  - proba
-  inQuantitative: path
-  inSecond: path
-  inSkip:
-  - 'true'
-  - 'false'
-  inT1weighted: path
-
-  outMasked:
-    type: Unknown
-  outMasked2:
-    type: Unknown
-  outSignal:
-    type: Unknown
-  outSignal2:
-    type: Unknown
-  xDefaultMem: 0
-  xMaxProcess: 1
-  xPrefExt:
-  - nrrd
-mipav_JistLaminarProfileCalculator:
+mrtrix3_DWIDenoise:
+  mask: path
+  extent: [<class 'traits.trait_types.Int'>, <class 'traits.trait_types.Int'>, <class
+      'traits.trait_types.Int'>]
+  noise: path
+  out_file: path
+  nthreads: 0
+  grad_file: path
+  grad_fsl: [null, null]
+  bval_scale: ['yes', 'no']
+  in_bvec: path
+  in_bval: path
+  out_bvec: path
+  out_bval: path
   args: ''
   environ: {}
-  inIntensity: path
-  inMask: path
-  incomputed:
-  - mean
-  - stdev
-  - skewness
-  - kurtosis
-
-  outResult:
-    type: Unknown
-  xDefaultMem: 0
-  xMaxProcess: 1
-  xPrefExt:
-  - nrrd
-mipav_JistLaminarProfileGeometry:
+mrtrix3_DWIPreproc:
+  pe_dir: ''
+  ro_time: 0.0
+  in_epi: path
+  align_seepi: true
+  json_import: path
+  topup_options: ''
+  eddy_options: ''
+  eddy_mask: path
+  eddy_slspec: path
+  eddyqc_text: path
+  eddyqc_all: path
+  out_grad_mrtrix: grad.b
+  out_grad_fsl: [grad.bvecs, grad.bvals]
+  nthreads: 0
+  grad_file: path
+  grad_fsl: [null, null]
+  bval_scale: ['yes', 'no']
+  in_bvec: path
+  in_bval: path
+  out_bvec: path
+  out_bval: path
   args: ''
   environ: {}
-  inProfile: path
-  incomputed:
-  - thickness
-  - curvedness
-  - shape_index
-  - mean_curvature
-  - gauss_curvature
-  - profile_length
-  - profile_curvature
-  - profile_torsion
-  inoutside: 0.0
-  inregularization:
-  - none
-  - Gaussian
-  insmoothing: 0.0
-
-  outResult:
-    type: Unknown
-  xDefaultMem: 0
-  xMaxProcess: 1
-  xPrefExt:
-  - nrrd
-mipav_JistLaminarProfileSampling:
+mrtrix3_MRDeGibbs:
+  axes: [0]
+  nshifts: 20
+  minW: 1
+  maxW: 3
+  out_file: path
+  nthreads: 0
+  grad_file: path
+  grad_fsl: [null, null]
+  bval_scale: ['yes', 'no']
+  in_bvec: path
+  in_bval: path
+  out_bvec: path
+  out_bval: path
   args: ''
   environ: {}
-  inCortex: path
-  inIntensity: path
-  inProfile: path
-
-  outProfile2:
-    type: Unknown
-  outProfilemapped:
-    type: Unknown
-  xDefaultMem: 0
-  xMaxProcess: 1
-  xPrefExt:
-  - nrrd
-mipav_JistLaminarROIAveraging:
+mrtrix3_ReplaceFSwithFIRST:
+  in_config: path
   args: ''
   environ: {}
-  inIntensity: path
-  inMask: path
-  inROI: path
-  inROI2: ''
-
-  outROI3:
-    type: Unknown
-  xDefaultMem: 0
-  xMaxProcess: 1
-  xPrefExt:
-  - nrrd
-mipav_JistLaminarVolumetricLayering:
+mrtrix3_ResponseSD:
+  mtt_file: path
+  wm_file: wm.txt
+  gm_file: path
+  csf_file: path
+  in_mask: path
+  max_sh: [0]
+  nthreads: 0
+  grad_file: path
+  grad_fsl: [null, null]
+  bval_scale: ['yes', 'no']
+  in_bvec: path
+  in_bval: path
+  out_bvec: path
+  out_bval: path
   args: ''
   environ: {}
-  inInner: path
-  inLayering:
-  - distance-preserving
-  - volume-preserving
-  inLayering2:
-  - outward
-  - inward
-  inMax: 0
-  inMin: 0.0
-  inNumber: 0
-  inOuter: path
-  inTopology:
-  - 26/6
-  - 6/26
-  - 18/6
-  - 6/18
-  - 6/6
-  - wcs
-  - wco
-  - 'no'
-  incurvature: 0
-  inpresmooth:
-  - 'true'
-  - 'false'
-  inratio: 0.0
-
-  outContinuous:
-    type: Unknown
-  outDiscrete:
-    type: Unknown
-  outLayer:
-    type: Unknown
-  xDefaultMem: 0
-  xMaxProcess: 1
-  xPrefExt:
-  - nrrd
-mipav_MedicAlgorithmImageCalculator:
+mrtrix3_ConstrainedSphericalDeconvolution:
+  gm_odf: path
+  csf_odf: path
+  max_sh: [0]
+  gm_txt: path
+  csf_txt: path
+  mask_file: path
+  shell: [0.0]
+  in_dirs: path
+  predicted_signal: path
+  nthreads: 0
+  grad_file: path
+  grad_fsl: [null, null]
+  bval_scale: ['yes', 'no']
+  in_bvec: path
+  in_bval: path
+  out_bvec: path
+  out_bval: path
   args: ''
   environ: {}
-  inOperation:
-  - Add
-  - Subtract
-  - Multiply
-  - Divide
-  - Min
-  - Max
-  inVolume: path
-  inVolume2: path
-
-  outResult:
-    type: Unknown
-  xDefaultMem: 0
-  xMaxProcess: 1
-  xPrefExt:
-  - nrrd
-mipav_MedicAlgorithmLesionToads:
+mrtrix3_EstimateFOD:
+  gm_txt: path
+  gm_odf: gm.mif
+  csf_txt: path
+  csf_odf: csf.mif
+  mask_file: path
+  shell: [0.0]
+  max_sh: [0]
+  in_dirs: path
+  predicted_signal: path
+  nthreads: 0
+  grad_file: path
+  grad_fsl: [null, null]
+  bval_scale: ['yes', 'no']
+  in_bvec: path
+  in_bval: path
+  out_bvec: path
+  out_bval: path
   args: ''
   environ: {}
-  inAtlas:
-  - With Lesion
-  - No Lesion
-  inAtlas2: path
-  inAtlas3: path
-  inAtlas4: path
-  inAtlas5: 0.0
-  inAtlas6:
-  - rigid
-  - multi_fully_affine
-  inConnectivity:
-  - (26,6)
-  - (6,26)
-  - (6,18)
-  - (18,6)
-  inCorrect:
-  - 'true'
-  - 'false'
-  inFLAIR: path
-  inInclude:
-  - 'true'
-  - 'false'
-  inMaximum: 0
-  inMaximum2: 0
-  inMaximum3: 0
-  inMaximum4: 0.0
-  inMaximum5: 0
-  inOutput:
-  - hard segmentation
-  - hard segmentation+memberships
-  - cruise inputs
-  - dura removal inputs
-  inOutput2:
-  - 'true'
-  - 'false'
-  inOutput3:
-  - 'true'
-  - 'false'
-  inSmooting: 0.0
-  inT1_MPRAGE: path
-  inT1_SPGR: path
-
-  outCortical:
-    type: Unknown
-  outFilled:
-    type: Unknown
-  outHard:
-    type: Unknown
-  outHard2:
-    type: Unknown
-  outInhomogeneity:
-    type: Unknown
-  outLesion:
-    type: Unknown
-  outMembership:
-    type: Unknown
-  outSulcal:
-    type: Unknown
-  outWM:
-    type: Unknown
-  xDefaultMem: 0
-  xMaxProcess: 1
-  xPrefExt:
-  - nrrd
-mipav_MedicAlgorithmMipavReorient:
+mrtrix3_FitTensor:
+  in_mask: path
+  method: [nonlinear, loglinear, sech, rician]
+  reg_term: 0.0
+  predicted_signal: path
+  nthreads: 0
+  grad_file: path
+  grad_fsl: [null, null]
+  bval_scale: ['yes', 'no']
+  in_bvec: path
+  in_bval: path
+  out_bvec: path
+  out_bval: path
   args: ''
   environ: {}
-  inInterpolation:
-  - Nearest Neighbor
-  - Trilinear
-  - Bspline 3rd order
-  - Bspline 4th order
-  - Cubic Lagrangian
-  - Quintic Lagrangian
-  - Heptic Lagrangian
-  - Windowed Sinc
-  inNew:
-  - Dicom axial
-  - Dicom coronal
-  - Dicom sagittal
-  - User defined
-  inResolution:
-  - Unchanged
-  - Finest cubic
-  - Coarsest cubic
-  - Same as template
-  inSource:
-  - path
-  inTemplate: path
-  inUser:
-  - Unknown
-  - Patient Right to Left
-  - Patient Left to Right
-  - Patient Posterior to Anterior
-  - Patient Anterior to Posterior
-  - Patient Inferior to Superior
-  - Patient Superior to Inferior
-  inUser2:
-  - Unknown
-  - Patient Right to Left
-  - Patient Left to Right
-  - Patient Posterior to Anterior
-  - Patient Anterior to Posterior
-  - Patient Inferior to Superior
-  - Patient Superior to Inferior
-  inUser3:
-  - Unknown
-  - Patient Right to Left
-  - Patient Left to Right
-  - Patient Posterior to Anterior
-  - Patient Anterior to Posterior
-  - Patient Inferior to Superior
-  - Patient Superior to Inferior
-  inUser4:
-  - Axial
-  - Coronal
-  - Sagittal
-  - Unknown
-
-  outReoriented:
-  - path
-  xDefaultMem: 0
-  xMaxProcess: 1
-  xPrefExt:
-  - nrrd
-mipav_MedicAlgorithmN3:
+mrtrix3_Tractography:
+  sph_trait: [0.0, 0.0, 0.0, 0.0]
+  algorithm: [iFOD2, FACT, iFOD1, Nulldist, SD_Stream, Tensor_Det, Tensor_Prob]
+  roi_incl:
+    type: Unknown
+  roi_excl:
+    type: Unknown
+  roi_mask:
+    type: Unknown
+  step_size: 0.0
+  angle: 0.0
+  n_tracks: 0
+  select: 0
+  max_tracks: 0
+  max_length: 0.0
+  min_length: 0.0
+  cutoff: 0.0
+  cutoff_init: 0.0
+  n_trials: 0
+  unidirectional: true
+  init_dir: [0.0, 0.0, 0.0]
+  noprecompt: true
+  power: 0
+  n_samples: 4
+  use_rk4: true
+  stop: true
+  downsample: 0.0
+  act_file: path
+  backtrack: true
+  crop_at_gmwmi: true
+  seed_sphere: [0.0, 0.0, 0.0, 0.0]
+  seed_image: path
+  seed_rnd_voxel: [null, 0]
+  seed_grid_voxel: [null, 0]
+  seed_rejection: path
+  seed_gmwmi: path
+  seed_dynamic: path
+  max_seed_attempts: 0
+  out_seeds: out_seeds.nii.gz
+  nthreads: 0
+  grad_file: path
+  grad_fsl: [null, null]
+  bval_scale: ['yes', 'no']
+  in_bvec: path
+  in_bval: path
+  out_bvec: path
+  out_bval: path
   args: ''
   environ: {}
-  inAutomatic:
-  - 'true'
-  - 'false'
-  inEnd: 0.0
-  inField: 0.0
-  inInput: path
-  inKernel: 0.0
-  inMaximum: 0
-  inSignal: 0.0
-  inSubsample: 0.0
-  inWeiner: 0.0
-
-  outInhomogeneity:
-    type: Unknown
-  outInhomogeneity2:
-    type: Unknown
-  xDefaultMem: 0
-  xMaxProcess: 1
-  xPrefExt:
-  - nrrd
-mipav_MedicAlgorithmSPECTRE2010:
+mrtrix3_BrainMask:
+  nthreads: 0
+  grad_file: path
+  grad_fsl: [null, null]
+  bval_scale: ['yes', 'no']
+  in_bvec: path
+  in_bval: path
+  out_bvec: path
+  out_bval: path
   args: ''
   environ: {}
-  inApply:
-  - All
-  - X
-  - Y
-  - Z
-  inAtlas: path
-  inBackground: 0.0
-  inCoarse: 0.0
-  inCost:
-  - Correlation ratio
-  - Least squares
-  - Normalized cross correlation
-  - Normalized mutual information
-  inDegrees:
-  - Rigid - 6
-  - Global rescale - 7
-  - Specific rescale - 9
-  - Affine - 12
-  inFind:
-  - 'true'
-  - 'false'
-  inFine: 0.0
-  inImage:
-  - T1_SPGR
-  - T1_ALT
-  - T1_MPRAGE
-  - T2
-  - FLAIR
-  inInhomogeneity:
-  - 'true'
-  - 'false'
-  inInitial: 0
-  inInitial2: 0.0
-  inInput: path
-  inMMC: 0
-  inMMC2: 0
-  inMaximum: 0.0
-  inMinimum: 0.0
-  inMinimum2: 0.0
-  inMultiple: 0
-  inMultithreading:
-  - 'true'
-  - 'false'
-  inNumber: 0
-  inNumber2: 0
-  inOutput:
-  - 'true'
-  - 'false'
-  inOutput2:
-  - 'true'
-  - 'false'
-  inOutput3:
-  - 'true'
-  - 'false'
-  inOutput4:
-  - 'true'
-  - 'false'
-  inOutput5:
-  - Trilinear
-  - Bspline 3rd order
-  - Bspline 4th order
-  - Cubic Lagrangian
-  - Quintic Lagrangian
-  - Heptic Lagrangian
-  - Windowed sinc
-  - Nearest Neighbor
-  inRegistration:
-  - Trilinear
-  - Bspline 3rd order
-  - Bspline 4th order
-  - Cubic Lagrangian
-  - Quintic Lagrangian
-  - Heptic Lagrangian
-  - Windowed sinc
-  inResample:
-  - 'true'
-  - 'false'
-  inRun:
-  - 'true'
-  - 'false'
-  inSkip:
-  - 'true'
-  - 'false'
-  inSmoothing: 0.0
-  inSubsample:
-  - 'true'
-  - 'false'
-  inUse:
-  - 'true'
-  - 'false'
-
-  outFANTASM:
-    type: Unknown
-  outMask:
-    type: Unknown
-  outMidsagittal:
-    type: Unknown
-  outOriginal:
-    type: Unknown
-  outPrior:
-    type: Unknown
-  outSegmentation:
-    type: Unknown
-  outSplitHalves:
-    type: Unknown
-  outStripped:
-    type: Unknown
-  outd0:
-    type: Unknown
-  xDefaultMem: 0
-  xMaxProcess: 1
-  xPrefExt:
-  - nrrd
-mipav_MedicAlgorithmThresholdToBinaryMask:
+mrtrix3_ComputeTDI:
+  out_file: tdi.mif
+  reference: path
+  vox_size: [0]
+  data_type: [float, unsigned int]
+  use_dec: true
+  dixel: path
+  max_tod: 0
+  contrast: [tdi, length, invlength, scalar_map, scalar_map_conut, fod_amp, curvature]
+  in_map: path
+  stat_vox: [sum, min, mean, max]
+  stat_tck: [mean, sum, min, max, median, mean_nonzero, gaussian, ends_min, ends_mean,
+    ends_max, ends_prod]
+  fwhm_tck: 0.0
+  map_zero: true
+  upsample: 0
+  precise: true
+  ends_only: true
+  tck_weights: path
+  nthreads: 0
   args: ''
   environ: {}
-  inLabel:
-  - path
-  inMaximum: 0.0
-  inMinimum: 0.0
-  inUse:
-  - 'true'
-  - 'false'
-
-  outBinary:
-  - path
-  xDefaultMem: 0
-  xMaxProcess: 1
-  xPrefExt:
-  - nrrd
-mipav_RandomVol:
+mrtrix3_DWIExtract:
+  bzero: true
+  nobzero: true
+  singleshell: true
+  shell: [0.0]
+  nthreads: 0
+  grad_file: path
+  grad_fsl: [null, null]
+  bval_scale: ['yes', 'no']
+  in_bvec: path
+  in_bval: path
+  out_bvec: path
+  out_bval: path
   args: ''
   environ: {}
-  inField:
-  - Uniform
-  - Normal
-  - Exponential
-  inLambda: 0.0
-  inMaximum: 0
-  inMinimum: 0
-  inSize: 0
-  inSize2: 0
-  inSize3: 0
-  inSize4: 0
-  inStandard: 0
-
-  outRand1:
-    type: Unknown
-  xDefaultMem: 0
-  xMaxProcess: 1
-  xPrefExt:
-  - nrrd
+mrtrix3_Generate5tt:
+  t2_image: path
+  mask_file: path
+  premasked: true
+  nocrop: true
+  sgm_amyg_hipp: true
+  template: path
+  hippocampi: [subfields, first, aseg]
+  white_stem: true
+  lut_file: path
+  nthreads: 0
+  grad_file: path
+  grad_fsl: [null, null]
+  bval_scale: ['yes', 'no']
+  in_bvec: path
+  in_bval: path
+  out_bvec: path
+  out_bval: path
+  args: ''
+  environ: {}
+mrtrix3_Generate5tt2gmwmi:
+  mask_in: path
+  nthreads: 0
+  grad_file: path
+  grad_fsl: [null, null]
+  bval_scale: ['yes', 'no']
+  in_bvec: path
+  in_bval: path
+  out_bvec: path
+  out_bval: path
+  args: ''
+  environ: {}
+mrtrix3_MRCat:
+  axis: 0
+  datatype: [float32, float32le, float32be, float64, float64le, float64be, int64,
+    uint64, int64le, uint64le, int64be, uint64be, int32, uint32, int32le, uint32le,
+    int32be, uint32be, int16, uint16, int16le, uint16le, int16be, uint16be, cfloat32,
+    cfloat32le, cfloat32be, cfloat64, cfloat64le, cfloat64be, int8, uint8, bit]
+  nthreads: 0
+  grad_file: path
+  grad_fsl: [null, null]
+  bval_scale: ['yes', 'no']
+  in_bvec: path
+  in_bval: path
+  out_bvec: path
+  out_bval: path
+  args: ''
+  environ: {}
+mrtrix3_MRConvert:
+  coord: [0]
+  vox: [0.0]
+  axes: [0]
+  scaling: [0.0]
+  json_import: path
+  json_export: path
+  nthreads: 0
+  grad_file: path
+  grad_fsl: [null, null]
+  bval_scale: ['yes', 'no']
+  in_bvec: path
+  in_bval: path
+  out_bvec: path
+  out_bval: path
+  args: ''
+  environ: {}
+mrtrix3_MRMath:
+  axis: 0
+  nthreads: 0
+  grad_file: path
+  grad_fsl: [null, null]
+  bval_scale: ['yes', 'no']
+  in_bvec: path
+  in_bval: path
+  out_bvec: path
+  out_bval: path
+  args: ''
+  environ: {}
+mrtrix3_MRResize:
+  image_size: [<class 'traits.trait_types.Int'>, <class 'traits.trait_types.Int'>,
+    <class 'traits.trait_types.Int'>]
+  voxel_size: [<class 'traits.trait_types.Float'>, <class 'traits.trait_types.Float'>,
+    <class 'traits.trait_types.Float'>]
+  scale_factor: [<class 'traits.trait_types.Float'>, <class 'traits.trait_types.Float'>,
+    <class 'traits.trait_types.Float'>]
+  interpolation: [cubic, nearest, linear, sinc]
+  out_file: path
+  nthreads: 0
+  grad_file: path
+  grad_fsl: [null, null]
+  bval_scale: ['yes', 'no']
+  in_bvec: path
+  in_bval: path
+  out_bvec: path
+  out_bval: path
+  args: ''
+  environ: {}
+mrtrix3_MRTransform:
+  out_file: path
+  invert: true
+  linear_transform: path
+  replace_transform: true
+  transformation_file: path
+  template_image: path
+  reference_image: path
+  flip_x: true
+  quiet: true
+  debug: true
+  nthreads: 0
+  grad_file: path
+  grad_fsl: [null, null]
+  bval_scale: ['yes', 'no']
+  in_bvec: path
+  in_bval: path
+  out_bvec: path
+  out_bval: path
+  args: ''
+  environ: {}
+mrtrix3_MTNormalise:
+  wm_fod: path
+  out_file_wm: path
+  gm_fod: path
+  out_file_gm: path
+  csf_fod: path
+  out_file_csf: path
+  mask: path
+  nthreads: 0
+  grad_file: path
+  grad_fsl: [null, null]
+  bval_scale: ['yes', 'no']
+  in_bvec: path
+  in_bval: path
+  out_bvec: path
+  out_bval: path
+  args: ''
+  environ: {}
+mrtrix3_MaskFilter:
+  npass: 0
+  args: ''
+  environ: {}
+mrtrix3_Mesh2PVE:
+  in_first: path
+  args: ''
+  environ: {}
+mrtrix3_SH2Amp:
+  out_file: path
+  nonnegative: true
+  args: ''
+  environ: {}
+mrtrix3_SHConv:
+  out_file: path
+  args: ''
+  environ: {}
+mrtrix3_TCK2VTK:
+  out_file: tracks.vtk
+  reference: path
+  voxel: path
+  nthreads: 0
+  args: ''
+  environ: {}
+mrtrix3_TensorMetrics:
+  out_fa: path
+  out_adc: path
+  out_ad: path
+  out_rd: path
+  out_cl: path
+  out_cp: path
+  out_cs: path
+  out_evec: path
+  out_eval: path
+  component: null
+  in_mask: path
+  modulate: [FA, none, eval]
+  nthreads: 0
+  grad_file: path
+  grad_fsl: [null, null]
+  bval_scale: ['yes', 'no']
+  in_bvec: path
+  in_bval: path
+  out_bvec: path
+  out_bval: path
+  args: ''
+  environ: {}
+mrtrix3_TransformFSLConvert:
+  nthreads: 0
+  grad_file: path
+  grad_fsl: [null, null]
+  bval_scale: ['yes', 'no']
+  in_bvec: path
+  in_bval: path
+  out_bvec: path
+  out_bval: path
+  args: ''
+  environ: {}
