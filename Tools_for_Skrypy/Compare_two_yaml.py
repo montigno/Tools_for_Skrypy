@@ -1,6 +1,6 @@
 import yaml
 
-module = 'utility'
+module = 'mipav'
 
 fichier1_yaml = "/home/olivier/Documents/eclipse-workspace-2026/skrypy-pyqt5/NodeEditor/modules/Nipype/Interfaces_{}.yml".format(module)
 fichier2_yaml = "data_v2.yml".format(module)

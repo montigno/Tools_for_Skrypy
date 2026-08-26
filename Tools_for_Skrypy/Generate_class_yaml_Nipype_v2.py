@@ -137,7 +137,7 @@ def get_input_mandatory_no_exclusive(class_name, nom_info):
         # print(" " * 10, input_name, input_info['type'], def_value)
     return set_inputs
 
-module = 'utility'
+module = 'mipav'
 codeMain = CodeGenerator()
 pkg = data[module]
 options_dict = {}

@@ -1,7 +1,7 @@
 import yaml
 
 
-pathYml = 'Check_type_of_variables.yml'
+pathYml = 'example_Yaml_for_Skrypy.yml'
 
 with open(pathYml, 'r', encoding='utf8') as stream:
     dicts = yaml.load(stream, yaml.FullLoader)

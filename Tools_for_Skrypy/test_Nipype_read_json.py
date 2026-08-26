@@ -5,7 +5,7 @@ import json
 # Lecture du fichier JSON
 # --------------------------------------------------
 
-with open("nipype_interfaces.json", "r", encoding="utf-8") as f:
+with open("nipype_interfaces_v2.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 
