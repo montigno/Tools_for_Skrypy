@@ -1,7 +1,7 @@
 from pathlib import Path
 
 
-def rechercher_mot(dossier, mot):
+def rechercher_mot(dossier, mot, file_ext):
     dossier = Path(dossier)
 
     if not dossier.is_dir():
@@ -14,7 +14,7 @@ def rechercher_mot(dossier, mot):
     nb_occurrences = 0
 
     # Parcours récursif de tous les fichiers .py
-    for fichier in dossier.rglob("*.py"):
+    for fichier in dossier.rglob(file_ext):
         try:
             with open(fichier, "r", encoding="utf-8") as f:
                 for numero_ligne, ligne in enumerate(f, start=1):
@@ -39,7 +39,8 @@ def rechercher_mot(dossier, mot):
 
 if __name__ == "__main__":
 
-    dossier = "/home/olivier/Applications/"
-    mot = "import"
+    dossier = "/home/olivier/Documents/eclipse-workspace-2026/skrypy-pyqt5/NodeEditor/modules/Nipype"
+    mot = "Mandatory"
+    file_extension = "*.yml"
 
-    rechercher_mot(dossier, mot)
+    rechercher_mot(dossier, mot, file_extension)
