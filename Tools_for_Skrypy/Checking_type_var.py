@@ -43,6 +43,7 @@ def get_var_type(lv):
     # print(lk, ' '*(20 - len(lk)), '{}{}'.format(type_list, type_var), ' '*(20 - len(type_list + type_var)), regular, ' '*(15-len(regular)), length, ' '*(10-len(str(length))), lv)
 
     if type_var == 'str':
+        # print(type_var, lv)
         if  lv == 'path':
             type_var = 'path'
         elif 'list' in type_list:

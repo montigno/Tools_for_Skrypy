@@ -38,7 +38,5 @@ Module:
   enum_str_particular2: enumerate([int, float, list, complex, str, dict, tuple])
   list_tuple1: [(25, 1), (128, 128, 64)]
   list_tuple2: [('', )]
-  list_tuple3: list((25, 1), (128, 128, 64))
-
-  
-  
+  list_tuple3: [(25, 1), (128, 128, 64), (25, 1), (128, 128, 64)]
+  list_tuple4: [('path',)]
